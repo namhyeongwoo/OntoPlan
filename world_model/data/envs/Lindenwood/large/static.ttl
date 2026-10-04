@@ -1,0 +1,358 @@
+@prefix : <http://example.org/OntoPlan#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/OntoPlan#> .
+
+<http://example.org/OntoPlan> rdf:type owl:Ontology .
+
+:Lindenwood rdf:type :Building .
+
+:Floor_A rdf:type :Storey ;
+    :storeyIsInBuilding :Lindenwood .
+
+:Floor_B rdf:type :Storey ;
+    :storeyIsInBuilding :Lindenwood .
+
+:bathroom_1 rdf:type :Space ;
+    :category "bathroom" ;
+    :description "Bathroom on A floor" ;
+    :spaceIsInStorey :Floor_A .
+
+:bathroom_2 rdf:type :Space ;
+    :category "bathroom" ;
+    :description "Bathroom on A floor" ;
+    :spaceIsInStorey :Floor_A .
+
+:bathroom_3 rdf:type :Space ;
+    :category "bathroom" ;
+    :description "Bathroom on A floor" ;
+    :spaceIsInStorey :Floor_A .
+
+:bathroom_4 rdf:type :Space ;
+    :category "bathroom" ;
+    :description "Bathroom on B floor" ;
+    :spaceIsInStorey :Floor_B .
+
+:bathroom_5 rdf:type :Space ;
+    :category "bathroom" ;
+    :description "Bathroom on B floor" ;
+    :spaceIsInStorey :Floor_B .
+
+:bathroom_6 rdf:type :Space ;
+    :category "bathroom" ;
+    :description "Bathroom on B floor" ;
+    :spaceIsInStorey :Floor_B .
+
+:bedroom_7 rdf:type :Space ;
+    :category "bedroom" ;
+    :description "Bedroom on A floor" ;
+    :spaceIsInStorey :Floor_A .
+
+:closet_8 rdf:type :Space ;
+    :category "closet" ;
+    :description "Storage closet on A floor" ;
+    :spaceIsInStorey :Floor_A .
+
+:corridor_9 rdf:type :Space ;
+    :category "corridor" ;
+    :description "Corridor on A floor connecting rooms" ;
+    :spaceIsInStorey :Floor_A .
+
+:corridor_10 rdf:type :Space ;
+    :category "corridor" ;
+    :description "Corridor on A floor connecting rooms" ;
+    :spaceIsInStorey :Floor_A .
+
+:corridor_11 rdf:type :Space ;
+    :category "corridor" ;
+    :description "Corridor on A floor connecting rooms" ;
+    :spaceIsInStorey :Floor_A .
+
+:corridor_12 rdf:type :Space ;
+    :category "corridor" ;
+    :description "Corridor on A floor connecting rooms" ;
+    :spaceIsInStorey :Floor_A .
+
+:corridor_13 rdf:type :Space ;
+    :category "corridor" ;
+    :description "Corridor on A floor connecting rooms" ;
+    :spaceIsInStorey :Floor_A .
+
+:corridor_14 rdf:type :Space ;
+    :category "corridor" ;
+    :description "Corridor on A floor connecting rooms" ;
+    :spaceIsInStorey :Floor_A .
+
+:corridor_15 rdf:type :Space ;
+    :category "corridor" ;
+    :description "Corridor on B floor connecting rooms" ;
+    :spaceIsInStorey :Floor_B .
+
+:corridor_16 rdf:type :Space ;
+    :category "corridor" ;
+    :description "Corridor on B floor connecting rooms" ;
+    :spaceIsInStorey :Floor_B .
+
+:corridor_17 rdf:type :Space ;
+    :category "corridor" ;
+    :description "Corridor on B floor connecting rooms" ;
+    :spaceIsInStorey :Floor_B .
+
+:dining_room_18 rdf:type :Space ;
+    :category "dining_room" ;
+    :description "Dining room on A floor for family meals" ;
+    :spaceIsInStorey :Floor_A .
+
+:dining_room_19 rdf:type :Space ;
+    :category "dining_room" ;
+    :description "Dining room on A floor for family meals" ;
+    :spaceIsInStorey :Floor_A .
+
+:empty_room_20 rdf:type :Space ;
+    :category "empty_room" ;
+    :description "Room 20 (empty_room) in building Lindenwood" ;
+    :spaceIsInStorey :Floor_B .
+
+:empty_room_21 rdf:type :Space ;
+    :category "empty_room" ;
+    :description "Room 21 (empty_room) in building Lindenwood" ;
+    :spaceIsInStorey :Floor_B .
+
+:empty_room_22 rdf:type :Space ;
+    :category "empty_room" ;
+    :description "Room 22 (empty_room) in building Lindenwood" ;
+    :spaceIsInStorey :Floor_B .
+
+:empty_room_23 rdf:type :Space ;
+    :category "empty_room" ;
+    :description "Room 23 (empty_room) in building Lindenwood" ;
+    :spaceIsInStorey :Floor_B .
+
+:exercise_room_24 rdf:type :Space ;
+    :category "exercise_room" ;
+    :description "Room 24 (exercise_room) in building Lindenwood" ;
+    :spaceIsInStorey :Floor_B .
+
+:home_office_25 rdf:type :Space ;
+    :category "home_office" ;
+    :description "Home office on A floor for work and study" ;
+    :spaceIsInStorey :Floor_A .
+
+:home_office_26 rdf:type :Space ;
+    :category "home_office" ;
+    :description "Home office on B floor for work and study" ;
+    :spaceIsInStorey :Floor_B .
+
+:kitchen_27 rdf:type :Space ;
+    :category "kitchen" ;
+    :description "Kitchen on A floor with cooking and dining area" ;
+    :spaceIsInStorey :Floor_A .
+
+:kitchen_28 rdf:type :Space ;
+    :category "kitchen" ;
+    :description "Kitchen on A floor with cooking and dining area" ;
+    :spaceIsInStorey :Floor_A .
+
+:kitchen_29 rdf:type :Space ;
+    :category "kitchen" ;
+    :description "Kitchen on B floor with cooking and dining area" ;
+    :spaceIsInStorey :Floor_B .
+
+:living_room_30 rdf:type :Space ;
+    :category "living_room" ;
+    :description "Room 30 (living_room) in building Lindenwood" ;
+    :spaceIsInStorey :Floor_A .
+
+:living_room_31 rdf:type :Space ;
+    :category "living_room" ;
+    :description "Room 31 (living_room) in building Lindenwood" ;
+    :spaceIsInStorey :Floor_A .
+
+:lobby_32 rdf:type :Space ;
+    :category "lobby" ;
+    :description "Room 32 (lobby) in building Lindenwood" ;
+    :spaceIsInStorey :Floor_A .
+
+:staircase_33 rdf:type :Space ;
+    :category "staircase" ;
+    :description "Room 33 (staircase) in building Lindenwood" ;
+    :spaceIsInStorey :Floor_A .
+
+:staircase_34 rdf:type :Space ;
+    :category "staircase" ;
+    :description "Room 34 (staircase) in building Lindenwood" ;
+    :spaceIsInStorey :Floor_A .
+
+:storage_room_35 rdf:type :Space ;
+    :category "storage_room" ;
+    :description "Room 35 (storage_room) in building Lindenwood" ;
+    :spaceIsInStorey :Floor_A .
+
+:utility_room_36 rdf:type :Space ;
+    :category "utility_room" ;
+    :description "Room 36 (utility_room) in building Lindenwood" ;
+    :spaceIsInStorey :Floor_A .
+
+:opening_1 rdf:type :Opening ;
+    :isOpeningOf :corridor_9 ;
+    :isOpeningOf :lobby_32 .
+
+:opening_2 rdf:type :Opening ;
+    :isOpeningOf :living_room_30 ;
+    :isOpeningOf :lobby_32 .
+
+:opening_3 rdf:type :Opening ;
+    :isOpeningOf :corridor_11 ;
+    :isOpeningOf :living_room_30 .
+
+:opening_4 rdf:type :Opening ;
+    :isOpeningOf :corridor_11 ;
+    :isOpeningOf :living_room_31 .
+
+:opening_5 rdf:type :Opening ;
+    :isOpeningOf :corridor_11 ;
+    :isOpeningOf :corridor_12 .
+
+:opening_6 rdf:type :Opening ;
+    :isOpeningOf :corridor_11 ;
+    :isOpeningOf :kitchen_28 .
+
+:opening_7 rdf:type :Opening ;
+    :isOpeningOf :dining_room_19 ;
+    :isOpeningOf :lobby_32 .
+
+:opening_8 rdf:type :Opening ;
+    :isOpeningOf :corridor_10 ;
+    :isOpeningOf :kitchen_28 .
+
+:opening_9 rdf:type :Opening ;
+    :isOpeningOf :corridor_10 ;
+    :isOpeningOf :corridor_13 .
+
+:opening_10 rdf:type :Opening ;
+    :isOpeningOf :corridor_13 ;
+    :isOpeningOf :corridor_14 .
+
+:opening_11 rdf:type :Opening ;
+    :isOpeningOf :corridor_13 ;
+    :isOpeningOf :utility_room_36 .
+
+:opening_12 rdf:type :Opening ;
+    :isOpeningOf :corridor_12 ;
+    :isOpeningOf :kitchen_27 .
+
+:opening_13 rdf:type :Opening ;
+    :isOpeningOf :dining_room_18 ;
+    :isOpeningOf :kitchen_27 .
+
+:opening_14 rdf:type :Opening ;
+    :isOpeningOf :corridor_12 ;
+    :isOpeningOf :dining_room_18 .
+
+:opening_15 rdf:type :Opening ;
+    :isOpeningOf :corridor_14 ;
+    :isOpeningOf :kitchen_27 .
+
+:opening_16 rdf:type :Opening ;
+    :isOpeningOf :corridor_15 ;
+    :isOpeningOf :corridor_17 .
+
+:opening_17 rdf:type :Opening ;
+    :isOpeningOf :corridor_15 ;
+    :isOpeningOf :corridor_16 .
+
+:door_1 rdf:type :Door ;
+    :isDoorOf :bathroom_1 ;
+    :isDoorOf :closet_8 .
+
+:door_2 rdf:type :Door ;
+    :isDoorOf :bathroom_1 ;
+    :isDoorOf :bedroom_7 .
+
+:door_3 rdf:type :Door ;
+    :isDoorOf :bedroom_7 ;
+    :isDoorOf :corridor_9 .
+
+:door_4 rdf:type :Door ;
+    :isDoorOf :corridor_9 ;
+    :isDoorOf :home_office_25 .
+
+:door_5 rdf:type :Door ;
+    :isDoorOf :bathroom_2 ;
+    :isDoorOf :corridor_9 .
+
+:door_6 rdf:type :Door ;
+    :isDoorOf :dining_room_19 ;
+    :isDoorOf :kitchen_28 .
+
+:door_7 rdf:type :Door ;
+    :isDoorOf :bathroom_3 ;
+    :isDoorOf :corridor_10 .
+
+:door_8 rdf:type :Door ;
+    :isDoorOf :corridor_14 ;
+    :isDoorOf :storage_room_35 .
+
+:door_9 rdf:type :Door ;
+    :isDoorOf :kitchen_27 ;
+    :isDoorOf :utility_room_36 .
+
+:door_10 rdf:type :Door ;
+    :isDoorOf :empty_room_20 ;
+    :isDoorOf :empty_room_21 .
+
+:door_11 rdf:type :Door ;
+    :isDoorOf :bathroom_5 ;
+    :isDoorOf :empty_room_21 .
+
+:door_12 rdf:type :Door ;
+    :isDoorOf :corridor_17 ;
+    :isDoorOf :empty_room_21 .
+
+:door_13 rdf:type :Door ;
+    :isDoorOf :corridor_17 ;
+    :isDoorOf :home_office_26 .
+
+:door_14 rdf:type :Door ;
+    :isDoorOf :corridor_15 ;
+    :isDoorOf :exercise_room_24 .
+
+:door_15 rdf:type :Door ;
+    :isDoorOf :corridor_15 ;
+    :isDoorOf :empty_room_22 .
+
+:door_16 rdf:type :Door ;
+    :isDoorOf :bathroom_6 ;
+    :isDoorOf :corridor_16 .
+
+:door_17 rdf:type :Door ;
+    :isDoorOf :corridor_16 ;
+    :isDoorOf :empty_room_23 .
+
+:door_18 rdf:type :Door ;
+    :isDoorOf :bathroom_4 ;
+    :isDoorOf :empty_room_23 .
+
+:door_19 rdf:type :Door ;
+    :isDoorOf :corridor_16 ;
+    :isDoorOf :kitchen_29 .
+
+:stairs_1 rdf:type :Stairs ;
+    :isStairsOf :lobby_32 ;
+    :isStairsOf :staircase_33 .
+
+:stairs_2 rdf:type :Stairs ;
+    :isStairsOf :corridor_13 ;
+    :isStairsOf :staircase_34 .
+
+:stairs_3 rdf:type :Stairs ;
+    :isStairsOf :corridor_17 ;
+    :isStairsOf :staircase_33 .
+
+:stairs_4 rdf:type :Stairs ;
+    :isStairsOf :corridor_16 ;
+    :isStairsOf :staircase_34 .
+

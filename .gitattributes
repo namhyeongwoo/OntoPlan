@@ -1,0 +1,33 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Python
+*.py text eol=lf
+*.pyx text eol=lf
+*.pxd text eol=lf
+
+# Shell scripts
+*.sh text eol=lf
+
+# YAML/JSON
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+
+# Markdown
+*.md text eol=lf
+
+# PDDL files
+*.pddl text eol=lf
+
+# TTL/RDF files
+*.ttl text eol=lf
+*.rdf text eol=lf
+*.owl text eol=lf
+*.owx text eol=lf
+
+# Binary files
+*.pkl binary
+*.faiss binary
+*.db binary
+*.pyc binary

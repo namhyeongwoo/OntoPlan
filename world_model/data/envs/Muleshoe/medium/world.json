@@ -1,0 +1,3841 @@
+{
+  "name": "muleshoe",
+  "locations": {
+    "dining_room_14": {
+      "items": {
+        "mango_182": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "basket_181"
+        },
+        "dining_table_173": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "dining_room_14"
+        },
+        "basket_181": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOntopOf": "dining_table_173"
+        },
+        "tea_cup_180": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "wall_cabinet_174"
+        },
+        "wine_glass_175": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "wall_cabinet_174"
+        },
+        "wall_painting_186": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "dining_room_14"
+        },
+        "wall_cabinet_174": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "dining_room_14",
+          "isOpen": true
+        },
+        "chair_165": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "dining_room_14"
+        },
+        "mango_183": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "basket_181"
+        },
+        "tea_cup_178": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "wall_cabinet_174"
+        },
+        "chair_170": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "dining_room_14"
+        },
+        "wine_glass_176": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "wall_cabinet_174"
+        },
+        "wine_glass_177": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "wall_cabinet_174"
+        },
+        "wall_painting_187": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "dining_room_14"
+        },
+        "chair_168": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "dining_room_14"
+        },
+        "tea_cup_179": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "wall_cabinet_174"
+        },
+        "chair_166": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "dining_room_14"
+        },
+        "chair_172": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "dining_room_14"
+        },
+        "mango_184": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "basket_181"
+        },
+        "chair_167": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "dining_room_14"
+        },
+        "mango_185": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "basket_181"
+        },
+        "chair_171": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "dining_room_14"
+        },
+        "chair_169": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "dining_room_14"
+        }
+      },
+      "neighbor": [
+        "door_1",
+        "opening_3",
+        "opening_5"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "home_office_15": {
+      "items": {
+        "pen_holder_196": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_194"
+        },
+        "tape_dispenser_199": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_194"
+        },
+        "stapler_197": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_194"
+        },
+        "chair_192": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "home_office_15"
+        },
+        "globe_193": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "desk_188"
+        },
+        "storage_cabinet_194": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "home_office_15",
+          "isOpen": false
+        },
+        "book_190": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOntopOf": "desk_188",
+          "isOpen": false
+        },
+        "book_189": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOntopOf": "desk_188",
+          "isOpen": false
+        },
+        "notebook_195": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_194"
+        },
+        "desk_188": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "home_office_15"
+        },
+        "paper_stack_198": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_194"
+        },
+        "chair_191": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "home_office_15"
+        }
+      },
+      "neighbor": [
+        "opening_9"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "living_room_18": {
+      "items": {
+        "wall_painting_312": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "living_room_18"
+        },
+        "book_330": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOntopOf": "side_table_325",
+          "isOpen": false
+        },
+        "cushion_315": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "sofa_302"
+        },
+        "side_table_324": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "living_room_18"
+        },
+        "book_329": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOntopOf": "side_table_324",
+          "isOpen": false
+        },
+        "glass_jar_308": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_18",
+          "isOpen": false
+        },
+        "cushion_318": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "sofa_302"
+        },
+        "cushion_319": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "sofa_303"
+        },
+        "sofa_304": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "living_room_18"
+        },
+        "sofa_303": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "living_room_18"
+        },
+        "side_table_323": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "living_room_18"
+        },
+        "cushion_320": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "sofa_303"
+        },
+        "book_328": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOntopOf": "side_table_323",
+          "isOpen": false
+        },
+        "wall_painting_314": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "living_room_18"
+        },
+        "wall_painting_313": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "living_room_18"
+        },
+        "cushion_321": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "sofa_304"
+        },
+        "fireplace_305": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_18"
+        },
+        "side_table_325": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "living_room_18"
+        },
+        "plant_pot_306": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOntopOf": "fireplace_305"
+        },
+        "plate_327": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isOntopOf": "desk_326"
+        },
+        "floor_lamp_310": {
+          "accessible": true,
+          "affordance": [
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_18",
+          "isSwitchedOn": false
+        },
+        "glass_jar_307": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_18",
+          "isOpen": false
+        },
+        "cushion_322": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "sofa_304"
+        },
+        "sofa_302": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "living_room_18"
+        },
+        "wall_painting_311": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "living_room_18"
+        },
+        "cushion_317": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "sofa_302"
+        },
+        "desk_326": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "living_room_18"
+        },
+        "floor_lamp_309": {
+          "accessible": true,
+          "affordance": [
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_18",
+          "isSwitchedOn": false
+        },
+        "cushion_316": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "sofa_302"
+        }
+      },
+      "neighbor": [
+        "opening_3",
+        "opening_4"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "staircase_22": {
+      "items": {
+        "vase_352": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "staircase_22"
+        },
+        "wall_painting_354": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "staircase_22"
+        },
+        "vase_353": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "staircase_22"
+        },
+        "plant_pot_351": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "staircase_22"
+        }
+      },
+      "neighbor": [
+        "stairs_1",
+        "stairs_5"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "closet_10": {
+      "items": {
+        "underwear_146": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "dresser_130"
+        },
+        "pajamas_set_157": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "laundry_basket_132"
+        },
+        "coat_134": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "clothes_hanger_128"
+        },
+        "sweater_152": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_131"
+        },
+        "belt_147": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "dresser_130"
+        },
+        "cardigan_153": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_131"
+        },
+        "dresser_130": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Containment",
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "closet_10",
+          "isOpen": false
+        },
+        "scarf_150": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "dresser_130"
+        },
+        "jacket_133": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "clothes_hanger_128"
+        },
+        "shirt_135": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "clothes_hanger_128"
+        },
+        "dress_136": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "clothes_hanger_128"
+        },
+        "socks_143": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "dresser_130"
+        },
+        "t_shirt_156": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "laundry_basket_132"
+        },
+        "jeans_154": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_131"
+        },
+        "clothes_hanger_129": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "closet_10"
+        },
+        "hoodie_138": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "clothes_hanger_129"
+        },
+        "tie_148": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "dresser_130"
+        },
+        "blazer_139": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "clothes_hanger_129"
+        },
+        "t_shirt_151": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_131"
+        },
+        "skirt_140": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "clothes_hanger_129"
+        },
+        "uniform_142": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "clothes_hanger_129"
+        },
+        "socks_144": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "dresser_130"
+        },
+        "overall_141": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "clothes_hanger_129"
+        },
+        "clothes_hanger_128": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "closet_10"
+        },
+        "slack_155": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_131"
+        },
+        "glove_149": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "dresser_130"
+        },
+        "laundry_basket_132": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "closet_10"
+        },
+        "storage_cabinet_131": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "closet_10",
+          "isOpen": false
+        },
+        "suit_137": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "clothes_hanger_128"
+        },
+        "underwear_145": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "dresser_130"
+        }
+      },
+      "neighbor": [
+        "door_6"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "kitchen_16": {
+      "items": {
+        "plant_pot_210": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "kitchen_16"
+        },
+        "microwave_201": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Containment",
+            "Openable",
+            "Support",
+            "Switchable"
+          ],
+          "isOnFloorOf": "kitchen_16",
+          "isOpen": false,
+          "isSwitchedOn": false
+        },
+        "fish_fillet_239": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "refrigerator_228"
+        },
+        "cup_226": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "island_table_207": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "kitchen_16"
+        },
+        "milk_234": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "refrigerator_228"
+        },
+        "bowl_255": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "serving_plate_265": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "sink_229": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support"
+          ],
+          "isOnFloorOf": "kitchen_16"
+        },
+        "teapot_264": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "glass_260": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "butter_245": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "refrigerator_228"
+        },
+        "bowl_256": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "cushion_213": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "couch_211"
+        },
+        "storage_cabinet_215": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "kitchen_16",
+          "isOpen": false
+        },
+        "cushion_212": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "couch_211"
+        },
+        "chair_206": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "kitchen_16"
+        },
+        "ladle_272": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_215"
+        },
+        "cushion_214": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "couch_211"
+        },
+        "rice_246": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "glass_258": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "egg_236": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "refrigerator_228"
+        },
+        "carrot_243": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "refrigerator_228"
+        },
+        "cup_224": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "plate_222": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "tomato_242": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "refrigerator_228"
+        },
+        "electric_kettle_217": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOntopOf": "storage_cabinet_215",
+          "isOpen": false,
+          "isSwitchedOn": false
+        },
+        "whisk_273": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_215"
+        },
+        "gas_stove_233": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "kitchen_16",
+          "isSwitchedOn": false
+        },
+        "olive_oil_253": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_215"
+        },
+        "plate_218": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "plate_219": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "chair_203": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "kitchen_16"
+        },
+        "cup_225": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "chicken_238": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "refrigerator_228"
+        },
+        "cupboard_200": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "kitchen_16",
+          "isOpen": false
+        },
+        "lamp_231": {
+          "accessible": true,
+          "affordance": [
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOntopOf": "desk_230",
+          "isSwitchedOn": false
+        },
+        "plant_pot_208": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOntopOf": "island_table_207"
+        },
+        "oven_209": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support",
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "kitchen_16",
+          "isOpen": false,
+          "isSwitchedOn": false
+        },
+        "glass_261": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "couch_211": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "kitchen_16"
+        },
+        "canned_bean_252": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_215"
+        },
+        "pasta_247": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "chair_204": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "kitchen_16"
+        },
+        "cheese_235": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "refrigerator_228"
+        },
+        "cup_227": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "plate_221": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "refrigerator_228": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Containment",
+            "Openable",
+            "Support",
+            "Switchable"
+          ],
+          "isOnFloorOf": "kitchen_16",
+          "isOpen": false,
+          "isSwitchedOn": false
+        },
+        "knife_270": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_215"
+        },
+        "pan_267": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_215"
+        },
+        "kettle_216": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Unimanual"
+          ],
+          "isOntopOf": "storage_cabinet_215",
+          "isOpen": false
+        },
+        "lettuce_241": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "refrigerator_228"
+        },
+        "bowl_257": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "cup_223": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "book_232": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOntopOf": "desk_230",
+          "isOpen": false
+        },
+        "oven_202": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support",
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "kitchen_16",
+          "isOpen": false,
+          "isSwitchedOn": false
+        },
+        "mug_262": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "shrimp_240": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "refrigerator_228"
+        },
+        "chair_205": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "kitchen_16"
+        },
+        "desk_230": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "kitchen_16"
+        },
+        "bowl_254": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "cutting_board_269": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_215"
+        },
+        "sugar_249": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "yogurt_244": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "refrigerator_228"
+        },
+        "tea_251": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "coffee_250": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "mug_263": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "beef_237": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "refrigerator_228"
+        },
+        "pot_266": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_215"
+        },
+        "flour_248": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "plate_220": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "glass_259": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_200"
+        },
+        "spatula_271": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_215"
+        },
+        "saucepan_268": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_215"
+        }
+      },
+      "neighbor": [
+        "door_1",
+        "opening_2",
+        "opening_7"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "bedroom_9": {
+      "items": {
+        "decor_sculpture_114": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bookshelf_113"
+        },
+        "dresser_124": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Containment",
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "bedroom_9",
+          "isOpen": false
+        },
+        "wall_painting_112": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "bedroom_9"
+        },
+        "decor_sculpture_115": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bookshelf_113"
+        },
+        "picture_frame_125": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "dresser_124"
+        },
+        "storybook_119": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bookshelf_113"
+        },
+        "storybook_117": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bookshelf_113"
+        },
+        "bookshelf_113": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Containment",
+            "Support"
+          ],
+          "isOnFloorOf": "bedroom_9"
+        },
+        "storybook_116": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bookshelf_113"
+        },
+        "bed_111": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "bedroom_9"
+        },
+        "storybook_118": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bookshelf_113"
+        },
+        "toy_126": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "dresser_124"
+        },
+        "storybook_120": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bookshelf_113"
+        },
+        "toy_127": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "dresser_124"
+        },
+        "cushion_122": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_111"
+        },
+        "cushion_123": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_111"
+        },
+        "pillow_121": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_111"
+        }
+      },
+      "neighbor": [
+        "door_8"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "bedroom_6": {
+      "items": {
+        "lamp_62": {
+          "accessible": true,
+          "affordance": [
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOntopOf": "nightstand_60",
+          "isSwitchedOn": false
+        },
+        "pillow_66": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_54"
+        },
+        "tv_56": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support",
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "bedroom_6",
+          "isSwitchedOn": false
+        },
+        "pillow_67": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_54"
+        },
+        "bed_54": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "bedroom_6"
+        },
+        "cushion_57": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "couch_55"
+        },
+        "phone_68": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "nightstand_59"
+        },
+        "cushion_58": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "couch_55"
+        },
+        "couch_55": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "bedroom_6"
+        },
+        "nightstand_59": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "bedroom_6"
+        },
+        "nightstand_60": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "bedroom_6"
+        },
+        "cushion_64": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_54"
+        },
+        "lamp_61": {
+          "accessible": true,
+          "affordance": [
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOntopOf": "nightstand_59",
+          "isSwitchedOn": false
+        },
+        "cushion_65": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_54"
+        },
+        "cushion_63": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_54"
+        }
+      },
+      "neighbor": [
+        "door_7",
+        "opening_8"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "corridor_12": {
+      "items": {},
+      "neighbor": [
+        "door_10",
+        "door_11",
+        "door_7",
+        "door_8",
+        "door_9",
+        "opening_9",
+        "stairs_4",
+        "stairs_5"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "bathroom_3": {
+      "items": {
+        "plant_pot_9": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOntopOf": "sink_8"
+        },
+        "body_wash_20": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_13"
+        },
+        "storage_cabinet_13": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_3",
+          "isOpen": false
+        },
+        "toilet_11": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_3",
+          "isOpen": false
+        },
+        "tissue_box_15": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_13",
+          "isOpen": false
+        },
+        "mirror_14": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "bathroom_3"
+        },
+        "plant_pot_10": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOntopOf": "sink_8"
+        },
+        "toothbrush_16": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_13"
+        },
+        "mouthwash_22": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_13"
+        },
+        "towel_21": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_13"
+        },
+        "shampoo_19": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_13"
+        },
+        "soap_18": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_13"
+        },
+        "bathtub_12": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_3"
+        },
+        "sink_8": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_3"
+        },
+        "razor_23": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_13"
+        },
+        "toothpaste_17": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_13"
+        },
+        "comb_24": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_13"
+        }
+      },
+      "neighbor": [
+        "door_6",
+        "opening_8"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "living_room_17": {
+      "items": {
+        "book_298": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276",
+          "isOpen": false
+        },
+        "couch_275": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "living_room_17"
+        },
+        "plate_282": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isOntopOf": "side_table_281"
+        },
+        "sculpture_286": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276"
+        },
+        "pottery_292": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276"
+        },
+        "book_297": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276",
+          "isOpen": false
+        },
+        "pottery_293": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276"
+        },
+        "cushion_278": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "couch_274"
+        },
+        "sculpture_287": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276"
+        },
+        "picture_frame_288": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276"
+        },
+        "tv_283": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support",
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276",
+          "isSwitchedOn": false
+        },
+        "turntable_291": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276",
+          "isSwitchedOn": false
+        },
+        "cushion_280": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "couch_275"
+        },
+        "cushion_277": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "couch_274"
+        },
+        "lp_vinyl_stack_295": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276"
+        },
+        "couch_274": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "living_room_17"
+        },
+        "cabinet_276": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "living_room_17",
+          "isOpen": false
+        },
+        "book_300": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276",
+          "isOpen": false
+        },
+        "sculpture_285": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276"
+        },
+        "side_table_281": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "living_room_17"
+        },
+        "book_299": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276",
+          "isOpen": false
+        },
+        "picture_frame_290": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276"
+        },
+        "book_301": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276",
+          "isOpen": false
+        },
+        "picture_frame_289": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276"
+        },
+        "fireplace_284": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_17"
+        },
+        "cushion_279": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "couch_275"
+        },
+        "lp_vinyl_stack_296": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276"
+        },
+        "lp_vinyl_stack_294": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_276"
+        }
+      },
+      "neighbor": [
+        "opening_1"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "bathroom_4": {
+      "items": {
+        "mouthwash_35": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_27"
+        },
+        "towel_34": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_27"
+        },
+        "toothbrush_29": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_27"
+        },
+        "toilet_25": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_4",
+          "isOpen": false
+        },
+        "shampoo_32": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_27"
+        },
+        "sink_26": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_4"
+        },
+        "body_wash_33": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_27"
+        },
+        "tissue_box_28": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_27",
+          "isOpen": false
+        },
+        "toothpaste_30": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_27"
+        },
+        "storage_cabinet_27": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_4",
+          "isOpen": true
+        },
+        "soap_31": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_27"
+        },
+        "razor_36": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_27"
+        },
+        "comb_37": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_27"
+        }
+      },
+      "neighbor": [
+        "door_10"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "playroom_20": {
+      "items": {
+        "book_346": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isInsideOf": "cabinet_341",
+          "isOpen": false
+        },
+        "ottoman_340": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "playroom_20"
+        },
+        "lamp_337": {
+          "accessible": true,
+          "affordance": [
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOntopOf": "toy_piano_335",
+          "isSwitchedOn": false
+        },
+        "plant_pot_336": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOntopOf": "toy_piano_335"
+        },
+        "music_sheet_348": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cabinet_341"
+        },
+        "book_347": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isInsideOf": "cabinet_341",
+          "isOpen": false
+        },
+        "magazine_344": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cabinet_341"
+        },
+        "music_sheet_350": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cabinet_341"
+        },
+        "music_sheet_349": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cabinet_341"
+        },
+        "bench_333": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "playroom_20"
+        },
+        "toy_piano_335": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "playroom_20"
+        },
+        "armchair_338": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "playroom_20"
+        },
+        "book_345": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isInsideOf": "cabinet_341",
+          "isOpen": false
+        },
+        "cabinet_341": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "playroom_20",
+          "isOpen": false
+        },
+        "armchair_339": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "playroom_20"
+        },
+        "magazine_342": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cabinet_341"
+        },
+        "chair_334": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "playroom_20"
+        },
+        "magazine_343": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cabinet_341"
+        }
+      },
+      "neighbor": [
+        "door_2"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "bathroom_5": {
+      "items": {
+        "cupboard_43": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "bathroom_5",
+          "isOpen": false
+        },
+        "plant_pot_39": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOntopOf": "sink_38"
+        },
+        "sink_38": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_5"
+        },
+        "tissue_box_44": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_40",
+          "isOpen": false
+        },
+        "mouthwash_51": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_43"
+        },
+        "shampoo_48": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_40"
+        },
+        "toilet_41": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_5",
+          "isOpen": false
+        },
+        "soap_47": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_40"
+        },
+        "towel_50": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_43"
+        },
+        "toothpaste_46": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_40"
+        },
+        "toothbrush_45": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_40"
+        },
+        "comb_53": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_43"
+        },
+        "razor_52": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_43"
+        },
+        "storage_cabinet_40": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_5",
+          "isOpen": false
+        },
+        "candle_42": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOntopOf": "toilet_41"
+        },
+        "body_wash_49": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_43"
+        }
+      },
+      "neighbor": [
+        "door_12"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "bedroom_7": {
+      "items": {
+        "trash_bin_84": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "bedroom_7",
+          "isOpen": false
+        },
+        "desk_78": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "bedroom_7"
+        },
+        "chair_83": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "bedroom_7"
+        },
+        "book_79": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOntopOf": "desk_78",
+          "isOpen": false
+        },
+        "cushion_72": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_69"
+        },
+        "book_82": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOntopOf": "desk_78",
+          "isOpen": false
+        },
+        "table_clock_77": {
+          "accessible": true,
+          "affordance": [
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOntopOf": "nightstand_76",
+          "isSwitchedOn": false
+        },
+        "book_80": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOntopOf": "desk_78",
+          "isOpen": false
+        },
+        "cushion_71": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_69"
+        },
+        "nightstand_76": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "bedroom_7"
+        },
+        "bed_69": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "bedroom_7"
+        },
+        "pillow_75": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_69"
+        },
+        "book_81": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOntopOf": "desk_78",
+          "isOpen": false
+        },
+        "doll_74": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_69"
+        },
+        "cushion_70": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_69"
+        },
+        "cushion_73": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_69"
+        }
+      },
+      "neighbor": [
+        "door_9"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "staircase_21": {
+      "items": {},
+      "neighbor": [
+        "stairs_2",
+        "stairs_3",
+        "stairs_4"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "bathroom_1": {
+      "items": {
+        "toilet_1": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_1",
+          "isOpen": false
+        },
+        "plant_pot_2": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOntopOf": "toilet_1"
+        },
+        "wall_painting_3": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "bathroom_1"
+        }
+      },
+      "neighbor": [
+        "door_5"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "bedroom_8": {
+      "items": {
+        "book_96": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isInsideOf": "bookshelf_93",
+          "isOpen": false
+        },
+        "whiteboard_92": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "bedroom_8"
+        },
+        "book_99": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isInsideOf": "bookshelf_93",
+          "isOpen": false
+        },
+        "lamp_104": {
+          "accessible": true,
+          "affordance": [
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOntopOf": "nightstand_94",
+          "isSwitchedOn": false
+        },
+        "plant_pot_105": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOntopOf": "nightstand_94"
+        },
+        "wall_art_108": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "bedroom_8"
+        },
+        "wall_art_109": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "bedroom_8"
+        },
+        "bed_85": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "bedroom_8"
+        },
+        "cushion_89": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_85"
+        },
+        "camera_110": {
+          "accessible": true,
+          "affordance": [
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOntopOf": "bookshelf_93",
+          "isSwitchedOn": false
+        },
+        "bookshelf_93": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Containment",
+            "Support"
+          ],
+          "isOnFloorOf": "bedroom_8"
+        },
+        "nightstand_95": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "bedroom_8"
+        },
+        "plant_pot_106": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOntopOf": "nightstand_95"
+        },
+        "antique_102": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bookshelf_93"
+        },
+        "cushion_86": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_85"
+        },
+        "antique_101": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bookshelf_93"
+        },
+        "book_98": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isInsideOf": "bookshelf_93",
+          "isOpen": false
+        },
+        "cushion_88": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_85"
+        },
+        "book_100": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isInsideOf": "bookshelf_93",
+          "isOpen": false
+        },
+        "book_97": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isInsideOf": "bookshelf_93",
+          "isOpen": false
+        },
+        "pillow_91": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_85"
+        },
+        "antique_103": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bookshelf_93"
+        },
+        "nightstand_94": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "bedroom_8"
+        },
+        "cushion_87": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_85"
+        },
+        "wall_art_107": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "bedroom_8"
+        },
+        "pillow_90": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "bed_85"
+        }
+      },
+      "neighbor": [
+        "door_11",
+        "door_12"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "lobby_19": {
+      "items": {
+        "plant_pot_332": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOntopOf": "coffee_table_331"
+        },
+        "coffee_table_331": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "lobby_19"
+        }
+      },
+      "neighbor": [
+        "opening_4",
+        "opening_5",
+        "opening_6",
+        "stairs_1"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "utility_room_24": {
+      "items": {
+        "dustpan_417": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_397"
+        },
+        "cupboard_396": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "utility_room_24",
+          "isOpen": false
+        },
+        "bleach_406": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_396"
+        },
+        "picture_frame_398": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "storage_cabinet_397"
+        },
+        "picture_frame_400": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "storage_cabinet_397"
+        },
+        "laundry_detergent_pod_409": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_396"
+        },
+        "picture_frame_399": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "storage_cabinet_397"
+        },
+        "towel_401": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "sink_394"
+        },
+        "laundry_detergent_404": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_396"
+        },
+        "scrub_brush_420": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_397"
+        },
+        "garbage_bags_box_413": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_396",
+          "isOpen": false
+        },
+        "dryer_sheet_408": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_396"
+        },
+        "microfiber_cloth_422": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_397"
+        },
+        "paper_towel_roll_412": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_396"
+        },
+        "washing_machine_402": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support",
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "utility_room_24",
+          "isOpen": false
+        },
+        "dryer_403": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support",
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "utility_room_24",
+          "isOpen": false,
+          "isSwitchedOn": true
+        },
+        "glove_423": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_397"
+        },
+        "stain_remover_407": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_396"
+        },
+        "mop_415": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isInsideOf": "storage_cabinet_397"
+        },
+        "cleaning_wipe_411": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_396"
+        },
+        "towel_421": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_397"
+        },
+        "sponge_419": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_397"
+        },
+        "bucket_418": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_397"
+        },
+        "wall_painting_395": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "utility_room_24"
+        },
+        "storage_cabinet_397": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "utility_room_24",
+          "isOpen": true
+        },
+        "vacuum_filter_414": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "storage_cabinet_397"
+        },
+        "broom_416": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isInsideOf": "storage_cabinet_397"
+        },
+        "fabric_softener_405": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_396"
+        },
+        "sink_394": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support"
+          ],
+          "isOnFloorOf": "utility_room_24"
+        },
+        "ironing_spray_410": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isInsideOf": "cupboard_396"
+        }
+      },
+      "neighbor": [
+        "door_4",
+        "door_5",
+        "stairs_2"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "bathroom_2": {
+      "items": {
+        "toilet_4": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_2",
+          "isOpen": false
+        },
+        "plant_pot_5": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOntopOf": "toilet_4"
+        },
+        "sink_6": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_2"
+        },
+        "mirror_7": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "bathroom_2"
+        }
+      },
+      "neighbor": [
+        "door_3"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "television_room_23": {
+      "items": {
+        "wall_painting_370": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "television_room_23"
+        },
+        "wall_painting_373": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "television_room_23"
+        },
+        "sofa_380": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "television_room_23"
+        },
+        "ottoman_383": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "television_room_23"
+        },
+        "cushion_386": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "sofa_380"
+        },
+        "cushion_387": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "sofa_380"
+        },
+        "speaker_small_374": {
+          "accessible": true,
+          "affordance": [
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "television_room_23",
+          "isSwitchedOn": false
+        },
+        "board_game_362": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support",
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_355"
+        },
+        "video_393": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_355"
+        },
+        "antique_361": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_355"
+        },
+        "cabinet_355": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "television_room_23",
+          "isOpen": false
+        },
+        "board_game_363": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support",
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_355"
+        },
+        "cushion_388": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "sofa_381"
+        },
+        "cushion_384": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "sofa_380"
+        },
+        "speaker_small_375": {
+          "accessible": true,
+          "affordance": [
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "television_room_23",
+          "isSwitchedOn": false
+        },
+        "sofa_382": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "television_room_23"
+        },
+        "antique_360": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_355"
+        },
+        "cushion_385": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "sofa_380"
+        },
+        "picture_frame_366": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_355"
+        },
+        "cushion_390": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "sofa_382"
+        },
+        "antique_359": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_355"
+        },
+        "speaker_system_357": {
+          "accessible": true,
+          "affordance": [
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "television_room_23",
+          "isSwitchedOn": false
+        },
+        "speaker_small_376": {
+          "accessible": true,
+          "affordance": [
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "television_room_23",
+          "isSwitchedOn": false
+        },
+        "video_392": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_355"
+        },
+        "wall_painting_371": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "television_room_23"
+        },
+        "board_game_364": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support",
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_355"
+        },
+        "picture_frame_367": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_355"
+        },
+        "cushion_389": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "sofa_381"
+        },
+        "wall_painting_372": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "television_room_23"
+        },
+        "video_391": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_355"
+        },
+        "picture_frame_368": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_355"
+        },
+        "floor_lamp_379": {
+          "accessible": true,
+          "affordance": [
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "television_room_23",
+          "isSwitchedOn": false
+        },
+        "chess_378": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOntopOf": "desk_377"
+        },
+        "sofa_381": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "television_room_23"
+        },
+        "playstation_365": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support",
+            "Switchable"
+          ],
+          "isOntopOf": "cabinet_355",
+          "isSwitchedOn": false
+        },
+        "desk_377": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "television_room_23"
+        },
+        "tv_356": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support",
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOntopOf": "cabinet_355",
+          "isSwitchedOn": false
+        },
+        "speaker_system_358": {
+          "accessible": true,
+          "affordance": [
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "television_room_23",
+          "isSwitchedOn": false
+        },
+        "wall_painting_369": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "television_room_23"
+        }
+      },
+      "neighbor": [
+        "stairs_3"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "dining_room_13": {
+      "items": {
+        "chair_160": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "dining_room_13"
+        },
+        "chair_159": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "dining_room_13"
+        },
+        "dining_table_162": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "dining_room_13"
+        },
+        "wall_painting_163": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "dining_room_13"
+        },
+        "chair_161": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "dining_room_13"
+        },
+        "chair_158": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "dining_room_13"
+        },
+        "wall_painting_164": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual"
+          ],
+          "isOnFloorOf": "dining_room_13"
+        }
+      },
+      "neighbor": [
+        "door_4",
+        "opening_1",
+        "opening_2"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "corridor_11": {
+      "items": {},
+      "neighbor": [
+        "door_2",
+        "door_3",
+        "opening_6",
+        "opening_7"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "door_1": {
+      "items": {},
+      "neighbor": [
+        "dining_room_14",
+        "kitchen_16"
+      ],
+      "storey": "Floor_A",
+      "type": "door",
+      "doorIsOpen": true
+    },
+    "door_10": {
+      "items": {},
+      "neighbor": [
+        "bathroom_4",
+        "corridor_12"
+      ],
+      "storey": "Floor_B",
+      "type": "door",
+      "doorIsOpen": true
+    },
+    "door_11": {
+      "items": {},
+      "neighbor": [
+        "bedroom_8",
+        "corridor_12"
+      ],
+      "storey": "Floor_B",
+      "type": "door",
+      "doorIsOpen": false
+    },
+    "door_12": {
+      "items": {},
+      "neighbor": [
+        "bathroom_5",
+        "bedroom_8"
+      ],
+      "storey": "Floor_B",
+      "type": "door",
+      "doorIsOpen": true
+    },
+    "door_2": {
+      "items": {},
+      "neighbor": [
+        "corridor_11",
+        "playroom_20"
+      ],
+      "storey": "Floor_A",
+      "type": "door",
+      "doorIsOpen": true
+    },
+    "door_3": {
+      "items": {},
+      "neighbor": [
+        "bathroom_2",
+        "corridor_11"
+      ],
+      "storey": "Floor_A",
+      "type": "door",
+      "doorIsOpen": true
+    },
+    "door_4": {
+      "items": {},
+      "neighbor": [
+        "dining_room_13",
+        "utility_room_24"
+      ],
+      "storey": "Floor_A",
+      "type": "door",
+      "doorIsOpen": true
+    },
+    "door_5": {
+      "items": {},
+      "neighbor": [
+        "bathroom_1",
+        "utility_room_24"
+      ],
+      "storey": "Floor_A",
+      "type": "door",
+      "doorIsOpen": false
+    },
+    "door_6": {
+      "items": {},
+      "neighbor": [
+        "bathroom_3",
+        "closet_10"
+      ],
+      "storey": "Floor_B",
+      "type": "door",
+      "doorIsOpen": false
+    },
+    "door_7": {
+      "items": {},
+      "neighbor": [
+        "bedroom_6",
+        "corridor_12"
+      ],
+      "storey": "Floor_B",
+      "type": "door",
+      "doorIsOpen": true
+    },
+    "door_8": {
+      "items": {},
+      "neighbor": [
+        "bedroom_9",
+        "corridor_12"
+      ],
+      "storey": "Floor_B",
+      "type": "door",
+      "doorIsOpen": false
+    },
+    "door_9": {
+      "items": {},
+      "neighbor": [
+        "bedroom_7",
+        "corridor_12"
+      ],
+      "storey": "Floor_B",
+      "type": "door",
+      "doorIsOpen": false
+    },
+    "opening_1": {
+      "items": {},
+      "neighbor": [
+        "dining_room_13",
+        "living_room_17"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_2": {
+      "items": {},
+      "neighbor": [
+        "dining_room_13",
+        "kitchen_16"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_3": {
+      "items": {},
+      "neighbor": [
+        "dining_room_14",
+        "living_room_18"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_4": {
+      "items": {},
+      "neighbor": [
+        "living_room_18",
+        "lobby_19"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_5": {
+      "items": {},
+      "neighbor": [
+        "dining_room_14",
+        "lobby_19"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_6": {
+      "items": {},
+      "neighbor": [
+        "corridor_11",
+        "lobby_19"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_7": {
+      "items": {},
+      "neighbor": [
+        "corridor_11",
+        "kitchen_16"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_8": {
+      "items": {},
+      "neighbor": [
+        "bathroom_3",
+        "bedroom_6"
+      ],
+      "storey": "Floor_B",
+      "type": "opening"
+    },
+    "opening_9": {
+      "items": {},
+      "neighbor": [
+        "corridor_12",
+        "home_office_15"
+      ],
+      "storey": "Floor_B",
+      "type": "opening"
+    },
+    "stairs_1": {
+      "items": {},
+      "neighbor": [
+        "lobby_19",
+        "staircase_22"
+      ],
+      "storey": "Floor_A",
+      "type": "stairs"
+    },
+    "stairs_2": {
+      "items": {},
+      "neighbor": [
+        "staircase_21",
+        "utility_room_24"
+      ],
+      "storey": "Floor_A",
+      "type": "stairs"
+    },
+    "stairs_3": {
+      "items": {},
+      "neighbor": [
+        "staircase_21",
+        "television_room_23"
+      ],
+      "storey": "Floor_A",
+      "type": "stairs"
+    },
+    "stairs_4": {
+      "items": {},
+      "neighbor": [
+        "corridor_12",
+        "staircase_21"
+      ],
+      "storey": [
+        "Floor_A",
+        "Floor_B"
+      ],
+      "type": "stairs"
+    },
+    "stairs_5": {
+      "items": {},
+      "neighbor": [
+        "corridor_12",
+        "staircase_22"
+      ],
+      "storey": [
+        "Floor_A",
+        "Floor_B"
+      ],
+      "type": "stairs"
+    }
+  },
+  "robot": {
+    "robotIsInSpace": "bathroom_1",
+    "hand": {
+      "left_hand": {
+        "holds": null
+      },
+      "right_hand": {
+        "holds": null
+      }
+    }
+  }
+}

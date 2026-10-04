@@ -1,0 +1,932 @@
+{
+  "env": "Marstons",
+  "tasks": [
+    {
+      "id": "S01",
+      "env": "Marstons",
+      "size": "small",
+      "instruction": "I'm getting hungry. Could you please turn on the microwave in the kitchen on Floor B?",
+      "expected": {
+        "at_end": {
+          "subject": "microwave_1",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S02",
+      "env": "Marstons",
+      "size": "small",
+      "instruction": "Cooking just finished in the Floor B kitchen, but the oven is too hot. Please turn off the oven first, then open it to let the heat out.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "oven_2",
+              "predicate": "isSwitchedOn",
+              "object": "false"
+            },
+            {
+              "subject": "oven_2",
+              "predicate": "isOpen",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": [
+          {
+            "before": {
+              "subject": "oven_2",
+              "predicate": "isSwitchedOn",
+              "object": "false"
+            },
+            "after": {
+              "subject": "oven_2",
+              "predicate": "isOpen",
+              "object": "true"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "S03",
+      "env": "Marstons",
+      "size": "small",
+      "instruction": "The air in the exercise room is stuffy. Could you open the door to the exercise room?",
+      "expected": {
+        "at_end": {
+          "subject": "door_1",
+          "predicate": "doorIsOpen",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S04",
+      "env": "Marstons",
+      "size": "small",
+      "instruction": "Please move the chair from the Floor A corridor to the Floor B dining room connected to the lobby. We're expecting more guests.",
+      "expected": {
+        "at_end": {
+          "subject": "chair_12",
+          "predicate": "isInSpace",
+          "object": "dining_room_18"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S05",
+      "env": "Marstons",
+      "size": "small",
+      "instruction": "Please close all the toilets in the bathrooms.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "toilet_9",
+              "predicate": "isOpen",
+              "object": "false"
+            },
+            {
+              "subject": "toilet_10",
+              "predicate": "isOpen",
+              "object": "false"
+            },
+            {
+              "subject": "toilet_11",
+              "predicate": "isOpen",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S06",
+      "env": "Marstons",
+      "size": "small",
+      "instruction": "I'm trying to clean the floor of all dining rooms. Please move all chairs from the dining rooms to the kitchen.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "chair_13",
+              "predicate": "isInSpace",
+              "object": "kitchen_22"
+            },
+            {
+              "subject": "chair_14",
+              "predicate": "isInSpace",
+              "object": "kitchen_22"
+            },
+            {
+              "subject": "chair_15",
+              "predicate": "isInSpace",
+              "object": "kitchen_22"
+            },
+            {
+              "subject": "chair_16",
+              "predicate": "isInSpace",
+              "object": "kitchen_22"
+            },
+            {
+              "subject": "chair_19",
+              "predicate": "isInSpace",
+              "object": "kitchen_22"
+            },
+            {
+              "subject": "chair_20",
+              "predicate": "isInSpace",
+              "object": "kitchen_22"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S07",
+      "env": "Marstons",
+      "size": "small",
+      "instruction": "Floor B is too stuffy and I need to ventilate. I'm washing and drying carpets in the dining rooms, so avoid going through them. Open all the closed doors on Floor B.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "door_7",
+              "predicate": "doorIsOpen",
+              "object": "true"
+            },
+            {
+              "subject": "door_8",
+              "predicate": "doorIsOpen",
+              "object": "true"
+            },
+            {
+              "subject": "door_10",
+              "predicate": "doorIsOpen",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [
+          {
+            "not": {
+              "subject": "robot",
+              "predicate": "robotIsInSpace",
+              "object": "dining_room_18"
+            }
+          },
+          {
+            "not": {
+              "subject": "robot",
+              "predicate": "robotIsInSpace",
+              "object": "dining_room_19"
+            }
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S08",
+      "env": "Marstons",
+      "size": "small",
+      "instruction": "The potted plants in the Floor A staircase and the Floor B bathroom are withering from the sun. Please move them all to the Floor B living room near the corridor. The opening between the lobby and corridor on Floor B is under repair, so avoid going through there.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "potted_plant_41",
+              "predicate": "isInSpace",
+              "object": "living_room_23"
+            },
+            {
+              "subject": "potted_plant_43",
+              "predicate": "isInSpace",
+              "object": "living_room_23"
+            },
+            {
+              "subject": "potted_plant_44",
+              "predicate": "isInSpace",
+              "object": "living_room_23"
+            },
+            {
+              "subject": "potted_plant_45",
+              "predicate": "isInSpace",
+              "object": "living_room_23"
+            },
+            {
+              "subject": "potted_plant_46",
+              "predicate": "isInSpace",
+              "object": "living_room_23"
+            }
+          ]
+        },
+        "always": [
+          {
+            "not": {
+              "subject": "robot",
+              "predicate": "robotIsInSpace",
+              "object": "opening_4"
+            }
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S09",
+      "env": "Marstons",
+      "size": "small",
+      "instruction": "We're prepping for a party in the kitchen. Move the couch from the exercise room to one of the Floor B dining rooms, and open the refrigerator.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "couch_27",
+              "predicate": "isInSpace",
+              "object": "dining_room_18"
+            },
+            {
+              "subject": "refrigerator_3",
+              "predicate": "isOpen",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S10",
+      "env": "Marstons",
+      "size": "small",
+      "instruction": "Your left hand is malfunctioning, so use only your right hand. Move the two vases from the Floor B living room connected to the kitchen to the Floor A bathroom connected to the exercise room.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "vase_4",
+              "predicate": "isInSpace",
+              "object": "bathroom_1"
+            },
+            {
+              "subject": "vase_7",
+              "predicate": "isInSpace",
+              "object": "bathroom_1"
+            }
+          ]
+        },
+        "always": [
+          {
+            "subject": "left_hand",
+            "predicate": "isEmpty",
+            "object": "true"
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M01",
+      "env": "Marstons",
+      "size": "medium",
+      "instruction": "The Floor B living room connected to the kitchen is too dark. Can you turn on the lamp on the drawer?",
+      "expected": {
+        "at_end": {
+          "subject": "lamp_140",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M02",
+      "env": "Marstons",
+      "size": "medium",
+      "instruction": "The Floor A storage room door is open. Could you close it to keep everything safe?",
+      "expected": {
+        "at_end": {
+          "subject": "door_6",
+          "predicate": "doorIsOpen",
+          "object": "false"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M03",
+      "env": "Marstons",
+      "size": "medium",
+      "instruction": "Turn on the alarm clock in the dresser in a Floor C bedroom. I need to wake up early tomorrow.",
+      "expected": {
+        "at_end": {
+          "subject": "alarm_clock_266",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M04",
+      "env": "Marstons",
+      "size": "medium",
+      "instruction": "There are too many cushions on the sofa in the Floor B living room connected to the dining room. Please move one cushion from the sofa with three cushions to the side table.",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "cushion_83",
+              "predicate": "isOntopOf",
+              "object": "side_table_78"
+            },
+            {
+              "subject": "cushion_85",
+              "predicate": "isOntopOf",
+              "object": "side_table_78"
+            },
+            {
+              "subject": "cushion_87",
+              "predicate": "isOntopOf",
+              "object": "side_table_78"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M05",
+      "env": "Marstons",
+      "size": "medium",
+      "instruction": "It is time to replace all toothbrushes. Collect all 4 toothbrushes from the bathroom storage cabinets on all floors, then place them in the bucket in the Floor A storage room.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "toothbrush_213",
+              "predicate": "isInsideOf",
+              "object": "bucket_36"
+            },
+            {
+              "subject": "toothbrush_223",
+              "predicate": "isInsideOf",
+              "object": "bucket_36"
+            },
+            {
+              "subject": "toothbrush_233",
+              "predicate": "isInsideOf",
+              "object": "bucket_36"
+            },
+            {
+              "subject": "toothbrush_243",
+              "predicate": "isInsideOf",
+              "object": "bucket_36"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M06",
+      "env": "Marstons",
+      "size": "medium",
+      "instruction": "I will be working late in the Floor B home office. Collect the apples from the kitchen storage cabinet and the cereal from the cupboard, then bring them to the desk in my office. Do not use your right hand.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "apple_316",
+              "predicate": "isOntopOf",
+              "object": "desk_65"
+            },
+            {
+              "subject": "cereal_321",
+              "predicate": "isOntopOf",
+              "object": "desk_65"
+            }
+          ]
+        },
+        "always": [
+          {
+            "subject": "right_hand",
+            "predicate": "isEmpty",
+            "object": "true"
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M07",
+      "env": "Marstons",
+      "size": "medium",
+      "instruction": "Retrieve the shirt from the bed and the t-shirt from the wall cabinet in the Floor C bedroom with the wall cabinet, then place them in the washing machine in the Floor B utility room. Also, take the detergent from the cupboard next to the washing machine and add it as well.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "shirt_185",
+              "predicate": "isInsideOf",
+              "object": "washing_machine_141"
+            },
+            {
+              "subject": "t_shirt_270",
+              "predicate": "isInsideOf",
+              "object": "washing_machine_141"
+            },
+            {
+              "subject": "laundry_detergent_380",
+              "predicate": "isInsideOf",
+              "object": "washing_machine_141"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M08",
+      "env": "Marstons",
+      "size": "medium",
+      "instruction": "Put the shirt from the bed in the Floor C bedroom with the wall cabinet into the washing machine in the Floor B utility room. Close the washing machine door and run a wash cycle. After washing is done, move the shirt to the dryer next to the washing machine.",
+      "expected": {
+        "at_end": {
+          "subject": "shirt_185",
+          "predicate": "isInsideOf",
+          "object": "dryer_142"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "shirt_185",
+                "predicate": "isInsideOf",
+                "object": "washing_machine_141"
+              },
+              {
+                "subject": "washing_machine_141",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "washing_machine_141",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M09",
+      "env": "Marstons",
+      "size": "medium",
+      "instruction": "Wash the plate from the Floor B kitchen storage cabinet in the dishwasher. Close the dishwasher door and run a wash cycle. Turn off the dishwasher after washing is complete.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "plate_333",
+              "predicate": "isInsideOf",
+              "object": "dishwasher_108"
+            },
+            {
+              "subject": "dishwasher_108",
+              "predicate": "isSwitchedOn",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "plate_333",
+                "predicate": "isInsideOf",
+                "object": "dishwasher_108"
+              },
+              {
+                "subject": "dishwasher_108",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "dishwasher_108",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M10",
+      "env": "Marstons",
+      "size": "medium",
+      "instruction": "The beef just finished cooking in the oven. Cool the beef in the kitchen refrigerator, then serve it on the plate on the dining table in the dining room connected to the kitchen.",
+      "expected": {
+        "at_end": {
+          "subject": "beef_313",
+          "predicate": "isOntopOf",
+          "object": "plate_117"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "beef_313",
+                "predicate": "isInsideOf",
+                "object": "refrigerator_101"
+              },
+              {
+                "subject": "refrigerator_101",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "refrigerator_101",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L01",
+      "env": "Marstons",
+      "size": "large",
+      "instruction": "It seems a bit dark in the Floor A bedroom with the nightstands. Could you turn on both lamps next to the bed?",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "lamp_29",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            {
+              "subject": "lamp_30",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L02",
+      "env": "Marstons",
+      "size": "large",
+      "instruction": "Please turn on the vacuum cleaner in the storage room. I need to start cleaning.",
+      "expected": {
+        "at_end": {
+          "subject": "vacuum_cleaner_37",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L03",
+      "env": "Marstons",
+      "size": "large",
+      "instruction": "We have a guest coming soon. Collect all the dress shoes in the house and move them to the Floor C corridor connected to the bedrooms.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "dress_sho_1_164",
+              "predicate": "isInSpace",
+              "object": "corridor_16"
+            },
+            {
+              "subject": "dress_sho_1_1",
+              "predicate": "isInSpace",
+              "object": "corridor_16"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L04",
+      "env": "Marstons",
+      "size": "large",
+      "instruction": "I will be working in the study all night. Move the air purifier from the Floor A storage shelf to the study and power it on. The narrow opening is too narrow to pass through while carrying the air purifier, so take an alternative route.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "air_purifier_374",
+              "predicate": "isInSpace",
+              "object": "home_office_21"
+            },
+            {
+              "subject": "air_purifier_374",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [
+          {
+            "not": {
+              "and": [
+                {
+                  "subject": "robot",
+                  "predicate": "robotIsInSpace",
+                  "object": "opening_4"
+                },
+                {
+                  "subject": "left_hand",
+                  "predicate": "holds",
+                  "object": "air_purifier_374"
+                }
+              ]
+            }
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L05",
+      "env": "Marstons",
+      "size": "large",
+      "instruction": "Gather the cleaning tools in the Floor C living room. First, go to Floor B to get the cleaning spray from the kitchen drawer. Then, collect the disinfectant spray from the Floor C bathroom connected to the corridor and bring everything to the Floor C living room. Use only your left hand throughout.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "cleaning_spray_1_318",
+              "predicate": "isInSpace",
+              "object": "living_room_25"
+            },
+            {
+              "subject": "disinfectant_spray_2_246",
+              "predicate": "isInSpace",
+              "object": "living_room_25"
+            }
+          ]
+        },
+        "always": [
+          {
+            "not": {
+              "subject": "right_hand",
+              "predicate": "holds",
+              "object": "?x"
+            }
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L06",
+      "env": "Marstons",
+      "size": "large",
+      "instruction": "It is time for the child to sleep. Collect the storybook from the floor of the Floor C bathroom connected to the bedroom and the novel from the nightstand in the Floor A bedroom with the nightstands. Place both on the small bookshelf on the nightstand in the Floor C bedroom.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "storybook_2_364",
+              "predicate": "isOntopOf",
+              "object": "bookshelf_2_11"
+            },
+            {
+              "subject": "novel_1_29",
+              "predicate": "isOntopOf",
+              "object": "bookshelf_2_11"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L07",
+      "env": "Marstons",
+      "size": "large",
+      "instruction": "Collect the soda can from the floor of the Floor A gym, the water bottle on the kitchen island on Floor B, and the newspapers on the Floor A storage shelf. Place all items into the recycling bin in the Floor A corridor and make sure to close the bin tightly. Do not pass through the Floor C corridor near the living room, as it is under maintenance.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "soda_1_51",
+              "predicate": "isInsideOf",
+              "object": "recycling_bin_small_2_185"
+            },
+            {
+              "subject": "water_bottle_1_109",
+              "predicate": "isInsideOf",
+              "object": "recycling_bin_small_2_185"
+            },
+            {
+              "subject": "newspaper_369",
+              "predicate": "isInsideOf",
+              "object": "recycling_bin_small_2_185"
+            },
+            {
+              "subject": "recycling_bin_small_2_185",
+              "predicate": "isOpen",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [
+          {
+            "not": {
+              "subject": "robot",
+              "predicate": "robotIsInSpace",
+              "object": "corridor_15"
+            }
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L08",
+      "env": "Marstons",
+      "size": "large",
+      "instruction": "Take the beef from the kitchen refrigerator and cook it in the slow cooker on the kitchen floor. Close the slow cooker lid so it is not open and turn it on. After cooking is done, first turn off the slow cooker, then take the beef out and place it on top of the plate that is on top of the brown dining table in the dining room connected to the kitchen by the opening. Make sure the slow cooker is off at the end.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "beef_313",
+              "predicate": "isOntopOf",
+              "object": "plate_117"
+            },
+            {
+              "subject": "slow_cooker_1_99",
+              "predicate": "isSwitchedOn",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "beef_313",
+                "predicate": "isInsideOf",
+                "object": "slow_cooker_1_99"
+              },
+              {
+                "subject": "slow_cooker_1_99",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "slow_cooker_1_99",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L09",
+      "env": "Marstons",
+      "size": "large",
+      "instruction": "The towel on the towel rack in the Floor A bathroom connected to the corridor needs to be washed. Put it in the washing machine in the Floor B utility room, close the door and turn it on. After washing, move the towel to the dryer next to the washing machine.",
+      "expected": {
+        "at_end": {
+          "subject": "towel_48",
+          "predicate": "isInsideOf",
+          "object": "dryer_142"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "towel_48",
+                "predicate": "isInsideOf",
+                "object": "washing_machine_141"
+              },
+              {
+                "subject": "washing_machine_141",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "washing_machine_141",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L10",
+      "env": "Marstons",
+      "size": "large",
+      "instruction": "The towel on the towel rack in the Floor A bathroom connected to the corridor is too wet. Put it in the dryer in the Floor B utility room. Close the dryer lid so it is not open and turn it on. After drying, first turn off the dryer, then take the towel out and hang it back on the towel rack.",
+      "expected": {
+        "at_end": {
+          "subject": "towel_48",
+          "predicate": "isOntopOf",
+          "object": "towel_rack_47"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "towel_48",
+                "predicate": "isInsideOf",
+                "object": "dryer_142"
+              },
+              {
+                "subject": "dryer_142",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "dryer_142",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    }
+  ]
+}

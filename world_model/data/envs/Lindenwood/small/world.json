@@ -1,0 +1,1228 @@
+{
+  "name": "lindenwood",
+  "locations": {
+    "living_room_30": {
+      "items": {
+        "couch_38": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "living_room_30"
+        },
+        "bottle_15": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_30",
+          "isOpen": false
+        },
+        "vase_17": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_30"
+        },
+        "potted_plant_55": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_30"
+        },
+        "potted_plant_52": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_30"
+        },
+        "couch_37": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "living_room_30"
+        },
+        "potted_plant_40": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_30"
+        },
+        "potted_plant_51": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_30"
+        },
+        "potted_plant_54": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_30"
+        },
+        "couch_36": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "living_room_30"
+        },
+        "chair_34": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_30"
+        },
+        "chair_33": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_30"
+        },
+        "book_13": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_30",
+          "isOpen": false
+        }
+      },
+      "neighbor": [
+        "opening_2",
+        "opening_3"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "corridor_16": {
+      "items": {},
+      "neighbor": [
+        "door_16",
+        "door_17",
+        "door_19",
+        "opening_17",
+        "stairs_4"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "home_office_25": {
+      "items": {},
+      "neighbor": [
+        "door_4"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "living_room_31": {
+      "items": {
+        "book_11": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_31",
+          "isOpen": false
+        },
+        "chair_29": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_31"
+        },
+        "book_12": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_31",
+          "isOpen": false
+        },
+        "potted_plant_46": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_31"
+        },
+        "couch_35": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "living_room_31"
+        },
+        "book_10": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_31",
+          "isOpen": false
+        },
+        "chair_30": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_31"
+        },
+        "potted_plant_50": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_31"
+        },
+        "potted_plant_45": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "living_room_31"
+        },
+        "clock_14": {
+          "accessible": false,
+          "affordance": [],
+          "isOnFloorOf": "living_room_31"
+        }
+      },
+      "neighbor": [
+        "opening_4"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "staircase_33": {
+      "items": {
+        "potted_plant_44": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "staircase_33"
+        }
+      },
+      "neighbor": [
+        "stairs_1",
+        "stairs_3"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "corridor_17": {
+      "items": {},
+      "neighbor": [
+        "door_12",
+        "door_13",
+        "opening_16",
+        "stairs_3"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "corridor_9": {
+      "items": {},
+      "neighbor": [
+        "door_3",
+        "door_4",
+        "door_5",
+        "opening_1"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "lobby_32": {
+      "items": {
+        "potted_plant_43": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "lobby_32"
+        },
+        "chair_28": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "lobby_32"
+        }
+      },
+      "neighbor": [
+        "opening_1",
+        "opening_2",
+        "opening_7",
+        "stairs_1"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "corridor_15": {
+      "items": {},
+      "neighbor": [
+        "door_14",
+        "door_15",
+        "opening_16",
+        "opening_17"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "corridor_13": {
+      "items": {},
+      "neighbor": [
+        "opening_10",
+        "opening_11",
+        "opening_9",
+        "stairs_2"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "bedroom_7": {
+      "items": {
+        "chair_31": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "bedroom_7"
+        },
+        "potted_plant_48": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "bedroom_7"
+        },
+        "bed_56": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "bedroom_7"
+        },
+        "chair_32": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "bedroom_7"
+        }
+      },
+      "neighbor": [
+        "door_2",
+        "door_3"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "bathroom_4": {
+      "items": {
+        "toilet_18": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_4",
+          "isOpen": false
+        }
+      },
+      "neighbor": [
+        "door_18"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "closet_8": {
+      "items": {},
+      "neighbor": [
+        "door_1"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "empty_room_21": {
+      "items": {},
+      "neighbor": [
+        "door_10",
+        "door_11",
+        "door_12"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "kitchen_27": {
+      "items": {
+        "bowl_16": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "kitchen_27"
+        },
+        "chair_23": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "kitchen_27"
+        },
+        "potted_plant_49": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "kitchen_27"
+        },
+        "potted_plant_39": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "kitchen_27"
+        },
+        "oven_1": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support",
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "kitchen_27",
+          "isOpen": false,
+          "isSwitchedOn": false
+        },
+        "chair_22": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "kitchen_27"
+        },
+        "sink_3": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support"
+          ],
+          "isOnFloorOf": "kitchen_27"
+        }
+      },
+      "neighbor": [
+        "door_9",
+        "opening_12",
+        "opening_13",
+        "opening_15"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "bathroom_3": {
+      "items": {},
+      "neighbor": [
+        "door_7"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "kitchen_28": {
+      "items": {
+        "sink_4": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support"
+          ],
+          "isOnFloorOf": "kitchen_28"
+        },
+        "oven_2": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Openable",
+            "Support",
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "kitchen_28",
+          "isOpen": false,
+          "isSwitchedOn": false
+        }
+      },
+      "neighbor": [
+        "door_6",
+        "opening_6",
+        "opening_8"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "bathroom_1": {
+      "items": {
+        "toilet_21": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_1",
+          "isOpen": false
+        },
+        "potted_plant_53": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "bathroom_1"
+        },
+        "sink_6": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_1"
+        },
+        "sink_5": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_1"
+        }
+      },
+      "neighbor": [
+        "door_1",
+        "door_2"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "bathroom_5": {
+      "items": {},
+      "neighbor": [
+        "door_11"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "storage_room_35": {
+      "items": {},
+      "neighbor": [
+        "door_8"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "bathroom_6": {
+      "items": {
+        "toilet_20": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_6",
+          "isOpen": false
+        }
+      },
+      "neighbor": [
+        "door_16"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "bathroom_2": {
+      "items": {
+        "toilet_19": {
+          "accessible": true,
+          "affordance": [
+            "Openable",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_2",
+          "isOpen": false
+        },
+        "sink_7": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support"
+          ],
+          "isOnFloorOf": "bathroom_2"
+        }
+      },
+      "neighbor": [
+        "door_5"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "exercise_room_24": {
+      "items": {},
+      "neighbor": [
+        "door_14"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "empty_room_20": {
+      "items": {},
+      "neighbor": [
+        "door_10"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "kitchen_29": {
+      "items": {
+        "tv_59": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Switchable",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "kitchen_29",
+          "isSwitchedOn": false
+        }
+      },
+      "neighbor": [
+        "door_19"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "dining_room_19": {
+      "items": {
+        "chair_27": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "dining_room_19"
+        },
+        "chair_26": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "dining_room_19"
+        },
+        "potted_plant_41": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "dining_room_19"
+        },
+        "potted_plant_42": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "dining_room_19"
+        },
+        "dining_table_57": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "dining_room_19"
+        }
+      },
+      "neighbor": [
+        "door_6",
+        "opening_7"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "utility_room_36": {
+      "items": {
+        "sink_8": {
+          "accessible": true,
+          "affordance": [
+            "Containment",
+            "Support"
+          ],
+          "isOnFloorOf": "utility_room_36"
+        }
+      },
+      "neighbor": [
+        "door_9",
+        "opening_11"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "corridor_11": {
+      "items": {},
+      "neighbor": [
+        "opening_3",
+        "opening_4",
+        "opening_5",
+        "opening_6"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "empty_room_23": {
+      "items": {},
+      "neighbor": [
+        "door_17",
+        "door_18"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "dining_room_18": {
+      "items": {
+        "potted_plant_47": {
+          "accessible": true,
+          "affordance": [
+            "Unimanual"
+          ],
+          "isOnFloorOf": "dining_room_18"
+        },
+        "chair_25": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "dining_room_18"
+        },
+        "dining_table_58": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Support"
+          ],
+          "isOnFloorOf": "dining_room_18"
+        },
+        "chair_24": {
+          "accessible": true,
+          "affordance": [
+            "Support",
+            "Unimanual"
+          ],
+          "isOnFloorOf": "dining_room_18"
+        }
+      },
+      "neighbor": [
+        "opening_13",
+        "opening_14"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "home_office_26": {
+      "items": {},
+      "neighbor": [
+        "door_13"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "staircase_34": {
+      "items": {},
+      "neighbor": [
+        "stairs_2",
+        "stairs_4"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "corridor_12": {
+      "items": {},
+      "neighbor": [
+        "opening_12",
+        "opening_14",
+        "opening_5"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "empty_room_22": {
+      "items": {},
+      "neighbor": [
+        "door_15"
+      ],
+      "storey": "Floor_B",
+      "type": "space"
+    },
+    "corridor_10": {
+      "items": {},
+      "neighbor": [
+        "door_7",
+        "opening_8",
+        "opening_9"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "corridor_14": {
+      "items": {
+        "refrigerator_9": {
+          "accessible": true,
+          "affordance": [
+            "Bimanual",
+            "Containment",
+            "Openable",
+            "Support",
+            "Switchable"
+          ],
+          "isOnFloorOf": "corridor_14",
+          "isOpen": false
+        }
+      },
+      "neighbor": [
+        "door_8",
+        "opening_10",
+        "opening_15"
+      ],
+      "storey": "Floor_A",
+      "type": "space"
+    },
+    "door_1": {
+      "items": {},
+      "neighbor": [
+        "bathroom_1",
+        "closet_8"
+      ],
+      "storey": "Floor_A",
+      "type": "door",
+      "doorIsOpen": false
+    },
+    "door_10": {
+      "items": {},
+      "neighbor": [
+        "empty_room_20",
+        "empty_room_21"
+      ],
+      "storey": "Floor_B",
+      "type": "door",
+      "doorIsOpen": false
+    },
+    "door_11": {
+      "items": {},
+      "neighbor": [
+        "bathroom_5",
+        "empty_room_21"
+      ],
+      "storey": "Floor_B",
+      "type": "door",
+      "doorIsOpen": false
+    },
+    "door_12": {
+      "items": {},
+      "neighbor": [
+        "corridor_17",
+        "empty_room_21"
+      ],
+      "storey": "Floor_B",
+      "type": "door",
+      "doorIsOpen": false
+    },
+    "door_13": {
+      "items": {},
+      "neighbor": [
+        "corridor_17",
+        "home_office_26"
+      ],
+      "storey": "Floor_B",
+      "type": "door",
+      "doorIsOpen": true
+    },
+    "door_14": {
+      "items": {},
+      "neighbor": [
+        "corridor_15",
+        "exercise_room_24"
+      ],
+      "storey": "Floor_B",
+      "type": "door",
+      "doorIsOpen": false
+    },
+    "door_15": {
+      "items": {},
+      "neighbor": [
+        "corridor_15",
+        "empty_room_22"
+      ],
+      "storey": "Floor_B",
+      "type": "door",
+      "doorIsOpen": true
+    },
+    "door_16": {
+      "items": {},
+      "neighbor": [
+        "bathroom_6",
+        "corridor_16"
+      ],
+      "storey": "Floor_B",
+      "type": "door",
+      "doorIsOpen": false
+    },
+    "door_17": {
+      "items": {},
+      "neighbor": [
+        "corridor_16",
+        "empty_room_23"
+      ],
+      "storey": "Floor_B",
+      "type": "door",
+      "doorIsOpen": true
+    },
+    "door_18": {
+      "items": {},
+      "neighbor": [
+        "bathroom_4",
+        "empty_room_23"
+      ],
+      "storey": "Floor_B",
+      "type": "door",
+      "doorIsOpen": true
+    },
+    "door_19": {
+      "items": {},
+      "neighbor": [
+        "corridor_16",
+        "kitchen_29"
+      ],
+      "storey": "Floor_B",
+      "type": "door",
+      "doorIsOpen": false
+    },
+    "door_2": {
+      "items": {},
+      "neighbor": [
+        "bathroom_1",
+        "bedroom_7"
+      ],
+      "storey": "Floor_A",
+      "type": "door",
+      "doorIsOpen": true
+    },
+    "door_3": {
+      "items": {},
+      "neighbor": [
+        "bedroom_7",
+        "corridor_9"
+      ],
+      "storey": "Floor_A",
+      "type": "door",
+      "doorIsOpen": true
+    },
+    "door_4": {
+      "items": {},
+      "neighbor": [
+        "corridor_9",
+        "home_office_25"
+      ],
+      "storey": "Floor_A",
+      "type": "door",
+      "doorIsOpen": false
+    },
+    "door_5": {
+      "items": {},
+      "neighbor": [
+        "bathroom_2",
+        "corridor_9"
+      ],
+      "storey": "Floor_A",
+      "type": "door",
+      "doorIsOpen": false
+    },
+    "door_6": {
+      "items": {},
+      "neighbor": [
+        "dining_room_19",
+        "kitchen_28"
+      ],
+      "storey": "Floor_A",
+      "type": "door",
+      "doorIsOpen": true
+    },
+    "door_7": {
+      "items": {},
+      "neighbor": [
+        "bathroom_3",
+        "corridor_10"
+      ],
+      "storey": "Floor_A",
+      "type": "door",
+      "doorIsOpen": false
+    },
+    "door_8": {
+      "items": {},
+      "neighbor": [
+        "corridor_14",
+        "storage_room_35"
+      ],
+      "storey": "Floor_A",
+      "type": "door",
+      "doorIsOpen": true
+    },
+    "door_9": {
+      "items": {},
+      "neighbor": [
+        "kitchen_27",
+        "utility_room_36"
+      ],
+      "storey": "Floor_A",
+      "type": "door",
+      "doorIsOpen": true
+    },
+    "opening_1": {
+      "items": {},
+      "neighbor": [
+        "corridor_9",
+        "lobby_32"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_10": {
+      "items": {},
+      "neighbor": [
+        "corridor_13",
+        "corridor_14"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_11": {
+      "items": {},
+      "neighbor": [
+        "corridor_13",
+        "utility_room_36"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_12": {
+      "items": {},
+      "neighbor": [
+        "corridor_12",
+        "kitchen_27"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_13": {
+      "items": {},
+      "neighbor": [
+        "dining_room_18",
+        "kitchen_27"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_14": {
+      "items": {},
+      "neighbor": [
+        "corridor_12",
+        "dining_room_18"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_15": {
+      "items": {},
+      "neighbor": [
+        "corridor_14",
+        "kitchen_27"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_16": {
+      "items": {},
+      "neighbor": [
+        "corridor_15",
+        "corridor_17"
+      ],
+      "storey": "Floor_B",
+      "type": "opening"
+    },
+    "opening_17": {
+      "items": {},
+      "neighbor": [
+        "corridor_15",
+        "corridor_16"
+      ],
+      "storey": "Floor_B",
+      "type": "opening"
+    },
+    "opening_2": {
+      "items": {},
+      "neighbor": [
+        "living_room_30",
+        "lobby_32"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_3": {
+      "items": {},
+      "neighbor": [
+        "corridor_11",
+        "living_room_30"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_4": {
+      "items": {},
+      "neighbor": [
+        "corridor_11",
+        "living_room_31"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_5": {
+      "items": {},
+      "neighbor": [
+        "corridor_11",
+        "corridor_12"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_6": {
+      "items": {},
+      "neighbor": [
+        "corridor_11",
+        "kitchen_28"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_7": {
+      "items": {},
+      "neighbor": [
+        "dining_room_19",
+        "lobby_32"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_8": {
+      "items": {},
+      "neighbor": [
+        "corridor_10",
+        "kitchen_28"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "opening_9": {
+      "items": {},
+      "neighbor": [
+        "corridor_10",
+        "corridor_13"
+      ],
+      "storey": "Floor_A",
+      "type": "opening"
+    },
+    "stairs_1": {
+      "items": {},
+      "neighbor": [
+        "lobby_32",
+        "staircase_33"
+      ],
+      "storey": "Floor_A",
+      "type": "stairs"
+    },
+    "stairs_2": {
+      "items": {},
+      "neighbor": [
+        "corridor_13",
+        "staircase_34"
+      ],
+      "storey": "Floor_A",
+      "type": "stairs"
+    },
+    "stairs_3": {
+      "items": {},
+      "neighbor": [
+        "corridor_17",
+        "staircase_33"
+      ],
+      "storey": [
+        "Floor_A",
+        "Floor_B"
+      ],
+      "type": "stairs"
+    },
+    "stairs_4": {
+      "items": {},
+      "neighbor": [
+        "corridor_16",
+        "staircase_34"
+      ],
+      "storey": [
+        "Floor_A",
+        "Floor_B"
+      ],
+      "type": "stairs"
+    }
+  },
+  "robot": {
+    "robotIsInSpace": "corridor_9",
+    "hand": {
+      "left_hand": {
+        "holds": null
+      },
+      "right_hand": {
+        "holds": null
+      }
+    }
+  }
+}

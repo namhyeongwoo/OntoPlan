@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Environment and secrets
+.env
+*.env
+!.env.example
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# LangGraph
+.langgraph_api/
+
+# Category embedding caches (rebuilt on first run)
+*.db
+world_model/data/envs/*/*/vector_store/
+
+# Local configuration (config.example.yaml is the tracked default)
+world_model/config.yaml
+
+# PDDL generated files
+pddl/workspace/
+pddl/sas_plan
+pddl/output.sas
+pddl/*.sas
+
+# Backups and temporary files
+*.tar.gz
+*.zip
+*_backup_*.tar.gz
+*_old.*
+*.backup
+*.bak
+tmp/
+temp/
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log
+
+# Development tasks (not part of the released benchmark)
+benchmark/dev/
+
+# Experiment outputs
+experiments/results/
+
+# Paper sources (not part of the code release)
+NeurIPS_camera_ready/

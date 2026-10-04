@@ -1,0 +1,1119 @@
+{
+  "env": "Muleshoe",
+  "tasks": [
+    {
+      "id": "S01",
+      "env": "Muleshoe",
+      "size": "small",
+      "instruction": "Could you turn on the TV in the living room?",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "tv_120",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S02",
+      "env": "Muleshoe",
+      "size": "small",
+      "instruction": "Move the books from the kitchen to the Floor A living room not connected to the lobby.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "book_12",
+              "predicate": "isInSpace",
+              "object": "living_room_17"
+            },
+            {
+              "subject": "book_13",
+              "predicate": "isInSpace",
+              "object": "living_room_17"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S03",
+      "env": "Muleshoe",
+      "size": "small",
+      "instruction": "Move a cup from the kitchen to the kitchen sink.",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "cup_33",
+              "predicate": "isInsideOf",
+              "object": "sink_5"
+            },
+            {
+              "subject": "cup_33",
+              "predicate": "isOntopOf",
+              "object": "sink_5"
+            },
+            {
+              "subject": "cup_34",
+              "predicate": "isInsideOf",
+              "object": "sink_5"
+            },
+            {
+              "subject": "cup_34",
+              "predicate": "isOntopOf",
+              "object": "sink_5"
+            },
+            {
+              "subject": "cup_35",
+              "predicate": "isInsideOf",
+              "object": "sink_5"
+            },
+            {
+              "subject": "cup_35",
+              "predicate": "isOntopOf",
+              "object": "sink_5"
+            },
+            {
+              "subject": "cup_36",
+              "predicate": "isInsideOf",
+              "object": "sink_5"
+            },
+            {
+              "subject": "cup_36",
+              "predicate": "isOntopOf",
+              "object": "sink_5"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S04",
+      "env": "Muleshoe",
+      "size": "small",
+      "instruction": "There are books scattered on the Floor A living room not connected to the lobby. Please gather all the books onto one couch. Put them all on the same couch.",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "and": [
+                {
+                  "subject": "book_11",
+                  "predicate": "isOntopOf",
+                  "object": "couch_92"
+                },
+                {
+                  "subject": "book_14",
+                  "predicate": "isOntopOf",
+                  "object": "couch_92"
+                },
+                {
+                  "subject": "book_15",
+                  "predicate": "isOntopOf",
+                  "object": "couch_92"
+                },
+                {
+                  "subject": "book_26",
+                  "predicate": "isOntopOf",
+                  "object": "couch_92"
+                },
+                {
+                  "subject": "book_27",
+                  "predicate": "isOntopOf",
+                  "object": "couch_92"
+                }
+              ]
+            },
+            {
+              "and": [
+                {
+                  "subject": "book_11",
+                  "predicate": "isOntopOf",
+                  "object": "couch_93"
+                },
+                {
+                  "subject": "book_14",
+                  "predicate": "isOntopOf",
+                  "object": "couch_93"
+                },
+                {
+                  "subject": "book_15",
+                  "predicate": "isOntopOf",
+                  "object": "couch_93"
+                },
+                {
+                  "subject": "book_26",
+                  "predicate": "isOntopOf",
+                  "object": "couch_93"
+                },
+                {
+                  "subject": "book_27",
+                  "predicate": "isOntopOf",
+                  "object": "couch_93"
+                }
+              ]
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S05",
+      "env": "Muleshoe",
+      "size": "small",
+      "instruction": "I have something to put in the fridge. Could you turn on the refrigerator and open the door? Leave it open for cleaning.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "refrigerator_6",
+              "predicate": "isOpen",
+              "object": "true"
+            },
+            {
+              "subject": "refrigerator_6",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S06",
+      "env": "Muleshoe",
+      "size": "small",
+      "instruction": "Please move the vase from the Floor A lobby to the Floor B bedroom with the potted plants. You can't use the lobby stairs because of fresh paint, so take the TV room stairs.",
+      "expected": {
+        "at_end": {
+          "subject": "vase_38",
+          "predicate": "isInSpace",
+          "object": "bedroom_8"
+        },
+        "always": [
+          {
+            "not": {
+              "subject": "robot",
+              "predicate": "robotIsInSpace",
+              "object": "staircase_22"
+            }
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S07",
+      "env": "Muleshoe",
+      "size": "small",
+      "instruction": "Gather all the books scattered in the Floor A living room not connected to the lobby and bring them to the home office on Floor B. The door between the dining room and utility room is under repair, so do not pass through it.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "book_11",
+              "predicate": "isInSpace",
+              "object": "home_office_15"
+            },
+            {
+              "subject": "book_14",
+              "predicate": "isInSpace",
+              "object": "home_office_15"
+            },
+            {
+              "subject": "book_15",
+              "predicate": "isInSpace",
+              "object": "home_office_15"
+            },
+            {
+              "subject": "book_26",
+              "predicate": "isInSpace",
+              "object": "home_office_15"
+            },
+            {
+              "subject": "book_27",
+              "predicate": "isInSpace",
+              "object": "home_office_15"
+            }
+          ]
+        },
+        "always": [
+          {
+            "not": {
+              "subject": "robot",
+              "predicate": "robotIsInSpace",
+              "object": "door_4"
+            }
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S08",
+      "env": "Muleshoe",
+      "size": "small",
+      "instruction": "Move a wine glass from the dining room connected to the lobby to the kitchen. Once you're in the kitchen, close the door between the dining room and the kitchen to keep the cooking smells inside.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "or": [
+                {
+                  "subject": "wine_glass_48",
+                  "predicate": "isInSpace",
+                  "object": "kitchen_16"
+                },
+                {
+                  "subject": "wine_glass_49",
+                  "predicate": "isInSpace",
+                  "object": "kitchen_16"
+                },
+                {
+                  "subject": "wine_glass_50",
+                  "predicate": "isInSpace",
+                  "object": "kitchen_16"
+                },
+                {
+                  "subject": "wine_glass_51",
+                  "predicate": "isInSpace",
+                  "object": "kitchen_16"
+                },
+                {
+                  "subject": "wine_glass_52",
+                  "predicate": "isInSpace",
+                  "object": "kitchen_16"
+                },
+                {
+                  "subject": "wine_glass_53",
+                  "predicate": "isInSpace",
+                  "object": "kitchen_16"
+                },
+                {
+                  "subject": "wine_glass_54",
+                  "predicate": "isInSpace",
+                  "object": "kitchen_16"
+                },
+                {
+                  "subject": "wine_glass_55",
+                  "predicate": "isInSpace",
+                  "object": "kitchen_16"
+                },
+                {
+                  "subject": "wine_glass_56",
+                  "predicate": "isInSpace",
+                  "object": "kitchen_16"
+                },
+                {
+                  "subject": "wine_glass_57",
+                  "predicate": "isInSpace",
+                  "object": "kitchen_16"
+                },
+                {
+                  "subject": "wine_glass_58",
+                  "predicate": "isInSpace",
+                  "object": "kitchen_16"
+                }
+              ]
+            },
+            {
+              "subject": "door_1",
+              "predicate": "doorIsOpen",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S09",
+      "env": "Muleshoe",
+      "size": "small",
+      "instruction": "Move the potted plant from the Floor A bathroom to the utility room. While you're there, open the bathroom door for ventilation, then close it before you leave.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "or": [
+                {
+                  "subject": "potted_plant_108",
+                  "predicate": "isInSpace",
+                  "object": "utility_room_24"
+                },
+                {
+                  "subject": "potted_plant_112",
+                  "predicate": "isInSpace",
+                  "object": "utility_room_24"
+                },
+                {
+                  "subject": "potted_plant_113",
+                  "predicate": "isInSpace",
+                  "object": "utility_room_24"
+                }
+              ]
+            },
+            {
+              "subject": "door_5",
+              "predicate": "doorIsOpen",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [
+          {
+            "subject": "door_5",
+            "predicate": "doorIsOpen",
+            "object": "true"
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S10",
+      "env": "Muleshoe",
+      "size": "small",
+      "instruction": "Open all the toilets in the house. First, open all Floor B toilets. Then, open the Floor A toilet.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "toilet_66",
+              "predicate": "isOpen",
+              "object": "true"
+            },
+            {
+              "subject": "toilet_67",
+              "predicate": "isOpen",
+              "object": "true"
+            },
+            {
+              "subject": "toilet_68",
+              "predicate": "isOpen",
+              "object": "true"
+            },
+            {
+              "subject": "toilet_69",
+              "predicate": "isOpen",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": [
+          {
+            "before": {
+              "and": [
+                {
+                  "subject": "toilet_66",
+                  "predicate": "isOpen",
+                  "object": "true"
+                },
+                {
+                  "subject": "toilet_67",
+                  "predicate": "isOpen",
+                  "object": "true"
+                },
+                {
+                  "subject": "toilet_69",
+                  "predicate": "isOpen",
+                  "object": "true"
+                }
+              ]
+            },
+            "after": {
+              "subject": "toilet_68",
+              "predicate": "isOpen",
+              "object": "true"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "M01",
+      "env": "Muleshoe",
+      "size": "medium",
+      "instruction": "It looks a bit dark in the Floor A living room not connected to the lobby. Could you turn on the TV on the cabinet?",
+      "expected": {
+        "at_end": {
+          "subject": "tv_283",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M02",
+      "env": "Muleshoe",
+      "size": "medium",
+      "instruction": "Please take a yogurt from the kitchen fridge and place it on the island table.",
+      "expected": {
+        "at_end": {
+          "subject": "yogurt_244",
+          "predicate": "isOntopOf",
+          "object": "island_table_207"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M03",
+      "env": "Muleshoe",
+      "size": "medium",
+      "instruction": "Take a magazine from the playroom cabinet and put it on the bench. Close the cabinet door after you're done.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "or": [
+                {
+                  "subject": "magazine_342",
+                  "predicate": "isOntopOf",
+                  "object": "bench_333"
+                },
+                {
+                  "subject": "magazine_343",
+                  "predicate": "isOntopOf",
+                  "object": "bench_333"
+                },
+                {
+                  "subject": "magazine_344",
+                  "predicate": "isOntopOf",
+                  "object": "bench_333"
+                }
+              ]
+            },
+            {
+              "subject": "cabinet_341",
+              "predicate": "isOpen",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M04",
+      "env": "Muleshoe",
+      "size": "medium",
+      "instruction": "The dryer in the utility room seems to be finished. Could you turn it off?",
+      "expected": {
+        "at_end": {
+          "subject": "dryer_403",
+          "predicate": "isSwitchedOn",
+          "object": "false"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M05",
+      "env": "Muleshoe",
+      "size": "medium",
+      "instruction": "Pick up the phone from the nightstand in the Floor B bedroom with the couch and TV, then place it on the bed in that bedroom.",
+      "expected": {
+        "at_end": {
+          "subject": "phone_68",
+          "predicate": "isOntopOf",
+          "object": "bed_54"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M06",
+      "env": "Muleshoe",
+      "size": "medium",
+      "instruction": "The house is too dark. Turn on the floor lamp in the Floor A TV room and the lamp on the nightstand in the Floor B bedroom connected to the bathroom. Do not use the staircase connected to the lobby, as it is currently under repair.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "floor_lamp_379",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            {
+              "subject": "lamp_104",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [
+          {
+            "not": {
+              "subject": "robot",
+              "predicate": "robotIsInSpace",
+              "object": "staircase_22"
+            }
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M07",
+      "env": "Muleshoe",
+      "size": "medium",
+      "instruction": "I am making beef stew tonight. Take the beef from the kitchen refrigerator and the pot from the kitchen cabinet, then place them on the island table. Once ready, turn on the stove.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "beef_237",
+              "predicate": "isOntopOf",
+              "object": "island_table_207"
+            },
+            {
+              "subject": "pot_266",
+              "predicate": "isOntopOf",
+              "object": "island_table_207"
+            },
+            {
+              "subject": "gas_stove_233",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": [
+          {
+            "before": {
+              "and": [
+                {
+                  "subject": "beef_237",
+                  "predicate": "isOntopOf",
+                  "object": "island_table_207"
+                },
+                {
+                  "subject": "pot_266",
+                  "predicate": "isOntopOf",
+                  "object": "island_table_207"
+                }
+              ]
+            },
+            "after": {
+              "subject": "gas_stove_233",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "M08",
+      "env": "Muleshoe",
+      "size": "medium",
+      "instruction": "Take the sponge from the utility room cabinet and a glass jar from the living room connected to the lobby, and place them in the kitchen sink.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "or": [
+                {
+                  "subject": "sponge_419",
+                  "predicate": "isInsideOf",
+                  "object": "sink_229"
+                },
+                {
+                  "subject": "sponge_419",
+                  "predicate": "isOntopOf",
+                  "object": "sink_229"
+                }
+              ]
+            },
+            {
+              "or": [
+                {
+                  "subject": "glass_jar_307",
+                  "predicate": "isInsideOf",
+                  "object": "sink_229"
+                },
+                {
+                  "subject": "glass_jar_307",
+                  "predicate": "isOntopOf",
+                  "object": "sink_229"
+                },
+                {
+                  "subject": "glass_jar_308",
+                  "predicate": "isInsideOf",
+                  "object": "sink_229"
+                },
+                {
+                  "subject": "glass_jar_308",
+                  "predicate": "isOntopOf",
+                  "object": "sink_229"
+                }
+              ]
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M09",
+      "env": "Muleshoe",
+      "size": "medium",
+      "instruction": "Take the t-shirt from the laundry basket in the closet and dry it. Put it in the dryer with a dryer sheet, close the door and turn it on. After drying, return the shirt to the closet.",
+      "expected": {
+        "at_end": {
+          "subject": "t_shirt_156",
+          "predicate": "isInSpace",
+          "object": "closet_10"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "t_shirt_156",
+                "predicate": "isInsideOf",
+                "object": "dryer_403"
+              },
+              {
+                "subject": "dryer_sheet_408",
+                "predicate": "isInsideOf",
+                "object": "dryer_403"
+              },
+              {
+                "subject": "dryer_403",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "dryer_403",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M10",
+      "env": "Muleshoe",
+      "size": "medium",
+      "instruction": "Wash the towel from the utility room storage cabinet. Get the laundry detergent from the utility room cupboard, put both the towel and detergent in the washing machine, close it and start the wash cycle. After washing, hang the towel in the closet.",
+      "expected": {
+        "at_end": {
+          "subject": "towel_421",
+          "predicate": "isInSpace",
+          "object": "closet_10"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "towel_421",
+                "predicate": "isInsideOf",
+                "object": "washing_machine_402"
+              },
+              {
+                "subject": "laundry_detergent_404",
+                "predicate": "isInsideOf",
+                "object": "washing_machine_402"
+              },
+              {
+                "subject": "washing_machine_402",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "washing_machine_402",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L01",
+      "env": "Muleshoe",
+      "size": "large",
+      "instruction": "The Floor A living room with the sofas is too dark. Could you turn on all the floor lamps in that living room?",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "floor_lamp_309",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            {
+              "subject": "floor_lamp_310",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L02",
+      "env": "Muleshoe",
+      "size": "large",
+      "instruction": "The kitchen refrigerator door seems to be slightly open. Please close it tightly to save energy and keep the food fresh.",
+      "expected": {
+        "at_end": {
+          "subject": "refrigerator_228",
+          "predicate": "isOpen",
+          "object": "false"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L03",
+      "env": "Muleshoe",
+      "size": "large",
+      "instruction": "The child left the toy piano on the playroom floor. To prevent tripping, please pick it up and move it onto the bench by the window.",
+      "expected": {
+        "at_end": {
+          "subject": "toy_piano_335",
+          "predicate": "isOntopOf",
+          "object": "bench_333"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L04",
+      "env": "Muleshoe",
+      "size": "large",
+      "instruction": "The children left toys on the dresser in the Floor B bedroom with the bookshelf. Collect all the toys from the dresser and place them into the toy bin in the Floor A playroom. After putting everything away, make sure to close the lid of the toy bin. Your left hand is injured, so use only your right hand throughout this task.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "toy_126",
+              "predicate": "isInsideOf",
+              "object": "toy_storage_bin_1_341"
+            },
+            {
+              "subject": "toy_127",
+              "predicate": "isInsideOf",
+              "object": "toy_storage_bin_1_341"
+            },
+            {
+              "subject": "toy_storage_bin_1_341",
+              "predicate": "isOpen",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [
+          {
+            "subject": "left_hand",
+            "predicate": "isEmpty",
+            "object": "true"
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L05",
+      "env": "Muleshoe",
+      "size": "large",
+      "instruction": "It's getting dark. Please turn on all the lamps on the nightstands in the Floor B bedrooms.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "lamp_61",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            {
+              "subject": "lamp_62",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            {
+              "subject": "lamp_104",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L06",
+      "env": "Muleshoe",
+      "size": "large",
+      "instruction": "I am finished playing games and am going to rest. Turn off all the game consoles and TVs in the house.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "game_console_1_279",
+              "predicate": "isSwitchedOn",
+              "object": "false"
+            },
+            {
+              "subject": "game_console_1_297",
+              "predicate": "isSwitchedOn",
+              "object": "false"
+            },
+            {
+              "subject": "tv_283",
+              "predicate": "isSwitchedOn",
+              "object": "false"
+            },
+            {
+              "subject": "tv_356",
+              "predicate": "isSwitchedOn",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L07",
+      "env": "Muleshoe",
+      "size": "large",
+      "instruction": "Heat up the fish fillet from the kitchen refrigerator using the kitchen microwave. First put the fish fillet in the microwave, then close the microwave door, then turn it on. After heating, serve it on the dining table in the Floor A dining room that opens directly to the lobby.",
+      "expected": {
+        "at_end": {
+          "subject": "fish_fillet_239",
+          "predicate": "isOntopOf",
+          "object": "dining_table_173"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "fish_fillet_239",
+                "predicate": "isInsideOf",
+                "object": "microwave_201"
+              },
+              {
+                "subject": "microwave_201",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "microwave_201",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L08",
+      "env": "Muleshoe",
+      "size": "large",
+      "instruction": "Roast the chicken from the kitchen refrigerator in the kitchen oven. First put the chicken in the oven, then close the oven door, then turn it on. After roasting, place it on the kitchen island table.",
+      "expected": {
+        "at_end": {
+          "subject": "chicken_238",
+          "predicate": "isOntopOf",
+          "object": "island_table_207"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "or": [
+              {
+                "and": [
+                  {
+                    "subject": "chicken_238",
+                    "predicate": "isInsideOf",
+                    "object": "oven_209"
+                  },
+                  {
+                    "subject": "oven_209",
+                    "predicate": "isOpen",
+                    "object": "false"
+                  },
+                  {
+                    "subject": "oven_209",
+                    "predicate": "isSwitchedOn",
+                    "object": "true"
+                  }
+                ]
+              },
+              {
+                "and": [
+                  {
+                    "subject": "chicken_238",
+                    "predicate": "isInsideOf",
+                    "object": "oven_202"
+                  },
+                  {
+                    "subject": "oven_202",
+                    "predicate": "isOpen",
+                    "object": "false"
+                  },
+                  {
+                    "subject": "oven_202",
+                    "predicate": "isSwitchedOn",
+                    "object": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L09",
+      "env": "Muleshoe",
+      "size": "large",
+      "instruction": "Wash the t-shirt from the closet laundry basket. Get the laundry detergent from the utility room cupboard, put both the t-shirt and detergent in the utility room washing machine, then close the washing machine door, then start the wash cycle. After washing, return the t-shirt to the closet.",
+      "expected": {
+        "at_end": {
+          "subject": "t_shirt_156",
+          "predicate": "isInSpace",
+          "object": "closet_10"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "t_shirt_156",
+                "predicate": "isInsideOf",
+                "object": "washing_machine_402"
+              },
+              {
+                "subject": "laundry_detergent_404",
+                "predicate": "isInsideOf",
+                "object": "washing_machine_402"
+              },
+              {
+                "subject": "washing_machine_402",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "washing_machine_402",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L10",
+      "env": "Muleshoe",
+      "size": "large",
+      "instruction": "Dry the towel from the utility room storage cabinet. Get the dryer sheet from the utility room cupboard, put both the towel and dryer sheet in the utility room dryer, then close the dryer door, then turn it on. After drying, hang the towel in the closet.",
+      "expected": {
+        "at_end": {
+          "subject": "towel_421",
+          "predicate": "isInSpace",
+          "object": "closet_10"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "towel_421",
+                "predicate": "isInsideOf",
+                "object": "dryer_403"
+              },
+              {
+                "subject": "dryer_sheet_408",
+                "predicate": "isInsideOf",
+                "object": "dryer_403"
+              },
+              {
+                "subject": "dryer_403",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "dryer_403",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    }
+  ]
+}

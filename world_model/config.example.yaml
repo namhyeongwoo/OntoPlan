@@ -1,0 +1,22 @@
+# OntoPlan world-model configuration.
+# Used as-is when world_model/config.yaml does not exist; copy it there to change settings.
+# The environment (env_id, env_size) is chosen per session, not here.
+
+ontology:
+  namespace: "http://example.org/OntoPlan#"
+
+graphdb:
+  url: "http://localhost:7200"
+  repository: "OntoPlan"   # created automatically (OWL2-RL) if missing
+
+# Embedding model for matching free-text queries to scene categories in semantic_search.
+# The index is cached per environment in data/envs/<env>/<size>/vector_store/ and is
+# rebuilt automatically when the model or dimensions change.
+embedding:
+  category:
+    model: "text-embedding-3-small"   # setting used in the paper's experiments
+    dimensions: 256
+
+data:
+  root: "data"
+  schema: "data/schema.ttl"

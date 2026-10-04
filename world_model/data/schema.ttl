@@ -1,0 +1,531 @@
+@prefix : <http://example.org/OntoPlan#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/OntoPlan#> .
+
+<http://example.org/OntoPlan> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://example.org/OntoPlan#llm_readable
+:llm_readable rdf:type owl:AnnotationProperty ;
+              rdfs:range xsd:boolean .
+
+
+###  http://example.org/OntoPlan#pddl
+:pddl rdf:type owl:AnnotationProperty ;
+      rdfs:range xsd:boolean .
+
+
+###  http://example.org/OntoPlan#scene_dynamic
+:scene_dynamic rdf:type owl:AnnotationProperty ;
+               rdfs:range xsd:boolean .
+
+
+###  http://example.org/OntoPlan#scene_static
+:scene_static rdf:type owl:AnnotationProperty ;
+              rdfs:range xsd:boolean .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/OntoPlan#affords
+:affords rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :Artifact ;
+         rdfs:range :Affordance ;
+         :pddl "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#artifactIsInSpace
+:artifactIsInSpace rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :isInSpace ;
+                   owl:inverseOf :spaceHasArtifact ;
+                   rdfs:domain :Artifact ;
+                   rdfs:range :Space ;
+                   owl:propertyChainAxiom ( :contains
+                                            :artifactIsInSpace
+                                          ) ,
+                                          ( :isCarriedBy
+                                            :robotIsInSpace
+                                          ) ,
+                                          ( :isInsideOf
+                                            :artifactIsInSpace
+                                          ) ,
+                                          ( :isOntopOf
+                                            :artifactIsInSpace
+                                          ) ,
+                                          ( :supports
+                                            :artifactIsInSpace
+                                          ) ;
+                   :pddl "true"^^xsd:boolean ;
+                   :scene_dynamic "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#buildingHasStorey
+:buildingHasStorey rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :hasStorey ;
+                   owl:inverseOf :storeyIsInBuilding ;
+                   rdfs:domain :Building ;
+                   rdfs:range :Storey .
+
+
+###  http://example.org/OntoPlan#carries
+:carries rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :isCarriedBy ;
+         rdfs:domain :Robot ;
+         rdfs:range :Artifact ;
+         owl:propertyChainAxiom ( :hasHand
+                                  :holds
+                                ) .
+
+
+###  http://example.org/OntoPlan#contains
+:contains rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          owl:inverseOf :isInsideOf ;
+          rdf:type owl:TransitiveProperty ;
+          rdfs:domain :Artifact ;
+          rdfs:range :Artifact ;
+          :llm_readable "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#hasArtifact
+:hasArtifact rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Environment ;
+             rdfs:range :Artifact ;
+             owl:propertyChainAxiom ( :buildingHasStorey
+                                      :storeyHasSpace
+                                      :spaceHasArtifact
+                                    ) ,
+                                    ( :storeyHasSpace
+                                      :spaceHasArtifact
+                                    ) ;
+             :llm_readable "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#hasDoor
+:hasDoor rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :hasPortal ;
+         owl:inverseOf :isDoorOf ;
+         rdfs:domain :Space ;
+         rdfs:range :Door ;
+         :llm_readable "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#hasHand
+:hasHand rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :Robot ;
+         rdfs:range :Hand ;
+         :llm_readable "true"^^xsd:boolean ;
+         :pddl "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#hasOpening
+:hasOpening rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasPortal ;
+            owl:inverseOf :isOpeningOf ;
+            rdfs:domain :Space ;
+            rdfs:range :Opening ;
+            :llm_readable "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#hasPathTo
+:hasPathTo rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:SymmetricProperty ;
+           :pddl "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#hasPortal
+:hasPortal rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasPathTo ;
+           owl:inverseOf :isPortalOf ;
+           rdfs:domain :Space ;
+           rdfs:range :Portal .
+
+
+###  http://example.org/OntoPlan#hasSpace
+:hasSpace rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:range :Space ;
+          owl:propertyChainAxiom ( :buildingHasStorey
+                                   :storeyHasSpace
+                                 ) ;
+          :llm_readable "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#hasStairs
+:hasStairs rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasPortal ;
+           owl:inverseOf :isStairsOf ;
+           rdfs:domain :Space ;
+           rdfs:range :Stairs ;
+           :llm_readable "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#hasStorey
+:hasStorey rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:range :Storey ;
+           :llm_readable "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#holds
+:holds rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       owl:inverseOf :isHeldBy ;
+       rdfs:domain :Hand ;
+       rdfs:range :Artifact ;
+       :llm_readable "true"^^xsd:boolean ;
+       :pddl "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#isAdjacentTo
+:isAdjacentTo rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Robot ;
+              rdfs:range :Artifact ;
+              :llm_readable "true"^^xsd:boolean ;
+              :pddl "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#isCarriedBy
+:isCarriedBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Artifact ;
+             rdfs:range :Robot .
+
+
+###  http://example.org/OntoPlan#isConnectedTo
+:isConnectedTo rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:SymmetricProperty ;
+               rdfs:domain :Space ;
+               rdfs:range :Space ;
+               owl:propertyChainAxiom ( :hasPortal
+                                        :isPortalOf
+                                      ) ;
+               :llm_readable "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#isDoorOf
+:isDoorOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :isPortalOf ;
+          rdfs:domain :Door ;
+          rdfs:range :Space ;
+          :llm_readable "true"^^xsd:boolean ;
+          :scene_static "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#isHeldBy
+:isHeldBy rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Artifact ;
+          rdfs:range :Hand .
+
+
+###  http://example.org/OntoPlan#isInBuilding
+:isInBuilding rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:range :Building ;
+              owl:propertyChainAxiom ( :artifactIsInSpace
+                                       :spaceIsInStorey
+                                       :storeyIsInBuilding
+                                     ) ,
+                                     ( :spaceIsInStorey
+                                       :storeyIsInBuilding
+                                     ) ;
+              :llm_readable "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#isInSpace
+:isInSpace rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:range :Space ;
+           :llm_readable "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#isInStorey
+:isInStorey rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:range :Storey ;
+            owl:propertyChainAxiom ( :artifactIsInSpace
+                                     :spaceIsInStorey
+                                   ) ;
+            :llm_readable "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#isInsideOf
+:isInsideOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:TransitiveProperty ;
+            rdfs:domain :Artifact ;
+            rdfs:range :Artifact ;
+            :llm_readable "true"^^xsd:boolean ;
+            :pddl "true"^^xsd:boolean ;
+            :scene_dynamic "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#isOnFloorOf
+:isOnFloorOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :artifactIsInSpace ;
+             rdfs:domain :Artifact ;
+             rdfs:range :Space .
+
+
+###  http://example.org/OntoPlan#isOntopOf
+:isOntopOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :supports ;
+           rdfs:domain :Artifact ;
+           rdfs:range :Artifact ;
+           :llm_readable "true"^^xsd:boolean ;
+           :pddl "true"^^xsd:boolean ;
+           :scene_dynamic "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#isOpeningOf
+:isOpeningOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :isPortalOf ;
+             rdfs:domain :Opening ;
+             rdfs:range :Space ;
+             :llm_readable "true"^^xsd:boolean ;
+             :scene_static "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#isPortalOf
+:isPortalOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasPathTo ;
+            rdfs:domain :Portal ;
+            rdfs:range :Space .
+
+
+###  http://example.org/OntoPlan#isStairsOf
+:isStairsOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :isPortalOf ;
+            rdfs:domain :Stairs ;
+            rdfs:range :Space ;
+            :llm_readable "true"^^xsd:boolean ;
+            :scene_static "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#robotIsInSpace
+:robotIsInSpace rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :isInSpace ;
+                rdfs:domain :Robot ;
+                rdfs:range :Space ;
+                :pddl "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#spaceHasArtifact
+:spaceHasArtifact rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasArtifact ;
+                  rdfs:domain :Space ;
+                  rdfs:range :Artifact .
+
+
+###  http://example.org/OntoPlan#spaceIsInStorey
+:spaceIsInStorey rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :isInStorey ;
+                 owl:inverseOf :storeyHasSpace ;
+                 rdfs:domain :Space ;
+                 rdfs:range :Storey ;
+                 :scene_static "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#storeyHasSpace
+:storeyHasSpace rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasSpace ;
+                rdfs:domain :Storey ;
+                rdfs:range :Space ;
+                owl:propertyChainAxiom ( :storeyHasSpace
+                                         :hasDoor
+                                         :isDoorOf
+                                       ) ,
+                                       ( :storeyHasSpace
+                                         :hasOpening
+                                         :isOpeningOf
+                                       ) .
+
+
+###  http://example.org/OntoPlan#storeyIsInBuilding
+:storeyIsInBuilding rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :isInBuilding ;
+                    rdfs:domain :Storey ;
+                    rdfs:range :Building ;
+                    :scene_static "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#supports
+:supports rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:TransitiveProperty ;
+          rdfs:domain :Artifact ;
+          rdfs:range :Artifact ;
+          :llm_readable "true"^^xsd:boolean .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/OntoPlan#category
+:category rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          :llm_readable "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#description
+:description rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             :llm_readable "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#doorIsOpen
+:doorIsOpen rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :isOpen ;
+            rdf:type owl:FunctionalProperty ;
+            :pddl "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#isOpen
+:isOpen rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        :llm_readable "true"^^xsd:boolean ;
+        :pddl "true"^^xsd:boolean .
+
+
+###  http://example.org/OntoPlan#isSwitchedOn
+:isSwitchedOn rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              :llm_readable "true"^^xsd:boolean ;
+              :pddl "true"^^xsd:boolean .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/OntoPlan#Affordance
+:Affordance rdf:type owl:Class .
+
+
+###  http://example.org/OntoPlan#Agent
+:Agent rdf:type owl:Class ;
+       rdfs:subClassOf :Object .
+
+
+###  http://example.org/OntoPlan#Artifact
+:Artifact rdf:type owl:Class ;
+          rdfs:subClassOf :Object .
+
+
+###  http://example.org/OntoPlan#Building
+:Building rdf:type owl:Class ;
+          rdfs:subClassOf :Environment .
+
+
+###  http://example.org/OntoPlan#Door
+:Door rdf:type owl:Class ;
+      rdfs:subClassOf :Portal .
+
+
+###  http://example.org/OntoPlan#Environment
+:Environment rdf:type owl:Class .
+
+
+###  http://example.org/OntoPlan#Hand
+:Hand rdf:type owl:Class ;
+      rdfs:subClassOf :RobotPart .
+
+
+###  http://example.org/OntoPlan#Human
+:Human rdf:type owl:Class ;
+       rdfs:subClassOf :Agent .
+
+
+###  http://example.org/OntoPlan#Object
+:Object rdf:type owl:Class .
+
+
+###  http://example.org/OntoPlan#Opening
+:Opening rdf:type owl:Class ;
+         rdfs:subClassOf :Portal .
+
+
+###  http://example.org/OntoPlan#Portal
+:Portal rdf:type owl:Class ;
+        rdfs:subClassOf :Space .
+
+
+###  http://example.org/OntoPlan#Robot
+:Robot rdf:type owl:Class ;
+       rdfs:subClassOf :Agent .
+
+
+###  http://example.org/OntoPlan#RobotPart
+:RobotPart rdf:type owl:Class ;
+           rdfs:subClassOf :Object .
+
+
+###  http://example.org/OntoPlan#Space
+:Space rdf:type owl:Class ;
+       rdfs:subClassOf :Environment .
+
+
+###  http://example.org/OntoPlan#Stairs
+:Stairs rdf:type owl:Class ;
+        rdfs:subClassOf :Portal .
+
+
+###  http://example.org/OntoPlan#Storey
+:Storey rdf:type owl:Class ;
+        rdfs:subClassOf :Environment .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/OntoPlan#Bimanual
+:Bimanual rdf:type owl:NamedIndividual ,
+                   :Affordance .
+
+
+###  http://example.org/OntoPlan#Containment
+:Containment rdf:type owl:NamedIndividual ,
+                      :Affordance .
+
+
+###  http://example.org/OntoPlan#Openable
+:Openable rdf:type owl:NamedIndividual ,
+                   :Affordance .
+
+
+###  http://example.org/OntoPlan#Support
+:Support rdf:type owl:NamedIndividual ,
+                  :Affordance .
+
+
+###  http://example.org/OntoPlan#Switchable
+:Switchable rdf:type owl:NamedIndividual ,
+                     :Affordance .
+
+
+###  http://example.org/OntoPlan#Unimanual
+:Unimanual rdf:type owl:NamedIndividual ,
+                    :Affordance .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

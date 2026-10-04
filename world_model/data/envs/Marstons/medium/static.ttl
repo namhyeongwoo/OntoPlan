@@ -1,0 +1,300 @@
+@prefix : <http://example.org/OntoPlan#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/OntoPlan#> .
+
+<http://example.org/OntoPlan> rdf:type owl:Ontology .
+
+:Marstons rdf:type :Building .
+
+:Floor_A rdf:type :Storey ;
+    :storeyIsInBuilding :Marstons .
+
+:Floor_B rdf:type :Storey ;
+    :storeyIsInBuilding :Marstons .
+
+:Floor_C rdf:type :Storey ;
+    :storeyIsInBuilding :Marstons .
+
+:bathroom_1 rdf:type :Space ;
+    :category "bathroom" ;
+    :description "Bathroom on A floor" ;
+    :spaceIsInStorey :Floor_A .
+
+:bathroom_2 rdf:type :Space ;
+    :category "bathroom" ;
+    :description "Bathroom on A floor" ;
+    :spaceIsInStorey :Floor_A .
+
+:bathroom_3 rdf:type :Space ;
+    :category "bathroom" ;
+    :description "Bathroom on B floor" ;
+    :spaceIsInStorey :Floor_B .
+
+:bathroom_4 rdf:type :Space ;
+    :category "bathroom" ;
+    :description "Bathroom on C floor" ;
+    :spaceIsInStorey :Floor_C .
+
+:bathroom_5 rdf:type :Space ;
+    :category "bathroom" ;
+    :description "Bathroom on C floor" ;
+    :spaceIsInStorey :Floor_C .
+
+:bedroom_6 rdf:type :Space ;
+    :category "bedroom" ;
+    :description "Bedroom on A floor" ;
+    :spaceIsInStorey :Floor_A .
+
+:bedroom_7 rdf:type :Space ;
+    :category "bedroom" ;
+    :description "Bedroom on A floor" ;
+    :spaceIsInStorey :Floor_A .
+
+:bedroom_8 rdf:type :Space ;
+    :category "bedroom" ;
+    :description "Bedroom on C floor" ;
+    :spaceIsInStorey :Floor_C .
+
+:bedroom_9 rdf:type :Space ;
+    :category "bedroom" ;
+    :description "Bedroom on C floor" ;
+    :spaceIsInStorey :Floor_C .
+
+:bedroom_10 rdf:type :Space ;
+    :category "bedroom" ;
+    :description "Bedroom on C floor" ;
+    :spaceIsInStorey :Floor_C .
+
+:closet_11 rdf:type :Space ;
+    :category "closet" ;
+    :description "Storage closet on C floor" ;
+    :spaceIsInStorey :Floor_C .
+
+:closet_12 rdf:type :Space ;
+    :category "closet" ;
+    :description "Storage closet on C floor" ;
+    :spaceIsInStorey :Floor_C .
+
+:corridor_13 rdf:type :Space ;
+    :category "corridor" ;
+    :description "Corridor on A floor connecting rooms" ;
+    :spaceIsInStorey :Floor_A .
+
+:corridor_14 rdf:type :Space ;
+    :category "corridor" ;
+    :description "Corridor on B floor connecting rooms" ;
+    :spaceIsInStorey :Floor_B .
+
+:corridor_15 rdf:type :Space ;
+    :category "corridor" ;
+    :description "Corridor on C floor connecting rooms" ;
+    :spaceIsInStorey :Floor_C .
+
+:corridor_16 rdf:type :Space ;
+    :category "corridor" ;
+    :description "Corridor on C floor connecting rooms" ;
+    :spaceIsInStorey :Floor_C .
+
+:corridor_17 rdf:type :Space ;
+    :category "corridor" ;
+    :description "Corridor on C floor connecting rooms" ;
+    :spaceIsInStorey :Floor_C .
+
+:dining_room_18 rdf:type :Space ;
+    :category "dining_room" ;
+    :description "Dining room on B floor for family meals" ;
+    :spaceIsInStorey :Floor_B .
+
+:dining_room_19 rdf:type :Space ;
+    :category "dining_room" ;
+    :description "Dining room on B floor for family meals" ;
+    :spaceIsInStorey :Floor_B .
+
+:exercise_room_20 rdf:type :Space ;
+    :category "exercise_room" ;
+    :description "Room 20 (exercise_room) in building Marstons" ;
+    :spaceIsInStorey :Floor_A .
+
+:home_office_21 rdf:type :Space ;
+    :category "home_office" ;
+    :description "Home office on B floor for work and study" ;
+    :spaceIsInStorey :Floor_B .
+
+:kitchen_22 rdf:type :Space ;
+    :category "kitchen" ;
+    :description "Kitchen on B floor with cooking and dining area" ;
+    :spaceIsInStorey :Floor_B .
+
+:living_room_23 rdf:type :Space ;
+    :category "living_room" ;
+    :description "Room 23 (living_room) in building Marstons" ;
+    :spaceIsInStorey :Floor_B .
+
+:living_room_24 rdf:type :Space ;
+    :category "living_room" ;
+    :description "Room 24 (living_room) in building Marstons" ;
+    :spaceIsInStorey :Floor_B .
+
+:living_room_25 rdf:type :Space ;
+    :category "living_room" ;
+    :description "Room 25 (living_room) in building Marstons" ;
+    :spaceIsInStorey :Floor_C .
+
+:lobby_26 rdf:type :Space ;
+    :category "lobby" ;
+    :description "Room 26 (lobby) in building Marstons" ;
+    :spaceIsInStorey :Floor_B .
+
+:staircase_27 rdf:type :Space ;
+    :category "staircase" ;
+    :description "Room 27 (staircase) in building Marstons" ;
+    :spaceIsInStorey :Floor_A .
+
+:staircase_28 rdf:type :Space ;
+    :category "staircase" ;
+    :description "Room 28 (staircase) in building Marstons" ;
+    :spaceIsInStorey :Floor_B .
+
+:staircase_29 rdf:type :Space ;
+    :category "staircase" ;
+    :description "Room 29 (staircase) in building Marstons" ;
+    :spaceIsInStorey :Floor_C .
+
+:storage_room_30 rdf:type :Space ;
+    :category "storage_room" ;
+    :description "Room 30 (storage_room) in building Marstons" ;
+    :spaceIsInStorey :Floor_A .
+
+:utility_room_31 rdf:type :Space ;
+    :category "utility_room" ;
+    :description "Room 31 (utility_room) in building Marstons" ;
+    :spaceIsInStorey :Floor_B .
+
+:opening_1 rdf:type :Opening ;
+    :isOpeningOf :kitchen_22 ;
+    :isOpeningOf :living_room_24 .
+
+:opening_2 rdf:type :Opening ;
+    :isOpeningOf :dining_room_19 ;
+    :isOpeningOf :kitchen_22 .
+
+:opening_3 rdf:type :Opening ;
+    :isOpeningOf :dining_room_18 ;
+    :isOpeningOf :lobby_26 .
+
+:opening_4 rdf:type :Opening ;
+    :isOpeningOf :corridor_14 ;
+    :isOpeningOf :lobby_26 .
+
+:opening_5 rdf:type :Opening ;
+    :isOpeningOf :corridor_15 ;
+    :isOpeningOf :corridor_17 .
+
+:door_1 rdf:type :Door ;
+    :isDoorOf :bathroom_1 ;
+    :isDoorOf :exercise_room_20 .
+
+:door_2 rdf:type :Door ;
+    :isDoorOf :corridor_13 ;
+    :isDoorOf :exercise_room_20 .
+
+:door_3 rdf:type :Door ;
+    :isDoorOf :bedroom_7 ;
+    :isDoorOf :corridor_13 .
+
+:door_4 rdf:type :Door ;
+    :isDoorOf :bedroom_6 ;
+    :isDoorOf :corridor_13 .
+
+:door_5 rdf:type :Door ;
+    :isDoorOf :bathroom_2 ;
+    :isDoorOf :corridor_13 .
+
+:door_6 rdf:type :Door ;
+    :isDoorOf :corridor_13 ;
+    :isDoorOf :storage_room_30 .
+
+:door_7 rdf:type :Door ;
+    :isDoorOf :corridor_14 ;
+    :isDoorOf :living_room_24 .
+
+:door_8 rdf:type :Door ;
+    :isDoorOf :dining_room_18 ;
+    :isDoorOf :kitchen_22 .
+
+:door_9 rdf:type :Door ;
+    :isDoorOf :bathroom_3 ;
+    :isDoorOf :lobby_26 .
+
+:door_10 rdf:type :Door ;
+    :isDoorOf :home_office_21 ;
+    :isDoorOf :lobby_26 .
+
+:door_11 rdf:type :Door ;
+    :isDoorOf :corridor_15 ;
+    :isDoorOf :living_room_25 .
+
+:door_12 rdf:type :Door ;
+    :isDoorOf :bathroom_5 ;
+    :isDoorOf :corridor_16 .
+
+:door_13 rdf:type :Door ;
+    :isDoorOf :bedroom_9 ;
+    :isDoorOf :corridor_16 .
+
+:door_14 rdf:type :Door ;
+    :isDoorOf :bedroom_10 ;
+    :isDoorOf :corridor_16 .
+
+:door_15 rdf:type :Door ;
+    :isDoorOf :bedroom_8 ;
+    :isDoorOf :corridor_16 .
+
+:door_16 rdf:type :Door ;
+    :isDoorOf :bathroom_4 ;
+    :isDoorOf :bedroom_8 .
+
+:door_17 rdf:type :Door ;
+    :isDoorOf :bathroom_4 ;
+    :isDoorOf :closet_12 .
+
+:door_18 rdf:type :Door ;
+    :isDoorOf :bathroom_4 ;
+    :isDoorOf :closet_11 .
+
+:stairs_1 rdf:type :Stairs ;
+    :isStairsOf :corridor_13 ;
+    :isStairsOf :staircase_27 .
+
+:stairs_2 rdf:type :Stairs ;
+    :isStairsOf :staircase_28 ;
+    :isStairsOf :utility_room_31 .
+
+:stairs_3 rdf:type :Stairs ;
+    :isStairsOf :corridor_14 ;
+    :isStairsOf :staircase_28 .
+
+:stairs_4 rdf:type :Stairs ;
+    :isStairsOf :dining_room_18 ;
+    :isStairsOf :living_room_23 .
+
+:stairs_5 rdf:type :Stairs ;
+    :isStairsOf :corridor_17 ;
+    :isStairsOf :staircase_29 .
+
+:stairs_6 rdf:type :Stairs ;
+    :isStairsOf :corridor_16 ;
+    :isStairsOf :staircase_29 .
+
+:stairs_7 rdf:type :Stairs ;
+    :isStairsOf :corridor_14 ;
+    :isStairsOf :staircase_27 .
+
+:stairs_8 rdf:type :Stairs ;
+    :isStairsOf :corridor_16 ;
+    :isStairsOf :staircase_28 .
+

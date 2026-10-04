@@ -1,0 +1,882 @@
+{
+  "env": "Klickitat",
+  "tasks": [
+    {
+      "id": "S01",
+      "env": "Klickitat",
+      "size": "small",
+      "instruction": "I think I left my cell phone in the dining room on Floor B. Can you find it and bring it to the home office on Floor C?",
+      "expected": {
+        "at_end": {
+          "subject": "cell_phone_61",
+          "predicate": "isInSpace",
+          "object": "home_office_18"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S02",
+      "env": "Klickitat",
+      "size": "small",
+      "instruction": "There should be a bottle in the kitchen on Floor B. Take it out and put it on the couch in the living room on Floor B.",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "bottle_3",
+              "predicate": "isOntopOf",
+              "object": "couch_31"
+            },
+            {
+              "subject": "bottle_3",
+              "predicate": "isOntopOf",
+              "object": "couch_33"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S03",
+      "env": "Klickitat",
+      "size": "small",
+      "instruction": "Move the sports ball from the playroom on Floor C to the home office on Floor C. Never go through the door connecting the lobby and the corridor on Floor B because it is under repair.",
+      "expected": {
+        "at_end": {
+          "subject": "sports_ball_2",
+          "predicate": "isInSpace",
+          "object": "home_office_18"
+        },
+        "always": [
+          {
+            "not": {
+              "subject": "robot",
+              "predicate": "robotIsInSpace",
+              "object": "door_5"
+            }
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S04",
+      "env": "Klickitat",
+      "size": "small",
+      "instruction": "Move the vase in the living room on Floor B to the bathroom on Floor C. Use only your right hand for this task.",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "vase_80",
+              "predicate": "isInSpace",
+              "object": "bathroom_3"
+            },
+            {
+              "subject": "vase_80",
+              "predicate": "isInSpace",
+              "object": "bathroom_4"
+            },
+            {
+              "subject": "vase_80",
+              "predicate": "isInSpace",
+              "object": "bathroom_5"
+            },
+            {
+              "subject": "vase_84",
+              "predicate": "isInSpace",
+              "object": "bathroom_3"
+            },
+            {
+              "subject": "vase_84",
+              "predicate": "isInSpace",
+              "object": "bathroom_4"
+            },
+            {
+              "subject": "vase_84",
+              "predicate": "isInSpace",
+              "object": "bathroom_5"
+            }
+          ]
+        },
+        "always": [
+          {
+            "subject": "left_hand",
+            "predicate": "isEmpty",
+            "object": "true"
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S05",
+      "env": "Klickitat",
+      "size": "small",
+      "instruction": "There is a book in one of the bedrooms on Floor C. Bring it to the living room on Floor B.",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "book_78",
+              "predicate": "isInSpace",
+              "object": "living_room_22"
+            },
+            {
+              "subject": "book_78",
+              "predicate": "isInSpace",
+              "object": "living_room_23"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S06",
+      "env": "Klickitat",
+      "size": "small",
+      "instruction": "There aren't enough chairs in the dining room connected to the kitchen on Floor B. Can you bring one more chair from the other dining room on the same floor?",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "chair_24",
+              "predicate": "isInSpace",
+              "object": "dining_room_16"
+            },
+            {
+              "subject": "chair_25",
+              "predicate": "isInSpace",
+              "object": "dining_room_16"
+            },
+            {
+              "subject": "chair_26",
+              "predicate": "isInSpace",
+              "object": "dining_room_16"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S07",
+      "env": "Klickitat",
+      "size": "small",
+      "instruction": "Move the potted plant from the staircase on Floor B to the lobby. I'm afraid people might bump into it.",
+      "expected": {
+        "at_end": {
+          "subject": "potted_plant_45",
+          "predicate": "isInSpace",
+          "object": "lobby_24"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S08",
+      "env": "Klickitat",
+      "size": "small",
+      "instruction": "Move the vase from the bathroom on Floor C to the playroom. Use only your right hand.",
+      "expected": {
+        "at_end": {
+          "subject": "vase_81",
+          "predicate": "isInSpace",
+          "object": "playroom_25"
+        },
+        "always": [
+          {
+            "subject": "left_hand",
+            "predicate": "isEmpty",
+            "object": "true"
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S09",
+      "env": "Klickitat",
+      "size": "small",
+      "instruction": "I need to move a chair from the dining room on Floor B to the bedroom on Floor A. Please use the stairs leading to Floor A.",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "chair_18",
+              "predicate": "isInSpace",
+              "object": "bedroom_6"
+            },
+            {
+              "subject": "chair_19",
+              "predicate": "isInSpace",
+              "object": "bedroom_6"
+            },
+            {
+              "subject": "chair_20",
+              "predicate": "isInSpace",
+              "object": "bedroom_6"
+            },
+            {
+              "subject": "chair_21",
+              "predicate": "isInSpace",
+              "object": "bedroom_6"
+            },
+            {
+              "subject": "chair_22",
+              "predicate": "isInSpace",
+              "object": "bedroom_6"
+            },
+            {
+              "subject": "chair_24",
+              "predicate": "isInSpace",
+              "object": "bedroom_6"
+            },
+            {
+              "subject": "chair_25",
+              "predicate": "isInSpace",
+              "object": "bedroom_6"
+            },
+            {
+              "subject": "chair_26",
+              "predicate": "isInSpace",
+              "object": "bedroom_6"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S10",
+      "env": "Klickitat",
+      "size": "small",
+      "instruction": "Move one potted plant from the bedroom connected to the closet on Floor C to another bedroom. And make sure to close the door when you leave the room.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "or": [
+                {
+                  "not": {
+                    "subject": "potted_plant_46",
+                    "predicate": "isInSpace",
+                    "object": "bedroom_7"
+                  }
+                },
+                {
+                  "not": {
+                    "subject": "potted_plant_47",
+                    "predicate": "isInSpace",
+                    "object": "bedroom_7"
+                  }
+                }
+              ]
+            },
+            {
+              "subject": "door_6",
+              "predicate": "doorIsOpen",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M01",
+      "env": "Klickitat",
+      "size": "medium",
+      "instruction": "Please turn on the coffee machine in the kitchen on Floor B. Also, bring the mug from the tray in the bedroom on Floor C and place it on the coffee machine.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "coffee_machine_170",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            {
+              "subject": "mug_71",
+              "predicate": "isOntopOf",
+              "object": "coffee_machine_170"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M02",
+      "env": "Klickitat",
+      "size": "medium",
+      "instruction": "Turn on the TV in the living room on Floor B and gather the cushions scattered around the room onto the sofa.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "tv_211",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            {
+              "subject": "cushion_219",
+              "predicate": "isOntopOf",
+              "object": "sofa_208"
+            },
+            {
+              "subject": "cushion_220",
+              "predicate": "isOntopOf",
+              "object": "sofa_208"
+            },
+            {
+              "subject": "cushion_221",
+              "predicate": "isOntopOf",
+              "object": "sofa_208"
+            },
+            {
+              "subject": "cushion_222",
+              "predicate": "isOntopOf",
+              "object": "sofa_208"
+            },
+            {
+              "subject": "cushion_223",
+              "predicate": "isOntopOf",
+              "object": "sofa_208"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M03",
+      "env": "Klickitat",
+      "size": "medium",
+      "instruction": "I think I left the refrigerator in the kitchen open. Could you take the juice out of it and place it on the dining table? And please close the refrigerator when you are done.",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "juice_357",
+              "predicate": "isOntopOf",
+              "object": "dining_table_112"
+            },
+            {
+              "subject": "juice_357",
+              "predicate": "isOntopOf",
+              "object": "dining_table_131"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M04",
+      "env": "Klickitat",
+      "size": "medium",
+      "instruction": "Turn on the laptop in the home office on Floor C and take the hole punch out of the storage cabinet onto the desk.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "laptop_144",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            {
+              "subject": "hole_punch_323",
+              "predicate": "isOntopOf",
+              "object": "desk_139"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M05",
+      "env": "Klickitat",
+      "size": "medium",
+      "instruction": "Take the jeans out of the dresser in the closet on Floor C and put them on the armchair in the bedroom.",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "jeans_294",
+              "predicate": "isOntopOf",
+              "object": "armchair_48"
+            },
+            {
+              "subject": "jeans_294",
+              "predicate": "isOntopOf",
+              "object": "armchair_49"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M06",
+      "env": "Klickitat",
+      "size": "medium",
+      "instruction": "Take the wine glasses out of the cupboard in the dining room on Floor B and set them on the dining table.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "wine_glass_121",
+              "predicate": "isOntopOf",
+              "object": "dining_table_112"
+            },
+            {
+              "subject": "wine_glass_122",
+              "predicate": "isOntopOf",
+              "object": "dining_table_112"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M07",
+      "env": "Klickitat",
+      "size": "medium",
+      "instruction": "Turn on the microwave in the kitchen on Floor B. And if the door leading to the dining room is closed, please open it.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "microwave_169",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            {
+              "subject": "door_3",
+              "predicate": "doorIsOpen",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M08",
+      "env": "Klickitat",
+      "size": "medium",
+      "instruction": "Cook the chicken from the refrigerator in the kitchen on Floor B in the oven, then serve it on the island table in the kitchen.",
+      "expected": {
+        "at_end": {
+          "subject": "chicken_353",
+          "predicate": "isOntopOf",
+          "object": "island_table_158"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "chicken_353",
+                "predicate": "isInsideOf",
+                "object": "oven_161"
+              },
+              {
+                "subject": "oven_161",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "oven_161",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M09",
+      "env": "Klickitat",
+      "size": "medium",
+      "instruction": "Heat up the beef from the refrigerator in the kitchen on Floor B in the microwave, then place it on the island table in the kitchen.",
+      "expected": {
+        "at_end": {
+          "subject": "beef_354",
+          "predicate": "isOntopOf",
+          "object": "island_table_158"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "beef_354",
+                "predicate": "isInsideOf",
+                "object": "microwave_169"
+              },
+              {
+                "subject": "microwave_169",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "microwave_169",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M10",
+      "env": "Klickitat",
+      "size": "medium",
+      "instruction": "Wash the bowl from the storage cabinet in the kitchen on Floor A in the dishwasher, then put it back on top of the storage cabinet.",
+      "expected": {
+        "at_end": {
+          "subject": "bowl_341",
+          "predicate": "isOntopOf",
+          "object": "storage_cabinet_154"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "bowl_341",
+                "predicate": "isInsideOf",
+                "object": "dishwasher_156"
+              },
+              {
+                "subject": "dishwasher_156",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "dishwasher_156",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L01",
+      "env": "Klickitat",
+      "size": "large",
+      "instruction": "Turn on the microwave in the kitchen on Floor B. But since the corridor is being cleaned, please go through the living room.",
+      "expected": {
+        "at_end": {
+          "subject": "microwave_169",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [
+          {
+            "not": {
+              "subject": "robot",
+              "predicate": "robotIsInSpace",
+              "object": "corridor_12"
+            }
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L02",
+      "env": "Klickitat",
+      "size": "large",
+      "instruction": "We need one more chair in the dining room on Floor A. Can you bring a chair from the dining room next to the corridor on Floor B?",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "chair_132",
+              "predicate": "isInSpace",
+              "object": "dining_room_15"
+            },
+            {
+              "subject": "chair_133",
+              "predicate": "isInSpace",
+              "object": "dining_room_15"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L03",
+      "env": "Klickitat",
+      "size": "large",
+      "instruction": "Turn on the TV in the living room on Floor B. But please avoid the stairs connecting the living room and the lobby on Floor B.",
+      "expected": {
+        "at_end": {
+          "subject": "tv_211",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [
+          {
+            "not": {
+              "subject": "robot",
+              "predicate": "robotIsInSpace",
+              "object": "stairs_4"
+            }
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L04",
+      "env": "Klickitat",
+      "size": "large",
+      "instruction": "There should be a hole punch in the storage cabinet in the home office on Floor C. Take it out and put it on the desk.",
+      "expected": {
+        "at_end": {
+          "subject": "hole_punch_323",
+          "predicate": "isOntopOf",
+          "object": "desk_139"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L05",
+      "env": "Klickitat",
+      "size": "large",
+      "instruction": "The lamps in the bedroom with a bathroom right next to you are on. Could you turn them all off so I can sleep comfortably?",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "lamp_83",
+              "predicate": "isSwitchedOn",
+              "object": "false"
+            },
+            {
+              "subject": "lamp_84",
+              "predicate": "isSwitchedOn",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L06",
+      "env": "Klickitat",
+      "size": "large",
+      "instruction": "Take the milk from the refrigerator in the kitchen on Floor B and put it on the dining room table.",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "milk_348",
+              "predicate": "isOntopOf",
+              "object": "dining_table_112"
+            },
+            {
+              "subject": "milk_348",
+              "predicate": "isOntopOf",
+              "object": "dining_table_131"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L07",
+      "env": "Klickitat",
+      "size": "large",
+      "instruction": "Take the jeans out of the closet dresser on Floor C and lay them on the bed.",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "jeans_294",
+              "predicate": "isOntopOf",
+              "object": "bed_53"
+            },
+            {
+              "subject": "jeans_294",
+              "predicate": "isOntopOf",
+              "object": "bed_73"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L08",
+      "env": "Klickitat",
+      "size": "large",
+      "instruction": "Cook the cheese from the refrigerator in the kitchen on Floor B in the oven, then serve it on the island table in the kitchen.",
+      "expected": {
+        "at_end": {
+          "subject": "cheese_350",
+          "predicate": "isOntopOf",
+          "object": "island_table_158"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "cheese_350",
+                "predicate": "isInsideOf",
+                "object": "oven_161"
+              },
+              {
+                "subject": "oven_161",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "oven_161",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L09",
+      "env": "Klickitat",
+      "size": "large",
+      "instruction": "Heat up the milk from the refrigerator in the kitchen on Floor B in the microwave, then place it on the island table in the kitchen.",
+      "expected": {
+        "at_end": {
+          "subject": "milk_348",
+          "predicate": "isOntopOf",
+          "object": "island_table_158"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "milk_348",
+                "predicate": "isInsideOf",
+                "object": "microwave_169"
+              },
+              {
+                "subject": "microwave_169",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "microwave_169",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L10",
+      "env": "Klickitat",
+      "size": "large",
+      "instruction": "Wash the cup from the storage cabinet in the kitchen on Floor A in the dishwasher, then put it back on top of the storage cabinet.",
+      "expected": {
+        "at_end": {
+          "subject": "cup_343",
+          "predicate": "isOntopOf",
+          "object": "storage_cabinet_154"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "cup_343",
+                "predicate": "isInsideOf",
+                "object": "dishwasher_156"
+              },
+              {
+                "subject": "dishwasher_156",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "dishwasher_156",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    }
+  ]
+}

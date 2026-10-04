@@ -1,0 +1,1015 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OntoPlan</title>
+<meta name="description" content="OntoPlan: An Ontology-Grounded Scene Representation and Agentic Framework for Scalable Robot Task Planning (NeurIPS 2026).">
+<meta property="og:title" content="OntoPlan (NeurIPS 2026)">
+<meta property="og:description" content="Ontology-grounded scene representation and agentic framework for scalable robot task planning. 0.89 task success with 18.1k tokens per task across 150 long-horizon tasks.">
+<meta property="og:image" content="https://namhyeongwoo.github.io/OntoPlan/static/images/og-card.png">
+<meta property="og:url" content="https://namhyeongwoo.github.io/OntoPlan/">
+<link rel="canonical" href="https://namhyeongwoo.github.io/OntoPlan/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a101c'/%3E%3Ccircle cx='11' cy='16' r='5' fill='%23f2677a'/%3E%3Ccircle cx='22' cy='10' r='3' fill='%23eef2f8'/%3E%3Ccircle cx='23' cy='22' r='3' fill='%234fb5c0'/%3E%3Cpath d='M11 16 22 10M11 16 23 22' stroke='%23eef2f8' stroke-width='1.6'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: one reading column (~44rem) with figures breaking out to a wide measure (~68rem);
+   colors are taken from the paper's figures (OntoPlan coral, SayPlan blue, DELTA teal). */
+:root {
+  --paper: #f5f7fa;
+  --surface: #ffffff;
+  --ink: #141c28;
+  --muted: #566274;
+  --rule: #d9dfe7;
+  --onto: #d63a51;
+  --onto-soft: #fbe5e8;
+  --sayplan: #4f7ea8;
+  --delta: #2a939f;
+  --code-bg: #eef1f5;
+  --plate: #ffffff;
+  --add: #1f8a4c;
+  --del: #c2413a;
+  --fo: #3f7fbf;
+  --pm: #a87400;
+
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --h-bg: #0a101c;
+  --h-fg: #eef2f8;
+  --h-muted: #9aa6b8;
+  --h-rule: rgba(255,255,255,0.14);
+  --h-grid: rgba(255,255,255,0.035);
+  --h-accent: #f2677a;
+
+  --read: 44rem;
+  --wide: 68rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0e131a; --surface: #151c26; --ink: #e5eaf1; --muted: #98a4b5; --rule: #263140;
+    --onto: #f26b7e; --onto-soft: #3a1c23; --sayplan: #7ba4ca; --delta: #4fb5c0; --code-bg: #1b2430; --plate: #f4f6f9; --add: #5ccf8a; --del: #f08a82; --fo: #7fb0e3; --pm: #f0b73a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0e131a; --surface: #151c26; --ink: #e5eaf1; --muted: #98a4b5; --rule: #263140;
+  --onto: #f26b7e; --onto-soft: #3a1c23; --sayplan: #7ba4ca; --delta: #4fb5c0; --code-bg: #1b2430; --plate: #f4f6f9; --add: #5ccf8a; --del: #f08a82; --fo: #7fb0e3; --pm: #f0b73a;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1.0625rem/1.65 var(--body);
+  padding-inline: 1.25rem;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration-color: color-mix(in srgb, var(--onto) 60%, transparent); text-underline-offset: 0.18em; }
+a:hover { color: var(--onto); }
+:focus-visible { outline: 2px solid var(--onto); outline-offset: 3px; border-radius: 3px; }
+code, pre { font-family: var(--mono); font-size: 0.84em; }
+p { margin: 0; }
+
+.read { max-width: var(--read); margin-inline: auto; }
+.wide { max-width: var(--wide); margin-inline: auto; }
+
+/* ---------- Top nav ---------- */
+.skip { position: absolute; left: -999px; top: 0; }
+.skip:focus { left: 1rem; top: 1rem; z-index: 100; background: var(--surface); padding: 0.5rem 0.8rem; border-radius: 6px; }
+.topnav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40;
+  margin-inline: -1.25rem; padding-inline: 1.25rem;
+  background: color-mix(in srgb, var(--h-bg) 82%, transparent);
+  backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--h-rule);
+}
+.topnav-in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 3.1rem; }
+.brand { font: 800 1.05rem/1 var(--display); font-stretch: 118%; letter-spacing: -0.02em; color: var(--h-fg); text-decoration: none; }
+.brand .o, h1 .o { color: var(--h-accent); }
+.navlinks { display: flex; gap: 0.2rem; overflow-x: auto; scrollbar-width: none; min-width: 0; }
+.navlinks a { font: 500 0.86rem/1 var(--display); color: var(--h-muted); text-decoration: none; padding: 0.55rem 0.6rem; border-radius: 6px; white-space: nowrap; }
+.navlinks a:hover, .navlinks a.on { color: var(--h-fg); background: rgba(255,255,255,0.07); }
+@media (max-width: 520px) { .navlinks a:nth-child(5) { display: none; } }
+
+/* ---------- Hero (always dark: a night-blueprint band) ---------- */
+.hero {
+  margin-inline: -1.25rem; padding-inline: 1.25rem;
+  background:
+    radial-gradient(60rem 30rem at 85% 30%, color-mix(in srgb, var(--h-accent) 16%, transparent), transparent 70%),
+    radial-gradient(40rem 26rem at 10% 110%, rgba(42,147,159,0.18), transparent 70%),
+    linear-gradient(var(--h-grid) 1px, transparent 1px) 0 0 / 100% 2.5rem,
+    linear-gradient(90deg, var(--h-grid) 1px, transparent 1px) 0 0 / 2.5rem 100%,
+    var(--h-bg);
+  color: var(--h-fg);
+  color-scheme: dark;
+}
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 2rem; align-items: center; padding-block: 4rem 4.2rem; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: minmax(0, 1fr); padding-block: 2.8rem 2.5rem; } }
+.hero-text { min-width: 0; }
+.venue {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  font: 600 0.76rem/1 var(--display); letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--h-fg); padding: 0.45rem 0.75rem; border: 1px solid var(--h-rule); border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+}
+.venue::before { content: ""; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--h-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--h-accent) 25%, transparent); }
+h1 {
+  margin: 1.1rem 0 0;
+  font: 800 clamp(3.4rem, 10vw, 6.4rem)/0.9 var(--display);
+  font-stretch: 122%;
+  letter-spacing: -0.04em;
+}
+.subtitle {
+  margin-top: 1.1rem; max-width: 34rem;
+  font: 500 clamp(1.1rem, 2.3vw, 1.35rem)/1.38 var(--display);
+  font-stretch: 94%; color: var(--h-fg); opacity: 0.92; text-wrap: balance;
+}
+.authors { margin-top: 1.7rem; display: flex; flex-wrap: wrap; gap: 0.35rem 1.3rem; font: 500 1rem/1.4 var(--display); }
+.authors sup { color: var(--h-accent); font-weight: 600; margin-left: 0.1em; }
+.author-links { display: inline-flex; gap: 0.25rem; margin-left: 0.35rem; vertical-align: -0.15em; }
+.author-links a { display: inline-grid; place-items: center; width: 1.5rem; height: 1.5rem; border-radius: 5px; color: var(--h-muted); text-decoration: none; }
+.author-links a:hover { color: var(--h-fg); background: rgba(255,255,255,0.1); }
+.author-links svg { width: 0.95rem; height: 0.95rem; fill: currentColor; }
+.affil { margin-top: 0.5rem; color: var(--h-muted); font-size: 0.93rem; }
+.affil .notes { display: block; font-size: 0.84rem; margin-top: 0.15rem; }
+.links { margin-top: 1.8rem; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.6rem;
+  padding: 0.62rem 1.05rem; border-radius: 999px;
+  font: 600 0.92rem/1 var(--display); text-decoration: none;
+  background: var(--h-fg); color: var(--h-bg); border: 1px solid var(--h-fg);
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+}
+.btn:hover { background: var(--h-accent); border-color: var(--h-accent); color: #fff; transform: translateY(-1px); }
+.btn svg { width: 1rem; height: 1rem; fill: currentColor; }
+.btn.ghost { background: transparent; color: var(--h-fg); border-color: var(--h-rule); }
+.btn.ghost:hover { border-color: var(--h-accent); color: #fff; background: transparent; }
+.btn[aria-disabled="true"] { background: transparent; color: var(--h-muted); border: 1px dashed var(--h-rule); cursor: default; transform: none; }
+.btn .soon { font-weight: 500; font-size: 0.76rem; }
+
+.hero-graph { position: relative; min-width: 0; }
+#hero-canvas { display: block; width: 100%; aspect-ratio: 1 / 0.86; max-width: 100%; }
+.ticker {
+  position: absolute; left: 0; right: 0; bottom: -0.4rem; margin-inline: auto; max-width: 26rem;
+  padding: 0.75rem 0.95rem; border-radius: 10px;
+  background: rgba(10,16,28,0.78); border: 1px solid var(--h-rule);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  font-size: 0.86rem; line-height: 1.45; min-height: 7.2rem;
+}
+.ticker-top { display: flex; gap: 0.6rem; align-items: center; margin-bottom: 0.35rem; }
+.tk-id { font: 600 0.72rem/1 var(--mono); color: #fff; background: var(--h-accent); padding: 0.25rem 0.4rem; border-radius: 4px; }
+.tk-lbl { font: 600 0.7rem/1 var(--display); letter-spacing: 0.1em; text-transform: uppercase; color: var(--h-muted); }
+.tk-text { color: var(--h-fg); transition: opacity .35s ease; }
+.tk-ents { margin-top: 0.35rem; font: 500 0.74rem/1.4 var(--mono); color: var(--h-accent); transition: opacity .35s ease; overflow-wrap: anywhere; }
+.ticker.fade .tk-text, .ticker.fade .tk-ents { opacity: 0; }
+.tk-track { margin-top: 0.55rem; height: 2px; border-radius: 2px; background: rgba(255,255,255,0.1); overflow: hidden; }
+.tk-track i { display: block; height: 100%; background: #c9a6f0; transform-origin: left; transform: scaleX(0); transition: transform .3s ease; }
+@media (max-width: 900px) { .ticker { position: relative; bottom: 0; margin-top: -1rem; } }
+
+.align-wrap { margin-top: 0.9rem; }
+/* ---------- Alignment strip (thesis) ---------- */
+.align {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  border: 1px solid var(--rule); border-radius: 10px; background: var(--surface);
+  overflow: hidden;
+}
+.align > div { padding: 1.1rem 1.25rem; min-width: 0; }
+.align .lbl {
+  font: 600 0.72rem/1 var(--display); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+  margin-bottom: 0.7rem; display: flex; justify-content: space-between; gap: 1rem;
+}
+.align pre { margin: 0; white-space: pre; overflow-x: auto; line-height: 1.6; }
+.align .eq {
+  display: grid; place-items: center; padding: 0 0.6rem;
+  border-inline: 1px solid var(--rule);
+  font: 700 1.3rem/1 var(--display); color: var(--onto);
+}
+.align .caption {
+  grid-column: 1 / -1; border-top: 1px solid var(--rule); padding: 0.8rem 1.25rem;
+  font-size: 0.92rem; color: var(--muted);
+}
+.k { color: var(--muted); }
+.hl { color: var(--onto); font-weight: 500; }
+@media (max-width: 720px) {
+  .align { grid-template-columns: minmax(0, 1fr); }
+  .align .eq { border-inline: 0; border-block: 1px solid var(--rule); padding: 0.45rem; }
+}
+
+/* ---------- Sections ---------- */
+section { padding-block: clamp(3.2rem, 7vw, 5rem); border-top: 1px solid var(--rule); scroll-margin-top: 3.1rem; }
+.eyebrow { display: flex; align-items: center; gap: 0.7rem; font: 600 0.74rem/1 var(--display); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.eyebrow b { font: 600 0.74rem/1 var(--mono); letter-spacing: 0; color: var(--onto); }
+.eyebrow b::after { content: ""; display: inline-block; width: 1.6rem; height: 1px; margin-left: 0.7rem; vertical-align: 0.25em; background: color-mix(in srgb, var(--onto) 55%, transparent); }
+.sec-head { display: grid; gap: 0; }
+.sec-head > p, .sec-lede { max-width: 66ch; font-size: 1.04rem; color: color-mix(in srgb, var(--ink) 86%, var(--muted)); }
+h3.sub-h { margin: 3rem 0 0.2rem; font-size: 1.08rem; }
+h2 {
+  margin: 0.6rem 0 1.1rem;
+  font: 700 clamp(1.6rem, 3.6vw, 2.15rem)/1.12 var(--display); font-stretch: 108%;
+  letter-spacing: -0.015em; text-wrap: balance;
+}
+h3 { margin: 0 0 0.5rem; font: 700 1.15rem/1.25 var(--display); }
+.prose { display: grid; gap: 1rem; }
+.prose p { max-width: 65ch; }
+.lede { font-size: 1.14rem; }
+
+figure { margin: 2rem auto 0; }
+.plate { background: var(--plate); border-radius: 10px; padding: clamp(0.6rem, 2vw, 1.4rem); border: 1px solid var(--rule); }
+figcaption { margin-top: 0.75rem; color: var(--muted); font-size: 0.92rem; max-width: var(--read); }
+figcaption b { color: var(--ink); font-family: var(--display); font-weight: 600; }
+
+/* ---------- Headline numbers ---------- */
+.stats { margin-top: 2rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+.stat { background: var(--surface); padding: 1.2rem 1.1rem 1.1rem; display: grid; gap: 0.4rem; align-content: start; }
+.stat .n { font: 800 2.3rem/1 var(--display); font-stretch: 112%; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.stat .n small { font-size: 0.5em; font-weight: 700; color: var(--muted); margin-left: 0.1em; }
+.stat .d { font-size: 0.9rem; color: var(--muted); line-height: 1.45; }
+.stat .d b { color: var(--ink); font-weight: 600; }
+@media (max-width: 820px) { .stats { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- Comparison bars ---------- */
+.bars { margin-top: 2rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.2rem; }
+.bars h3 { font-size: 1rem; }
+.bars .sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.9rem; }
+.row { display: grid; grid-template-columns: 5.6rem minmax(0, 1fr); align-items: center; gap: 0.8rem; margin-top: 0.55rem; }
+.row .m { font: 600 0.88rem/1 var(--display); }
+.track { position: relative; height: 1.7rem; }
+.fill { height: 100%; border-radius: 0 4px 4px 0; min-width: 2px; }
+.val { position: absolute; top: 50%; transform: translate(0.5rem, -50%); font: 600 0.85rem/1 var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.c-say { background: var(--sayplan); } .c-delta { background: var(--delta); } .c-onto { background: var(--onto); }
+.t-say { color: var(--sayplan); } .t-delta { color: var(--delta); } .t-onto { color: var(--onto); }
+@media (max-width: 760px) { .bars { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- Tables ---------- */
+.tbl-wrap { overflow-x: auto; margin-top: 1.2rem; border: 1px solid var(--rule); border-radius: 10px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font: 400 0.9rem/1.35 var(--display); font-variant-numeric: tabular-nums; }
+th, td { padding: 0.55rem 0.8rem; text-align: right; white-space: nowrap; }
+th:first-child, td:first-child, th.l, td.l { text-align: left; }
+thead th { font-weight: 600; font-size: 0.78rem; letter-spacing: 0.04em; color: var(--muted); border-bottom: 1px solid var(--rule); vertical-align: bottom; }
+tbody tr + tr td { border-top: 1px solid color-mix(in srgb, var(--rule) 60%, transparent); }
+tbody tr.grp td { border-top: 1px solid var(--rule); }
+tr.ours td { font-weight: 700; }
+tr.ours td.m { color: var(--onto); }
+td.env { font-weight: 600; }
+.pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; margin-top: 1.4rem; }
+@media (max-width: 820px) { .pair { grid-template-columns: minmax(0, 1fr); } }
+
+.legend { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 1rem; font: 600 0.88rem/1 var(--display); }
+.legend span { display: inline-flex; align-items: center; gap: 0.45rem; }
+.legend i { width: 0.9rem; height: 0.9rem; border-radius: 3px; display: inline-block; }
+
+.figpair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; }
+@media (max-width: 720px) { .figpair { grid-template-columns: minmax(0, 1fr); } }
+.figpair .t { font: 600 0.82rem/1 var(--display); color: #3b4656; margin-bottom: 0.5rem; }
+
+/* ---------- BibTeX ---------- */
+.bib { position: relative; margin-top: 1rem; }
+.bib pre { margin: 0; padding: 1.2rem 1.3rem; background: var(--code-bg); border-radius: 10px; overflow-x: auto; line-height: 1.6; font-size: 0.84rem; }
+.copy {
+  position: absolute; top: 0.6rem; right: 0.6rem;
+  font: 600 0.8rem/1 var(--display); padding: 0.5rem 0.75rem; border-radius: 6px;
+  border: 1px solid var(--rule); background: var(--surface); color: var(--ink); cursor: pointer;
+}
+.copy:hover { border-color: var(--onto); color: var(--onto); }
+
+footer { padding-block: 2.6rem 3.6rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.88rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.2rem; }
+.ft-brand { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.4rem 0.9rem; }
+.brand-ink { font: 800 1.05rem/1 var(--display); font-stretch: 118%; letter-spacing: -0.02em; color: var(--ink); }
+.brand-ink .o { color: var(--onto); }
+.ft-links { display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; font: 600 0.88rem/1 var(--display); }
+.ft-links a { text-decoration: none; color: var(--muted); padding-block: 0.4rem; }
+.ft-links a:hover { color: var(--onto); }
+.ds-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.4rem; align-items: start; }
+.ds-grid .tbl-wrap { margin-top: 0.2rem; }
+@media (max-width: 860px) { .ds-grid { grid-template-columns: minmax(0, 1fr); gap: 0.6rem; } }
+
+/* ---------- Explorer ---------- */
+.explorer { margin-top: 1.6rem; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 1.2rem; align-items: start; }
+@media (max-width: 900px) { .explorer { grid-template-columns: minmax(0, 1fr); } }
+.stage { position: relative; background: var(--h-bg); border-radius: 12px; overflow: hidden; border: 1px solid var(--rule); color-scheme: dark; }
+.stage-bar { position: absolute; left: 0.75rem; right: 0.75rem; top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: space-between; align-items: center; pointer-events: none; }
+.stage-bar > * { pointer-events: auto; }
+.seg { display: inline-flex; padding: 3px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid var(--h-rule); }
+.seg button { font: 600 0.82rem/1 var(--display); color: var(--h-muted); background: transparent; border: 0; border-radius: 999px; padding: 0.55rem 0.85rem; cursor: pointer; min-height: 2.1rem; }
+.seg button[aria-pressed="true"] { background: var(--h-fg); color: var(--h-bg); }
+.counts { font: 500 0.74rem/1.3 var(--mono); color: var(--h-muted); text-align: right; font-variant-numeric: tabular-nums; }
+.keys { position: absolute; left: 0.8rem; bottom: 0.7rem; display: flex; flex-wrap: wrap; gap: 0.35rem 0.9rem; font: 500 0.74rem/1 var(--display); color: var(--h-muted); pointer-events: none; }
+.keys span { display: inline-flex; align-items: center; gap: 0.35rem; }
+.keys i { width: 0.6rem; height: 0.6rem; border-radius: 50%; display: inline-block; }
+.tip { position: absolute; pointer-events: none; font: 500 0.75rem/1.2 var(--mono); color: #fff; background: rgba(0,0,0,0.78); padding: 0.35rem 0.5rem; border-radius: 5px; transform: translate(-50%, calc(-100% - 10px)); white-space: nowrap; }
+.tasklist { display: grid; gap: 0.4rem; max-height: 34rem; overflow-y: auto; padding-right: 0.2rem; }
+.task {
+  text-align: left; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.7rem; align-items: start;
+  padding: 0.7rem 0.8rem; border-radius: 9px; border: 1px solid var(--rule); background: var(--surface);
+  color: var(--ink); font: 400 0.9rem/1.45 var(--body); cursor: pointer;
+  transition: border-color .15s ease, background-color .15s ease;
+}
+.task:hover { border-color: color-mix(in srgb, var(--onto) 50%, var(--rule)); }
+.task[aria-pressed="true"] { border-color: var(--onto); background: var(--onto-soft); }
+.task .tid { font: 600 0.72rem/1 var(--mono); padding: 0.28rem 0.38rem; border-radius: 4px; background: var(--code-bg); color: var(--muted); margin-top: 0.1rem; }
+.task[aria-pressed="true"] .tid { background: var(--onto); color: #fff; }
+.task .conds { display: none; margin-top: 0.5rem; gap: 0.3rem; }
+.task[aria-pressed="true"] .conds { display: grid; }
+.cond { font: 400 0.76rem/1.4 var(--mono); color: var(--muted); overflow-wrap: anywhere; }
+.cond b { font-weight: 600; margin-right: 0.35rem; padding: 0.08rem 0.3rem; border-radius: 3px; }
+.cond.at_end b { background: color-mix(in srgb, var(--onto) 18%, transparent); color: var(--onto); }
+.cond.always b { background: color-mix(in srgb, var(--sayplan) 20%, transparent); color: var(--sayplan); }
+.cond.sometime b { background: color-mix(in srgb, var(--delta) 20%, transparent); color: var(--delta); }
+
+/* ---------- Task replay ---------- */
+.replay { margin-top: 1.6rem; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 1.2rem; align-items: start; }
+@media (max-width: 900px) { .replay { grid-template-columns: minmax(0, 1fr); } }
+#rp-canvas, #ss-canvas { display: block; width: 100%; aspect-ratio: 1 / 0.8; max-width: 100%; }
+.rp-bar { position: absolute; left: 0.75rem; right: 0.75rem; bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.rp-btn { font: 600 0.82rem/1 var(--display); color: var(--h-fg); background: rgba(255,255,255,0.08); border: 1px solid var(--h-rule); border-radius: 999px; padding: 0.55rem 0.9rem; min-height: 2.25rem; cursor: pointer; }
+.rp-btn:hover { background: rgba(255,255,255,0.16); }
+.rp-btn.primary { background: var(--h-accent); border-color: var(--h-accent); color: #fff; min-width: 5.2rem; }
+.rp-caption { flex: 1 1 12rem; min-width: 0; font: 500 0.76rem/1.3 var(--mono); color: var(--h-fg); overflow-wrap: anywhere; text-align: right; }
+.rp-track { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: rgba(255,255,255,0.08); }
+.rp-track i { display: block; height: 100%; width: 0; background: var(--h-accent); transition: width .25s ease; }
+.rp-meta { position: absolute; left: 0.8rem; top: 0.75rem; right: 0.8rem; font: 500 0.74rem/1.3 var(--mono); color: var(--h-muted); font-variant-numeric: tabular-nums; pointer-events: none; }
+.rp-side { display: grid; gap: 0.8rem; min-width: 0; }
+.rp-picker { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.4rem; }
+.rp-task { text-align: left; display: grid; gap: 0.3rem; padding: 0.6rem 0.7rem; border-radius: 9px; border: 1px solid var(--rule); background: var(--surface); color: var(--ink); cursor: pointer; min-width: 0; }
+.rp-task:hover { border-color: color-mix(in srgb, var(--onto) 50%, var(--rule)); }
+.rp-task[aria-pressed="true"] { border-color: var(--onto); background: var(--onto-soft); }
+.rp-task .tid { justify-self: start; font: 600 0.7rem/1 var(--mono); padding: 0.26rem 0.36rem; border-radius: 4px; background: var(--code-bg); color: var(--muted); }
+.rp-task[aria-pressed="true"] .tid { background: var(--onto); color: #fff; }
+.rp-task-body { display: grid; gap: 0.15rem; min-width: 0; }
+.rp-task-title { font: 600 0.84rem/1.3 var(--display); }
+.rp-task-text { font: 400 0.8rem/1.4 var(--body); color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-height: 2.8em; }
+.rp-log { display: grid; gap: 0.5rem; max-height: 27rem; overflow-y: auto; padding-right: 0.25rem; position: relative; }
+.rp-msg { border: 1px solid var(--rule); border-left: 3px solid var(--rule); border-radius: 8px; background: var(--surface); padding: 0.55rem 0.7rem; transition: opacity .25s ease; min-width: 0; }
+.rp-msg.future, .rp-act.future, .rp-msg.done.future { opacity: 0.28; }
+.rp-msg.now { box-shadow: 0 0 0 2px color-mix(in srgb, var(--onto) 45%, transparent); }
+.rp-msg.user { border-left-color: var(--muted); }
+.rp-msg.fo { border-left-color: var(--fo); }
+.rp-msg.se { border-left-color: var(--delta); }
+.rp-msg.tf { border-left-color: var(--onto); }
+.rp-msg.pm { border-left-color: var(--pm); }
+.rp-msg.robot { border-left-color: #b88be0; }
+.rp-msg.done { font: 600 0.82rem/1.4 var(--display); color: var(--add); border-left-color: var(--add); }
+.rp-who { display: flex; flex-wrap: wrap; gap: 0.25rem 0.5rem; align-items: baseline; font: 600 0.78rem/1.3 var(--display); }
+.rp-to { color: var(--muted); font-weight: 500; }
+.rp-tag { font: 600 0.68rem/1 var(--mono); padding: 0.2rem 0.35rem; border-radius: 4px; background: var(--code-bg); color: var(--muted); }
+.rp-text { margin-top: 0.3rem; font: 400 0.82rem/1.5 var(--body); white-space: pre-wrap; overflow-wrap: anywhere; }
+.rp-conds { margin-top: 0.35rem; display: grid; gap: 0.25rem; }
+.rp-subgoals { margin: 0.35rem 0 0; padding-left: 1.2rem; display: grid; gap: 0.25rem; font-size: 0.8rem; }
+.rp-subgoals code { overflow-wrap: anywhere; }
+.rp-desc { display: block; color: var(--muted); font-size: 0.78rem; }
+.rp-actions { margin: 0.35rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.1rem; counter-reset: act; }
+.rp-act { font: 400 0.75rem/1.45 var(--mono); padding: 0.08rem 0.35rem; border-radius: 4px; overflow-wrap: anywhere; counter-increment: act; }
+.rp-act::before { content: counter(act) ". "; color: var(--muted); }
+.rp-act.now { background: var(--onto-soft); color: var(--onto); font-weight: 500; }
+.rp-seg { font: 600 0.72rem/1.4 var(--display); color: var(--muted); margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 0.04em; }
+@media (max-width: 600px) {
+  #rp-canvas, #ss-canvas { aspect-ratio: 1 / 0.95; }
+  .rp-bar { position: static; padding: 0.6rem 0.75rem 0.85rem; border-top: 1px solid var(--h-rule); }
+  .rp-caption { flex-basis: 100%; text-align: left; }
+}
+
+/* ---------- Token chart (inside a light plate in both themes) ---------- */
+.tok { display: grid; gap: 0.5rem; min-width: 0; color: #141c28; }
+.tok-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem; }
+.tok-head .t { margin: 0; }
+.tok-seg { display: inline-flex; padding: 2px; border-radius: 999px; background: #eef1f5; border: 1px solid #d9dfe7; }
+.tok-seg button { font: 600 0.76rem/1 var(--display); color: #566274; background: transparent; border: 0; border-radius: 999px; padding: 0.45rem 0.7rem; cursor: pointer; min-height: 1.9rem; }
+.tok-seg button[aria-pressed="true"] { background: #141c28; color: #fff; }
+.tk-stage { position: relative; }
+#tok-svg { display: block; width: 100%; height: auto; max-width: 100%; }
+#tok-svg .tk-grid { stroke: #b9c2ce; stroke-width: 0.8; stroke-dasharray: 4 3; }
+#tok-svg .tk-grid.minor { stroke: #dde2e9; stroke-dasharray: 1 3; }
+#tok-svg .tk-axis { stroke: #141c28; stroke-width: 1; }
+#tok-svg .tk-whisk { stroke: #141c28; stroke-width: 1; }
+#tok-svg .tk-ax { font: 500 13px var(--mono); fill: #3b4656; }
+#tok-svg .tk-method { font: 700 15px var(--display); }
+#tok-svg .tk-dot, #tok-svg .tk-box { cursor: default; }
+#tok-svg .tk-dot:hover { fill-opacity: 1; r: 4; }
+#tok-svg .tk-box:focus { outline: none; }
+#tok-svg .tk-box:focus rect { stroke-width: 2.4; }
+.tk-tip { position: absolute; pointer-events: none; font: 500 0.74rem/1.35 var(--mono); color: #fff; background: rgba(8,12,22,0.86); padding: 0.4rem 0.55rem; border-radius: 5px; transform: translate(-50%, calc(-100% - 10px)); white-space: pre; z-index: 2; }
+.tk-foot { display: grid; gap: 0.2rem; font: 500 0.76rem/1.4 var(--mono); color: #3b4656; font-variant-numeric: tabular-nums; }
+.tk-lbl { font: 600 0.72rem/1 var(--display); letter-spacing: 0.06em; text-transform: uppercase; color: #566274; }
+.tk-summary b { font-family: var(--display); margin-right: 0.3rem; }
+
+#succ-svg { display: block; width: 100%; height: auto; max-width: 100%; }
+#succ-svg .tk-grid { stroke: #b9c2ce; stroke-width: 0.8; stroke-dasharray: 4 3; }
+#succ-svg .tk-axis { stroke: #141c28; stroke-width: 1; }
+#succ-svg .tk-ax { font: 500 13px var(--mono); fill: #3b4656; }
+#succ-svg .tk-method { font: 700 15px var(--display); }
+#succ-svg .sc-bar rect { transform-box: fill-box; transform-origin: 50% 100%; transition: transform .45s cubic-bezier(.2,.7,.2,1); }
+#succ-svg .sc-bar:hover rect, #succ-svg .sc-bar:focus rect { fill-opacity: 1; stroke-width: 1.8; }
+#succ-svg .sc-bar:focus { outline: none; }
+#succ-svg .sc-val { font: 600 12px var(--mono); fill: #141c28; paint-order: stroke; stroke: #fff; stroke-width: 4px; stroke-linejoin: round; opacity: 0; transition: opacity .2s ease; }
+#succ-svg .sc-line { fill: none; stroke: #141c28; stroke-width: 1.3; stroke-dasharray: 4 3; opacity: 0; transition: opacity .2s ease; pointer-events: none; }
+#succ-svg .sc-dot { fill: #fff; stroke: #141c28; stroke-width: 1.3; opacity: 0; transition: opacity .2s ease; pointer-events: none; }
+#succ-svg.settled .sc-val, #succ-svg.settled .sc-line, #succ-svg.settled .sc-dot { opacity: 1; }
+.tok-seg { flex-wrap: wrap; }
+
+.rp-picker.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 520px) { .rp-picker.three { grid-template-columns: minmax(0, 1fr); } }
+.rp-tag.accent { background: color-mix(in srgb, var(--onto) 16%, transparent); color: var(--onto); }
+.rp-call { margin-top: 0.35rem; border: 1px solid var(--rule); border-radius: 6px; background: var(--code-bg); }
+.rp-call summary { cursor: pointer; padding: 0.35rem 0.5rem; display: flex; flex-wrap: wrap; gap: 0.2rem 0.5rem; align-items: baseline; list-style-position: inside; }
+.rp-fn { font-size: 0.74rem; overflow-wrap: anywhere; min-width: 0; }
+.rp-res-peek { font: 600 0.68rem/1 var(--mono); color: var(--muted); }
+.rp-result { padding: 0.1rem 0.6rem 0.5rem; display: grid; gap: 0.2rem; font: 400 0.74rem/1.45 var(--mono); }
+.rp-res-text { color: var(--muted); overflow-wrap: anywhere; }
+.rp-res-ids { overflow-wrap: anywhere; }
+.rp-call .rp-subgoals { padding: 0 0.6rem 0.4rem 1.6rem; }
+.rp-diff { margin-top: 0.35rem; display: grid; gap: 0.1rem; font: 400 0.75rem/1.45 var(--mono); }
+.rp-diff .add { color: var(--add); }
+.rp-diff .del { color: var(--del); }
+.rp-msg.world { border-left-color: var(--add); }
+
+.tldr { margin: 0.2rem 0 0; padding-left: 1.2rem; display: grid; gap: 0.55rem; max-width: 70ch; font-size: 1.04rem; }
+.tldr li::marker { color: var(--onto); }
+details.abs { margin-top: 1.6rem; max-width: 70ch; border-top: 1px solid var(--rule); padding-top: 0.8rem; }
+details.abs summary { cursor: pointer; font: 600 0.9rem/1.4 var(--display); color: var(--muted); }
+details.abs summary:hover { color: var(--onto); }
+details.abs[open] summary { margin-bottom: 0.8rem; }
+details.abs p + p { margin-top: 0.9rem; }
+details.env-table { margin-top: 1.4rem; }
+details.env-table > summary { cursor: pointer; font: 600 0.92rem/1.4 var(--display); color: var(--muted); }
+details.env-table > summary:hover { color: var(--onto); }
+details.env-table[open] > summary { margin-bottom: 0.8rem; }
+
+/* ---------- Clarification examples ---------- */
+.cl { margin-top: 0.4rem; display: grid; gap: 0.7rem; }
+.cl-legend { font-size: 0.86rem; color: var(--muted); max-width: 75ch; }
+.cl-legend i { font-style: normal; font: 600 0.72rem/1 var(--mono); padding: 0.2rem 0.35rem; border-radius: 4px; }
+.cl-legend i.ok { background: color-mix(in srgb, var(--add) 18%, transparent); color: var(--add); }
+.cl-legend i.no { background: color-mix(in srgb, var(--del) 16%, transparent); color: var(--del); }
+.seg-light { display: inline-flex; flex-wrap: wrap; gap: 0.3rem; padding: 3px; border-radius: 999px; background: var(--code-bg); border: 1px solid var(--rule); justify-self: start; }
+.seg-light button { font: 600 0.84rem/1 var(--display); color: var(--muted); background: transparent; border: 0; border-radius: 999px; padding: 0.6rem 0.9rem; cursor: pointer; min-height: 2.25rem; }
+.seg-light button span { font-weight: 500; opacity: 0.8; }
+.seg-light button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.cl-rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.cl-row { display: grid; grid-template-columns: 6.2rem minmax(0, 1fr) minmax(0, 1.25fr); gap: 0.4rem 1.2rem; padding: 0.95rem 0; border-bottom: 1px solid var(--rule); align-items: start; }
+.cl-tag { display: grid; gap: 0.35rem; justify-items: start; }
+.cl-id { font: 600 0.74rem/1 var(--mono); color: var(--muted); padding-top: 0.2rem; }
+.cl-out { white-space: nowrap; font: 600 0.72rem/1.2 var(--display); padding: 0.22rem 0.42rem; border-radius: 4px; }
+.cl-out.ok { background: color-mix(in srgb, var(--add) 15%, transparent); color: var(--add); }
+.cl-out.no { background: color-mix(in srgb, var(--del) 14%, transparent); color: var(--del); }
+.cl-ins { font: 400 0.95rem/1.5 var(--body); }
+.cl-ins .cl-note { margin-top: 0.35rem; }
+.cl-ex-turns { display: grid; gap: 0.45rem; }
+.cl-turn { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: 0.6rem; font-size: 0.92rem; line-height: 1.5; }
+.cl-who { font: 600 0.74rem/1.5 var(--display); color: var(--muted); padding-top: 0.12rem; }
+.cl-turn.onto .cl-who { color: var(--fo); }
+.cl-turn.onto.plan .cl-who { color: var(--pm); }
+.cl-turn .cl-text { overflow-wrap: anywhere; }
+.cl-text code, .cl-note code { font-size: 0.8em; padding: 0.05rem 0.25rem; border-radius: 3px; background: color-mix(in srgb, var(--ink) 7%, transparent); }
+.cl-note { font-size: 0.84rem; color: var(--muted); line-height: 1.45; }
+.cl-note b { color: var(--ink); font-family: var(--display); font-weight: 600; }
+@media (max-width: 820px) {
+  .cl-row { grid-template-columns: minmax(0, 1fr); }
+  .cl-tag { grid-auto-flow: column; justify-content: start; align-items: center; }
+}
+
+.figcap, .rp-note, .tbl-note, .hot-note { margin-top: 0.85rem; color: var(--muted); font-size: 0.88rem; line-height: 1.55; max-width: 74ch; }
+.figcap b { color: var(--ink); font-family: var(--display); font-weight: 600; }
+
+.hot-note { min-height: 3.1em; transition: color .15s ease; }
+.hot-note.on { color: var(--ink); }
+
+/* ---------- Agentic workflow (palette and type of the paper's figures; the plate is white in both themes) ---------- */
+.arch-plate { color: #091421; font-family: "Freesentation", var(--display); padding: clamp(1rem, 2.6vw, 2rem);
+  background: radial-gradient(circle, #e6e9ee 1px, transparent 1.2px) 0 0 / 18px 18px, #fff; }
+.ax-fo { --ax-c: #0074E0; --ax-t: #EDF3F8; }
+.ax-se { --ax-c: #1f9b78; --ax-t: #EAF5F1; }
+.ax-tf { --ax-c: #e2364e; --ax-t: #FEECEE; }
+.ax-pm { --ax-c: #c98200; --ax-t: #F8EEDA; }
+.ax .ic { width: 1.05em; height: 1.05em; flex: none; }
+.ax .ic.big { width: 1.35em; height: 1.35em; }
+.ax-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; padding: 4px; margin-bottom: 1.8rem; border-radius: 12px; background: #f1f3f6; border: 1px solid #e3e7ec; }
+.ax-tab { display: flex; align-items: center; justify-content: center; gap: 0.45rem; min-height: 2.75rem; padding: 0.45rem 0.6rem; border-radius: 9px; border: 1px solid transparent; background: transparent; color: #555b66; font: 600 0.98rem/1.15 "Freesentation", var(--display); cursor: pointer; transition: background .2s ease, color .2s ease, box-shadow .2s ease; }
+.ax-tab .ic { filter: grayscale(1); opacity: .6; transition: filter .2s ease, opacity .2s ease; }
+.ax-tab:hover { color: #091421; }
+.ax-tab:hover .ic, .ax-tab[aria-selected="true"] .ic { filter: none; opacity: 1; }
+.ax-tab[aria-selected="true"] { background: #fff; color: var(--ax-c); border-color: color-mix(in srgb, var(--ax-c) 35%, #fff); box-shadow: 0 1px 3px rgba(9,20,33,.1), 0 0 0 3px color-mix(in srgb, var(--ax-c) 10%, transparent); }
+.ax-tab:focus-visible { outline: 2px solid var(--ax-c); outline-offset: 2px; }
+.ax-stage { position: relative; display: grid; grid-template-columns: minmax(12.5rem, 15rem) minmax(3rem, 1fr) minmax(14rem, 17rem) minmax(3rem, 1fr) minmax(11rem, 13rem); align-items: stretch; }
+.ax-col { position: relative; z-index: 1; display: grid; gap: 0.36rem; align-content: start; min-width: 0; }
+.ax-h { font: 700 0.72rem/1 "Freesentation", var(--display); letter-spacing: 0.1em; text-transform: uppercase; color: #8a8f99; margin-bottom: 0.35rem; }
+.ax-field { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.38rem 0.55rem 0.38rem 0.65rem; border-radius: 7px; border: 1px solid #d7dbe1; background: #fff; transition: opacity .25s ease, background .25s ease, border-color .25s ease, box-shadow .25s ease; cursor: default; }
+.ax-field code { font: 350 0.79rem/1.2 "Cascadia Code", var(--mono); color: #091421; overflow-wrap: anywhere; }
+.ax-field:hover { box-shadow: 0 0 0 3px rgba(9,20,33,.06); }
+.ax-field:focus-visible { outline: 2px solid #404756; outline-offset: 2px; }
+.ax-marks { display: inline-flex; gap: 0.15rem; }
+.ax-marks .ic { width: 0.95em; height: 0.95em; display: none; opacity: .75; }
+.ax-field.is-r .ax-marks .r, .ax-field.is-w .ax-marks .w { display: inline-block; }
+.ax-field.is-r { border: 1px dashed #9aa0aa; }
+.ax-field.is-w { border: 1px solid color-mix(in srgb, var(--ax-c) 55%, #fff); background: var(--ax-t); }
+.ax-field.is-w::before { content: ""; position: absolute; left: -1px; top: 5px; bottom: 5px; width: 3px; border-radius: 2px; background: var(--ax-c); }
+.ax-field.off { opacity: 0.34; }
+.ax-stage[data-agent="fo"] .ax-field { --ax-c: #0074E0; --ax-t: #EDF3F8; }
+.ax-stage[data-agent="se"] .ax-field { --ax-c: #1f9b78; --ax-t: #EAF5F1; }
+.ax-stage[data-agent="tf"] .ax-field { --ax-c: #e2364e; --ax-t: #FEECEE; }
+.ax-stage[data-agent="pm"] .ax-field { --ax-c: #c98200; --ax-t: #F8EEDA; }
+.ax-center { align-content: center; padding-top: 1.1rem; }
+.ax-card { display: grid; gap: 0.85rem; padding: 1.3rem 1.25rem 1.15rem; border-radius: 16px; border: 1.5px solid color-mix(in srgb, var(--ax-c) 60%, #fff); background: linear-gradient(180deg, #fff, var(--ax-t)); box-shadow: 0 10px 30px -12px color-mix(in srgb, var(--ax-c) 45%, transparent), 0 2px 6px rgba(9,20,33,.06); animation: ax-in .35s ease; }
+.ax-card h4 { margin: 0; display: flex; align-items: center; gap: 0.5rem; color: var(--ax-c); font: 700 1.32rem/1.15 "Freesentation", var(--display); }
+.ax-card h4 .ic { width: 1.6em; height: 1.6em; }
+.ax-role { display: flex; gap: 0.5rem; align-items: flex-start; padding: 0.6rem 0.7rem; border-radius: 9px; background: rgba(255,255,255,.75); border: 1px solid rgba(9,20,33,.08); font: 600 1rem/1.35 "Freesentation", var(--display); }
+.ax-role .ic { margin-top: 0.18em; }
+.ax-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.4rem; }
+.ax-stat { display: grid; justify-items: center; gap: 0.1rem; padding: 0.4rem 0.2rem; border-radius: 8px; background: rgba(255,255,255,.6); }
+.ax-stat b { font: 700 1.25rem/1 "Freesentation", var(--display); color: var(--ax-c); }
+.ax-stat span { font: 500 0.74rem/1 "Freesentation", var(--display); color: #70737d; text-transform: uppercase; letter-spacing: .06em; }
+.ax-target { display: flex; align-items: center; gap: 0.45rem; padding: 0.42rem 0.6rem; border-radius: 7px; border: 1px solid #dfe3e9; background: #fff; font: 600 0.88rem/1.15 "Freesentation", var(--display); color: #404756; opacity: 0.34; transition: opacity .25s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease; }
+.ax-target.on { opacity: 1; border-color: #091421; color: #091421; box-shadow: 0 2px 6px rgba(9,20,33,.1); }
+.ax-target.self { opacity: 0.16; border-style: dotted; }
+.ax-t-fo.on { border-color: #0074E0; color: #0074E0; background: #EDF3F8; }
+.ax-t-se.on { border-color: #1f9b78; color: #1f9b78; background: #EAF5F1; }
+.ax-t-tf.on { border-color: #e2364e; color: #e2364e; background: #FEECEE; }
+.ax-t-pm.on { border-color: #c98200; color: #a86d00; background: #F8EEDA; }
+.ax-lines { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; overflow: visible; pointer-events: none; }
+.ax-lines path { fill: none; stroke-width: 1.7; }
+.ax-lines .ln-read { stroke-dasharray: 4 4; animation: ax-in .45s ease; }
+.ax-lines .ln-write, .ax-lines .ln-route { stroke-width: 2; animation: ax-in .45s ease; }
+.ax-lines .ln-route { stroke-width: 2.2; }
+.ax-lines circle { animation: ax-in .45s ease; }
+.ax-key { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin-top: 1.4rem; padding-top: 0.9rem; border-top: 1px solid #eceff3; font: 500 0.82rem/1 "Freesentation", var(--display); color: #555b66; }
+.ax-key span { display: inline-flex; align-items: center; gap: 0.45rem; }
+.ax-key i { display: inline-block; width: 1.6rem; height: 0; border-top: 2px solid #404756; }
+.ax-key .k-read { border-top: 2px dashed #9aa0aa; }
+.ax-key .k-route { border-top-width: 2.5px; }
+@keyframes ax-in { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 860px) {
+  .ax-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ax-stage { grid-template-columns: minmax(0, 1fr); gap: 1.1rem; }
+  .ax-gap, .ax-lines { display: none; }
+  .ax-center { order: -1; padding-top: 0; }
+  .ax-field.off, .ax-target:not(.on) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .ax-card, .ax-lines path, .ax-lines circle { animation: none; } }
+.arch-fallback { display: block; width: 100%; height: auto; }
+/* ---------- Figures rebuilt from the slides (docs/scripts/build_figures.py) ---------- */
+@font-face { font-family: "Freesentation"; font-weight: 500; font-display: swap; src: url(static/fonts/freesentation-500.woff2) format("woff2"); }
+@font-face { font-family: "Freesentation"; font-weight: 600; font-display: swap; src: url(static/fonts/freesentation-600.woff2) format("woff2"); }
+@font-face { font-family: "Freesentation"; font-weight: 700; font-display: swap; src: url(static/fonts/freesentation-700.woff2) format("woff2"); }
+@font-face { font-family: "Cascadia Code"; font-weight: 350; font-display: swap; src: url(static/fonts/cascadia-code-350.woff2) format("woff2"); }
+.fig-svg { overflow-x: auto; }
+.fig-svg svg { display: block; width: 100%; height: auto; min-width: 46rem; }
+.figsvg text { white-space: pre; }
+.figsvg.anim .fs[data-part] { transition: opacity .38s cubic-bezier(.2,.7,.2,1), transform .38s cubic-bezier(.2,.7,.2,1); }
+.figsvg.anim .fs.hid { opacity: 0; transform: translateY(110px); }
+.figsvg.clearing .fs[data-part] { opacity: 0; transition-duration: .45s; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#overview">Skip to content</a>
+<nav class="topnav" aria-label="Sections">
+  <div class="wide topnav-in">
+    <a class="brand" href="#top"><span class="o">Onto</span>Plan</a>
+    <div class="navlinks">
+      <a href="#overview">Overview</a><a href="#world-model">Method</a><a href="#replay">Demo</a><a href="#scalability">Results</a><a href="#bibtex">Cite</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-grid wide">
+    <div class="hero-text">
+      <div class="venue">NeurIPS 2026</div>
+      <h1><span class="o">Onto</span>Plan</h1>
+      <p class="subtitle">An Ontology-Grounded Scene Representation and Agentic Framework for Scalable Robot Task Planning</p>
+
+      <div class="authors">
+        <span>Hyeongwoo Nam<span class="author-links">
+          <a href="https://www.linkedin.com/in/hyeongwoo-nam-729332428" aria-label="Hyeongwoo Nam on LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+          <a href="https://scholar.google.com/citations?user=1403XwEAAAAJ" aria-label="Hyeongwoo Nam on Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.84 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.16 4.44L24 9.5z"/></svg></a>
+        </span></span>
+        <span>Woongje Cho<sup>*</sup></span>
+        <span>Juwon Kim<sup>*</sup></span>
+        <span>Jongeun Choi<sup>†</sup></span>
+      </div>
+      <p class="affil">School of Mechanical Engineering, Yonsei University, Seoul, Republic of Korea
+        <span class="notes"><sup>*</sup> Equal contribution &nbsp;&nbsp; <sup>†</sup> Corresponding author</span>
+      </p>
+
+      <nav class="links" aria-label="Paper resources">
+        <a class="btn" href="https://openreview.net/forum?id=7YcnWpfSWA">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6zM14 3.5V8h4.5zM8.5 12v1.5h9V12zm0 3.5V17h9v-1.5zm0 3.5v1.5h6V19z"/></svg>Paper</a>
+        <a class="btn" href="https://arxiv.org/abs/2610.07649">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h3.2l4.8 7.2L16.8 3H20l-6.4 9.4L20 21h-3.2L12 14.3 7.2 21H4l6.4-8.6z"/></svg>arXiv</a>
+        <a class="btn" href="https://github.com/namhyeongwoo/OntoPlan">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>Code</a>
+        <a class="btn ghost" href="#bibtex">BibTeX</a>
+      </nav>
+
+    </div>
+    <div class="hero-graph">
+      <canvas id="hero-canvas" aria-label="Scene graph of the Klickitat environment (Small scale): each task's goal entities are highlighted, then the robot follows the plan OntoPlan returned"></canvas>
+      <div class="ticker" aria-live="off">
+        <div class="ticker-top"><span class="tk-id" id="tk-id">S01</span><span class="tk-lbl" id="tk-lbl">Klickitat · goal</span></div>
+        <p class="tk-text" id="tk-text">I think I left my cell phone in the dining room on Floor B. Can you find it and bring it to the home office on Floor C?</p>
+        <p class="tk-ents" id="tk-ents">cell_phone_61 · home_office_18</p>
+        <div class="tk-track" aria-hidden="true"><i id="tk-bar"></i></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="overview">
+  <div class="wide">
+    <div class="eyebrow"><b>01</b>Overview</div>
+    <h2>From an instruction to an executable plan</h2>
+    <ul class="tldr">
+        <li>LLM agents plan over an <b>ontology-grounded world model</b> whose classes and properties map one-to-one to a PDDL domain, so grounding, goals, and planning share one vocabulary.</li>
+        <li>They query only the <b>task-relevant part of the scene</b> and hand formalized goals and constraints to a <b>symbolic planner</b>, so returned plans are executable.</li>
+        <li>On 150 long-horizon tasks in five buildings at three scales: <b>0.89 task success</b> vs. 0.27 for the strongest baseline, with <b>5.6× fewer tokens</b>, and cost stays nearly flat as scenes grow 10–23×.</li>
+      </ul>
+    <figure class="svgfig" data-fig="overview" data-mode="loop">
+      <div class="plate"><div class="fig-svg" data-label="Timeline of an OntoPlan interaction: the user asks to put coffee in the living room, the Scene Explorer finds no coffee but a coffee machine, the Flow Orchestrator asks the user, the Task Formalizer writes conditions, the Planning Manager produces a plan with the PDDL plan tool, and the robot executes it."><img src="static/images/overview.webp" alt="Timeline of an OntoPlan interaction: the user asks to put coffee in the living room, the Scene Explorer finds no coffee but a coffee machine, the Flow Orchestrator asks the user, the Task Formalizer writes conditions, the Planning Manager produces a plan with the PDDL plan tool, and the robot executes it." width="2000" height="847" loading="lazy"></div></div>
+    </figure>
+    <p class="figcap">The Flow Orchestrator routes grounding, clarification, task formalization, and planning across specialized agents, while the Scene query and PDDL plan tools operate over a shared ontology-grounded world model.</p>
+    <details class="abs">
+      <summary>Read the abstract</summary>
+      <p>Large language model (LLM)-based robot task planning is promising for open-ended instruction following, but degrades on long-horizon tasks in large environments. When spatial information is conveyed to the LLM through text, the model can fail to capture spatial context, and token cost grows with environment size. Generating action sequences directly with an LLM also makes it difficult to satisfy the current world state and action preconditions.</p>
+    <p>We address this with an ontology-grounded scene representation that aligns objects, spaces, relations, and states in a shared symbolic vocabulary for spatial reasoning and task planning, and with <b>OntoPlan</b>, an agentic framework that interprets instructions, selectively retrieves task-relevant information, formalizes goals and constraints, and produces executable plans.</p>
+    <p>Across 150 general tasks spanning five indoor environments and three scene scales, OntoPlan achieves 0.89 average task success, compared with 0.27 for the strongest baseline, while using 18.1k total tokens per task on average, about 5.6× fewer than the most efficient baseline. These advantages persist as scene scale increases, whereas prior methods degrade more sharply in success and remain far more costly in tokens. OntoPlan also responds appropriately to ambiguous or infeasible instructions by asking follow-up questions or reporting insufficient information rather than committing to invalid plans.</p>
+    </details>
+  </div>
+</section>
+
+
+<section id="highlights">
+  <div class="wide">
+    <div class="eyebrow"><b>02</b>Results at a glance</div>
+    <h2>Higher success at a fraction of the token cost</h2>
+    <div class="stats">
+      <div class="stat"><div class="n t-onto">0.89</div><div class="d">average <b>task success</b> on 150 general tasks, vs. 0.27 for SayPlan and 0.13 for DELTA</div></div>
+      <div class="stat"><div class="n">5.6<small>×</small></div><div class="d"><b>fewer total tokens</b> per task than the most efficient baseline (18.1k vs. 100.6k)</div></div>
+      <div class="stat"><div class="n">1.15<small>×</small></div><div class="d">growth in <b>tokens per task</b> from Small to Large scenes, while object counts grow 10–23×</div></div>
+    </div>
+
+    <div class="bars">
+      <div>
+        <h3>Task success</h3>
+        <p class="sub">Mean over 5 environments × 3 scene scales (higher is better)</p>
+        <div class="row"><span class="m">SayPlan</span><div class="track"><div class="fill c-say" style="width:27%"></div><span class="val" style="left:27%">0.27</span></div></div>
+        <div class="row"><span class="m">DELTA</span><div class="track"><div class="fill c-delta" style="width:13%"></div><span class="val" style="left:13%">0.13</span></div></div>
+        <div class="row"><span class="m t-onto">OntoPlan</span><div class="track"><div class="fill c-onto" style="width:89%"></div><span class="val" style="left:89%">0.89</span></div></div>
+      </div>
+      <div>
+        <h3>Total tokens per task</h3>
+        <p class="sub">Input + output tokens over all LLM calls, ×10³ (lower is better)</p>
+        <div class="row"><span class="m">SayPlan</span><div class="track"><div class="fill c-say" style="width:79.4%"></div><span class="val" style="left:79.4%">216.0k</span></div></div>
+        <div class="row"><span class="m">DELTA</span><div class="track"><div class="fill c-delta" style="width:37%"></div><span class="val" style="left:37%">100.6k</span></div></div>
+        <div class="row"><span class="m t-onto">OntoPlan</span><div class="track"><div class="fill c-onto" style="width:6.7%"></div><span class="val" style="left:6.7%">18.1k</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="world-model">
+  <div class="wide">
+    <div class="sec-head">
+      <div class="eyebrow"><b>03</b>Method · World model</div>
+      <h2>One symbolic state for grounding and planning</h2>
+      <p>The world model has three layers: an <b>ontology</b> layer declaring entity types and relation semantics, a <b>static</b> layer storing topology and connectivity, and a <b>dynamic</b> layer storing object instances, states, and spatial relations. Access goes through an ask/tell interface. <i>Ask</i> runs read-only SPARQL queries for scene inspection and planner-state extraction. <i>Tell</i> inserts and deletes RDF triples for observations and action effects, and GraphDB materializes the resulting OWL 2 RL entailments.</p>
+    </div>
+    <figure class="svgfig" data-fig="world_model" data-mode="static">
+      <div class="plate"><div class="fig-svg" data-label="World model with ontology, static, and dynamic layers, the ask and tell interfaces, and the OWL reasoner."><img src="static/images/world_model.webp" alt="World model with ontology, static, and dynamic layers, the ask and tell interfaces, and the OWL reasoner." width="2000" height="1211" loading="lazy"></div></div>
+    </figure>
+    <p class="figcap"><b>World model.</b> <i>Ask</i> supports scene inspection and planner-state extraction; <i>tell</i> updates dynamic facts from symbolic observations and action effects, and GraphDB materializes the OWL 2 RL entailments. The Marstons Medium scene has 2,908 asserted triples and 19,394 after reasoning.</p>
+    <h3 class="sub-h">One vocabulary from the world model to the planner</h3>
+    <div class="align-wrap">
+  <div class="align" role="figure" aria-label="The same vocabulary in the ontology and the PDDL domain">
+    <div>
+      <div class="lbl"><span>World model · OWL / RDF</span><span>schema.ttl</span></div>
+<pre><span class="hl">:isInsideOf</span> a owl:ObjectProperty ,
+                owl:TransitiveProperty ;
+    rdfs:domain <span class="hl">:Artifact</span> ;
+    rdfs:range  <span class="hl">:Artifact</span> .
+
+<span class="k"># dynamic layer fact</span>
+:toothbrush_213 <span class="hl">:isInsideOf</span> :storage_cabinet_55 .</pre>
+    </div>
+    <div class="eq" aria-hidden="true">≡</div>
+    <div>
+      <div class="lbl"><span>Planner · PDDL</span><span>domain.pddl</span></div>
+<pre>(:types ... <span class="hl">Artifact</span>)
+
+(:predicates
+  (<span class="hl">isInsideOf</span> ?x - <span class="hl">Artifact</span> ?c - <span class="hl">Artifact</span>)
+  ...)
+
+<span class="k">; extracted initial state</span>
+(<span class="hl">isInsideOf</span> toothbrush_213 storage_cabinet_55)</pre>
+    </div>
+    <p class="caption">Ontology classes map one-to-one to PDDL types, and ontology properties map one-to-one to predicates with the same names. Grounding, task formalization, and planning share one vocabulary, so no schema translation sits between them.</p>
+  </div>
+</div>
+  </div>
+</section>
+
+<section id="architecture">
+  <div class="wide">
+    <div class="sec-head">
+      <div class="eyebrow"><b>04</b>Method · Agentic workflow</div>
+      <h2>Four roles, two tools, shared memory</h2>
+      <p>OntoPlan splits the planning loop into workflow control, scene grounding, task formalization, and executable planning. Shared memory holds the current intent, grounding evidence, open ambiguities, formalized goals and constraints, and planner diagnostics, so any agent can revise an intermediate result as planning proceeds.</p>
+    </div>
+    <figure class="arch" id="arch">
+      <div class="plate arch-plate"><img class="arch-fallback" src="static/images/system_architecture.webp" alt="System architecture: the Flow Orchestrator, Scene Explorer, Task Formalizer, and Planning Manager each read and write fields of a shared memory and have their own routing options." width="2001" height="1068" loading="lazy"></div>
+    </figure>
+  </div>
+</section>
+
+<section id="replay">
+  <div class="wide">
+    <div class="eyebrow"><b>05</b>Demo · Recorded runs</div>
+    <h2>Watch OntoPlan solve a task</h2>
+    <p class="sec-lede">Four runs from the evaluation, replayed step by step: the agents' messages as logged, the conditions and subgoals they produced, and the plan executed on the Klickitat scene graph. Nothing here is regenerated; every message and action comes from the run's result file.</p>
+    <div class="replay">
+      <div class="stage">
+        <canvas id="rp-canvas" aria-label="Scene graph replay of a recorded OntoPlan run"></canvas>
+        <div class="rp-meta" id="rp-meta"></div>
+        <div class="rp-bar">
+          <button type="button" class="rp-btn primary" id="rp-play" aria-pressed="false">Play</button>
+          <button type="button" class="rp-btn" id="rp-prev" aria-label="Previous step">&#8592;</button>
+          <button type="button" class="rp-btn" id="rp-next" aria-label="Next step">&#8594;</button>
+          <button type="button" class="rp-btn" id="rp-restart">Restart</button>
+          <button type="button" class="rp-btn" id="rp-speed" aria-label="Playback speed">1×</button>
+          <span class="rp-caption" id="rp-caption"></span>
+        </div>
+        <div class="rp-track" aria-hidden="true"><i id="rp-progress"></i></div>
+      </div>
+      <div class="rp-side">
+        <div class="rp-picker" id="rp-tasks" role="group" aria-label="Recorded runs"></div>
+        <div class="rp-log" id="rp-log"></div>
+      </div>
+    </div>
+    <p class="rp-note">The purple marker is the robot and its trail is the executed path; orange squares are objects being carried or put down, and a red cross marks a place an <code>always</code> condition forbids. In the first run the Flow Orchestrator asks which couch to use and receives the fixed automatic reply used in the non-interactive evaluation.</p>
+  </div>
+</section>
+
+<section id="scalability">
+  <div class="wide">
+    <div class="eyebrow"><b>06</b>Results · Scalability</div>
+    <h2>Success holds and token cost stays flat as scenes grow</h2>
+    <p class="sec-lede">From Small to Large, object counts grow from 50–121 to 954–1,269 per environment. OntoPlan keeps the highest rate on every metric at every scale, while SayPlan shows heavier token tails and DELTA remains far more token-intensive.</p>
+    <div class="legend" aria-label="Legend">
+      <span><i class="c-say"></i>SayPlan</span><span><i class="c-delta"></i>DELTA</span><span><i class="c-onto"></i>OntoPlan</span>
+      <span style="color:var(--muted);font-weight:500">S / M / L = Small / Medium / Large scene</span>
+    </div>
+    <figure style="margin-top:1rem">
+      <div class="plate figpair">
+        <div id="succ-chart" class="tok">
+          <div class="tok-head"><div class="t">Success rates by scene scale</div>
+            <div class="tok-seg" role="group" aria-label="Success metric">
+              <button type="button" data-metric="plan_generation" aria-pressed="false">Plan returned</button>
+              <button type="button" data-metric="plan_execution" aria-pressed="false">Plan executable</button>
+              <button type="button" data-metric="goal_success" aria-pressed="false">Goal reached</button>
+              <button type="button" data-metric="task_success" aria-pressed="true">Task success</button>
+            </div>
+          </div>
+          <div class="tk-stage"><svg id="succ-svg" viewBox="0 0 600 470" role="img"></svg><div class="tk-tip" id="succ-tip" hidden></div></div>
+          <div class="tk-foot"><span class="tk-lbl">Overall, 150 tasks</span><div class="tk-summary" id="succ-note"></div></div>
+        </div>
+        <div id="tok-chart" class="tok">
+          <div class="tok-head"><div class="t">Token usage by scene scale (log scale)</div>
+            <div class="tok-seg" role="group" aria-label="Token metric">
+              <button type="button" data-metric="tasks" aria-pressed="true">Total per task</button>
+              <button type="button" data-metric="calls" aria-pressed="false">Input per call</button>
+            </div>
+          </div>
+          <div class="tk-stage"><svg id="tok-svg" viewBox="0 0 600 470" role="img"></svg><div class="tk-tip" id="tok-tip" hidden></div></div>
+          <div class="tk-foot"><span class="tk-lbl">Mean, S / M / L</span><div class="tk-summary" id="tok-summary"></div></div>
+        </div>
+      </div>
+    </figure>
+
+    <details class="env-table">
+      <summary>Per-environment results (table)</summary>
+      <p style="max-width:65ch;color:var(--muted);font-size:0.92rem">Rates are averaged over the three scales; tokens are ×10³. All methods use GPT-4o at temperature 0 and are scored against the same <code>at_end</code>, <code>always</code>, <code>sometime</code>, and <code>ordering</code> checks.</p>
+      <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Environment</th><th class="l">Method</th><th>Plan<br>Returned</th><th>Plan<br>Executable</th><th>Goal<br>Reached</th><th>Task<br>Success</th><th>Input tokens<br>per call</th><th>Total tokens<br>per task</th></tr></thead>
+        <tbody>
+          <tr class="grp"><td class="env" rowspan="3">Klickitat</td><td class="l m">SayPlan</td><td>0.67</td><td>0.47</td><td>0.33</td><td>0.27</td><td>30.9</td><td>221.7</td></tr>
+          <tr><td class="l m">DELTA</td><td>0.63</td><td>0.23</td><td>0.23</td><td>0.20</td><td>23.9</td><td>101.3</td></tr>
+          <tr class="ours"><td class="l m">OntoPlan</td><td>1.00</td><td>1.00</td><td>0.93</td><td>0.90</td><td>2.6</td><td>17.3</td></tr>
+          <tr class="grp"><td class="env" rowspan="3">Lakeville</td><td class="l m">SayPlan</td><td>0.57</td><td>0.40</td><td>0.33</td><td>0.33</td><td>33.3</td><td>205.5</td></tr>
+          <tr><td class="l m">DELTA</td><td>0.47</td><td>0.23</td><td>0.17</td><td>0.17</td><td>23.4</td><td>98.8</td></tr>
+          <tr class="ours"><td class="l m">OntoPlan</td><td>1.00</td><td>1.00</td><td>0.97</td><td>0.97</td><td>2.6</td><td>18.8</td></tr>
+          <tr class="grp"><td class="env" rowspan="3">Lindenwood</td><td class="l m">SayPlan</td><td>0.63</td><td>0.47</td><td>0.40</td><td>0.40</td><td>34.5</td><td>206.6</td></tr>
+          <tr><td class="l m">DELTA</td><td>0.37</td><td>0.17</td><td>0.23</td><td>0.17</td><td>23.4</td><td>98.9</td></tr>
+          <tr class="ours"><td class="l m">OntoPlan</td><td>1.00</td><td>1.00</td><td>0.87</td><td>0.87</td><td>2.6</td><td>17.5</td></tr>
+          <tr class="grp"><td class="env" rowspan="3">Marstons</td><td class="l m">SayPlan</td><td>0.73</td><td>0.43</td><td>0.30</td><td>0.27</td><td>37.1</td><td>255.6</td></tr>
+          <tr><td class="l m">DELTA</td><td>0.27</td><td>0.17</td><td>0.17</td><td>0.10</td><td>23.9</td><td>101.3</td></tr>
+          <tr class="ours"><td class="l m">OntoPlan</td><td>1.00</td><td>1.00</td><td>0.77</td><td>0.77</td><td>2.6</td><td>18.7</td></tr>
+          <tr class="grp"><td class="env" rowspan="3">Muleshoe</td><td class="l m">SayPlan</td><td>0.70</td><td>0.17</td><td>0.20</td><td>0.10</td><td>31.9</td><td>190.4</td></tr>
+          <tr><td class="l m">DELTA</td><td>0.47</td><td>0.03</td><td>0.03</td><td>0.03</td><td>24.2</td><td>102.7</td></tr>
+          <tr class="ours"><td class="l m">OntoPlan</td><td>0.97</td><td>0.97</td><td>0.93</td><td>0.93</td><td>2.6</td><td>18.1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    </details>
+
+    <h3 style="margin-top:2.6rem">Ablation: what each tool contributes</h3>
+    <p style="max-width:65ch;color:var(--muted);font-size:0.95rem">Without Scene query, the full scene is serialized into the prompt. Without PDDL plan, the LLM generates action sequences directly, given the same PDDL domain. Tokens are ×10³; L/S is the Large-to-Small ratio.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th rowspan="2">Setting</th><th colspan="4" style="text-align:center">Task success</th><th colspan="4" style="text-align:center">Total tokens per task</th><th colspan="4" style="text-align:center">Peak input tokens per call</th></tr>
+          <tr><th>S</th><th>M</th><th>L</th><th>Avg.</th><th>S</th><th>M</th><th>L</th><th>L/S</th><th>S</th><th>M</th><th>L</th><th>L/S</th></tr>
+        </thead>
+        <tbody>
+          <tr class="ours"><td class="m">Full system</td><td>0.92</td><td>0.90</td><td>0.84</td><td>0.89</td><td>17.1</td><td>17.5</td><td>19.7</td><td>1.15×</td><td>3.6</td><td>3.7</td><td>3.9</td><td>1.06×</td></tr>
+          <tr><td>w/o Scene query</td><td>0.86</td><td>0.90</td><td>0.84</td><td>0.87</td><td>18.1</td><td>32.5</td><td>72.7</td><td>4.02×</td><td>7.6</td><td>22.3</td><td>62.2</td><td>8.13×</td></tr>
+          <tr><td>w/o PDDL plan</td><td>0.32</td><td>0.26</td><td>0.36</td><td>0.31</td><td>23.6</td><td>25.0</td><td>26.9</td><td>1.14×</td><td>8.4</td><td>8.5</td><td>8.4</td><td>1.01×</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">Selective scene access drives token scalability; the integrated planning path drives task reliability.</p>
+  </div>
+</section>
+
+<section id="clarification">
+  <div class="wide">
+    <div class="eyebrow"><b>07</b>Results · Ambiguous and infeasible instructions</div>
+    <h2>Asking before acting</h2>
+    <p class="sec-lede">Two qualitative subsets of 10 instructions each in Klickitat (Medium). When an instruction leaves the target open, OntoPlan asks the user; when a request cannot be satisfied, it reports what is missing instead of committing to a wrong plan.</p>
+    <div class="pair">
+      <div>
+        <h3>Ambiguous instructions</h3>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Method</th><th>Plan Returned</th><th>Plan Executable</th><th>Goal Reached</th></tr></thead>
+            <tbody>
+              <tr><td>SayPlan</td><td>5/10</td><td>4/10</td><td>0/10</td></tr>
+              <tr><td>DELTA</td><td>5/10</td><td>3/10</td><td>0/10</td></tr>
+              <tr><td>OntoPlan (auto replies)</td><td>8/10</td><td>8/10</td><td>1/10</td></tr>
+              <tr class="ours grp"><td class="m">OntoPlan (user replies)</td><td>10/10</td><td>10/10</td><td>8/10</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="tbl-note">Auto replies: a fixed answer telling the agent to assume and continue, matching the non-interactive baselines.</p>
+      </div>
+      <div>
+        <h3>Infeasible instructions</h3>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Method</th><th>Clarification<br>request</th><th>Misdirected<br>plan</th><th>Inexecutable<br>plan</th><th>Planning<br>failure</th></tr></thead>
+            <tbody>
+              <tr><td>SayPlan</td><td>—</td><td>3/10</td><td>0/10</td><td>7/10</td></tr>
+              <tr><td>DELTA</td><td>—</td><td>1/10</td><td>1/10</td><td>8/10</td></tr>
+              <tr class="ours grp"><td class="m">OntoPlan</td><td>9/10</td><td>1/10</td><td>0/10</td><td>0/10</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="tbl-note">SayPlan and DELTA cannot request clarification in this protocol.</p>
+      </div>
+    </div>
+    <details class="env-table cl-ex">
+      <summary>See the exchange for each instruction</summary>
+      <div class="cl" id="cl-browser">
+      <div class="cl-tabs seg-light" role="group" aria-label="Instruction set">
+        <button type="button" data-set="ambiguous" aria-pressed="true">Ambiguous</button>
+        <button type="button" data-set="infeasible" aria-pressed="false">Infeasible</button>
+      </div>
+      <p class="cl-legend" id="cl-legend"></p>
+      <ol class="cl-rows" id="cl-rows" aria-live="polite"></ol>
+    </div>
+    </details>
+  </div>
+</section>
+
+<section id="qualitative">
+  <div class="wide">
+    <div class="eyebrow"><b>08</b>Qualitative · One session, three turns</div>
+    <h2>A multi-turn session over one world model</h2>
+    <p class="sec-lede">A question, a task, and a follow-up in one session. Expand a tool call to see its arguments and result. Plans run on the shared world model, and each turn ends with the facts it changed, so the next turn starts from the updated state. Recorded with the released code; the paper's figure shows an earlier run of the same session, so details such as where the mug is put down differ.</p>
+    <div class="replay">
+      <div class="stage">
+        <canvas id="ss-canvas" aria-label="Scene graph replay of a recorded multi-turn session"></canvas>
+        <div class="rp-meta" id="ss-meta"></div>
+        <div class="rp-bar">
+          <button type="button" class="rp-btn primary" id="ss-play" aria-pressed="false">Play</button>
+          <button type="button" class="rp-btn" id="ss-prev" aria-label="Previous step">&#8592;</button>
+          <button type="button" class="rp-btn" id="ss-next" aria-label="Next step">&#8594;</button>
+          <button type="button" class="rp-btn" id="ss-restart">Restart</button>
+          <button type="button" class="rp-btn" id="ss-speed" aria-label="Playback speed">1×</button>
+          <span class="rp-caption" id="ss-caption"></span>
+        </div>
+        <div class="rp-track" aria-hidden="true"><i id="ss-progress"></i></div>
+      </div>
+      <div class="rp-side">
+        <div class="rp-picker three" id="ss-tasks" role="group" aria-label="Turns of the session"></div>
+        <div class="rp-log" id="ss-log"></div>
+      </div>
+    </div>
+    <p class="rp-note">Dashed blue lines are paths returned by <code>find_path</code>; the purple trail is the executed plan. In Turn 3 the robot starts in the living room where Turn 2 left it, and the bread is still in the switched-on oven.</p>
+  </div>
+</section>
+
+<section id="dataset">
+  <div class="wide">
+    <div class="eyebrow"><b>09</b>Benchmark</div>
+    <h2>Five buildings, three scene scales</h2>
+    <div class="ds-grid">
+      <div>
+  <p class="sec-lede">Environments come from the <a href="https://3dscenegraph.stanford.edu/">3D Scene Graph dataset</a> and are mapped deterministically into one ontology schema (Small). Medium is manually augmented, and Large triples Medium's object count through constrained random augmentation. All scales share the same ontology and PDDL domain, and all are included in the repository.</p>
+      </div>
+      <div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Environment</th><th>Floors</th><th>Rooms</th><th>Small</th><th>Medium</th><th>Large</th></tr></thead>
+        <tbody>
+          <tr><td>Klickitat</td><td>3</td><td>28</td><td>84</td><td>385</td><td>1,155</td></tr>
+          <tr><td>Lakeville</td><td>2</td><td>19</td><td>83</td><td>387</td><td>1,161</td></tr>
+          <tr><td>Lindenwood</td><td>2</td><td>36</td><td>59</td><td>318</td><td>954</td></tr>
+          <tr><td>Marstons</td><td>4</td><td>31</td><td>50</td><td>388</td><td>1,164</td></tr>
+          <tr><td>Muleshoe</td><td>2</td><td>24</td><td>121</td><td>423</td><td>1,269</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">Small / Medium / Large columns are object counts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bibtex">
+  <div class="wide">
+    <div class="eyebrow"><b>10</b>Citation</div>
+    <h2>BibTeX</h2>
+    <div class="bib">
+      <button type="button" class="copy" id="copy-bib">Copy</button>
+<pre id="bib-text">@inproceedings{nam2026ontoplan,
+  title     = {{OntoPlan}: An Ontology-Grounded Scene Representation and
+               Agentic Framework for Scalable Robot Task Planning},
+  author    = {Nam, Hyeongwoo and Cho, Woongje and Kim, Juwon and Choi, Jongeun},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2026}
+}</pre>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="wide">
+  <div class="ft-brand"><span class="brand-ink"><span class="o">Onto</span>Plan</span><span>NeurIPS 2026 · Yonsei University</span></div>
+  <nav class="ft-links" aria-label="Project links">
+    <a href="https://openreview.net/forum?id=7YcnWpfSWA">Paper</a>
+    <a href="https://github.com/namhyeongwoo/OntoPlan">Code</a>
+    <a href="#bibtex">BibTeX</a>
+    <a href="#top">Back to top ↑</a>
+  </nav>
+</footer>
+
+
+<script src="static/data/klickitat.js"></script>
+<script src="static/data/hero_plans.js"></script>
+<script src="static/js/scene-graph.js"></script>
+<script src="static/data/figures.js"></script>
+<script src="static/js/figures.js"></script>
+<script src="static/js/arch.js"></script>
+<script src="static/data/replays.js"></script>
+<script src="static/data/session.js"></script>
+<script src="static/js/replay.js"></script>
+<script src="static/data/tokens.js"></script>
+<script src="static/js/token-chart.js"></script>
+<script src="static/data/success.js"></script>
+<script src="static/data/clarification.js"></script>
+<script src="static/js/clarification.js"></script>
+<script src="static/js/success-chart.js"></script>
+<script>
+(function () {
+  var copyBtn = document.getElementById('copy-bib');
+  var bib = document.getElementById('bib-text');
+  copyBtn.addEventListener('click', function () {
+    var done = function () { copyBtn.textContent = 'Copied'; setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1600); };
+    var fallback = function () {
+      var r = document.createRange(); r.selectNodeContents(bib);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      copyBtn.textContent = 'Selected';
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(bib.textContent).then(done, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+@prefix : <http://example.org/OntoPlan#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/OntoPlan#> .
+
+<http://example.org/OntoPlan> rdf:type owl:Ontology .
+
+:microwave_1 rdf:type :Artifact ;
+    :category "microwave" ;
+    :description "A microwave, made of ['glass', 'metal'], in kitchen_22." ;
+    :isOnFloorOf :kitchen_22 ;
+    :affords :Openable ;
+    :affords :Switchable ;
+    :affords :Bimanual ;
+    :affords :Support ;
+    :affords :Containment ;
+    :isOpen "false"^^xsd:boolean ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:oven_2 rdf:type :Artifact ;
+    :category "oven" ;
+    :description "A oven, made of ['glass', 'metal'], in kitchen_22." ;
+    :isOnFloorOf :kitchen_22 ;
+    :affords :Openable ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :affords :Support ;
+    :affords :Containment ;
+    :isOpen "false"^^xsd:boolean ;
+    :isSwitchedOn "true"^^xsd:boolean .
+
+:refrigerator_3 rdf:type :Artifact ;
+    :category "refrigerator" ;
+    :description "A refrigerator, made of ['metal', None], in kitchen_22." ;
+    :isOnFloorOf :kitchen_22 ;
+    :affords :Bimanual ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :affords :Switchable ;
+    :isOpen "false"^^xsd:boolean ;
+    :isSwitchedOn "true"^^xsd:boolean .
+
+:vase_4 rdf:type :Artifact ;
+    :category "vase" ;
+    :description "A vase, made of ['ceramic', None], visual texture: smeared, in living_room_24." ;
+    :isOnFloorOf :living_room_24 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:vase_5 rdf:type :Artifact ;
+    :category "vase" ;
+    :description "A vase, made of ['ceramic', None], tactile texture: bumpy, visual texture: interlaced, in living_room_23." ;
+    :isOnFloorOf :living_room_23 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:vase_6 rdf:type :Artifact ;
+    :category "vase" ;
+    :description "A vase, made of ['metal', None], tactile texture: bumpy, visual texture: interlaced, in living_room_23." ;
+    :isOnFloorOf :living_room_23 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:vase_7 rdf:type :Artifact ;
+    :category "vase" ;
+    :description "A vase, made of ['metal', None], tactile texture: bumpy, in living_room_24." ;
+    :isOnFloorOf :living_room_24 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:vase_8 rdf:type :Artifact ;
+    :category "vase" ;
+    :description "A vase, made of ['metal', None], tactile texture: woven, visual texture: interlaced, in living_room_23." ;
+    :isOnFloorOf :living_room_23 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:toilet_9 rdf:type :Artifact ;
+    :category "toilet" ;
+    :description "A toilet, made of ['ceramic', None], in bathroom_1." ;
+    :isOnFloorOf :bathroom_1 ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "true"^^xsd:boolean .
+
+:toilet_10 rdf:type :Artifact ;
+    :category "toilet" ;
+    :description "A toilet, made of ['ceramic', None], in bathroom_3." ;
+    :isOnFloorOf :bathroom_3 ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "true"^^xsd:boolean .
+
+:toilet_11 rdf:type :Artifact ;
+    :category "toilet" ;
+    :description "A toilet, made of ['ceramic', None], in bathroom_2." ;
+    :isOnFloorOf :bathroom_2 ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "true"^^xsd:boolean .
+
+:chair_12 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['fabric', None], in corridor_13." ;
+    :isOnFloorOf :corridor_13 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_13 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['fabric', 'wood'], tactile texture: studded, visual texture: dotted, in dining_room_18." ;
+    :isOnFloorOf :dining_room_18 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_14 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['fabric', 'wood'], tactile texture: studded, visual texture: dotted, in dining_room_18." ;
+    :isOnFloorOf :dining_room_18 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_15 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['fabric', 'wood'], tactile texture: studded, visual texture: dotted, in dining_room_18." ;
+    :isOnFloorOf :dining_room_18 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_16 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['fabric', 'wood'], tactile texture: studded, visual texture: dotted, in dining_room_18." ;
+    :isOnFloorOf :dining_room_18 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_17 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['fabric', 'wood'], tactile texture: woven, visual texture: interlaced, in living_room_23." ;
+    :isOnFloorOf :living_room_23 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_18 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['fabric', 'wood'], tactile texture: woven, visual texture: interlaced, in living_room_23." ;
+    :isOnFloorOf :living_room_23 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_19 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['plastic', 'fabric'], tactile texture: woven, visual texture: interlaced, in dining_room_18." ;
+    :isOnFloorOf :dining_room_18 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_20 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['plastic', 'fabric'], tactile texture: woven, visual texture: interlaced, in dining_room_19." ;
+    :isOnFloorOf :dining_room_19 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_21 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['fabric', 'wood'], tactile texture: studded, visual texture: dotted, in home_office_21." ;
+    :isOnFloorOf :home_office_21 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_22 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['fabric', 'wood'], tactile texture: studded, visual texture: dotted, in home_office_21." ;
+    :isOnFloorOf :home_office_21 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_23 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['fabric', 'wood'], in home_office_21." ;
+    :isOnFloorOf :home_office_21 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_24 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['fabric', 'wood'], tactile texture: woven, visual texture: interlaced, in living_room_24." ;
+    :isOnFloorOf :living_room_24 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_25 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['fabric', 'wood'], tactile texture: woven, visual texture: interlaced, in living_room_24." ;
+    :isOnFloorOf :living_room_24 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:couch_26 rdf:type :Artifact ;
+    :category "couch" ;
+    :description "A couch, made of ['fabric', 'wood'], in living_room_24." ;
+    :isOnFloorOf :living_room_24 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:couch_27 rdf:type :Artifact ;
+    :category "couch" ;
+    :description "A couch, made of ['plastic', 'fabric'], tactile texture: woven, visual texture: interlaced, in exercise_room_20." ;
+    :isOnFloorOf :exercise_room_20 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:couch_28 rdf:type :Artifact ;
+    :category "couch" ;
+    :description "A couch, made of ['fabric', 'wood'], in bedroom_6." ;
+    :isOnFloorOf :bedroom_6 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:couch_29 rdf:type :Artifact ;
+    :category "couch" ;
+    :description "A couch, made of ['fabric', 'wood'], in living_room_23." ;
+    :isOnFloorOf :living_room_23 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:couch_30 rdf:type :Artifact ;
+    :category "couch" ;
+    :description "A couch, made of ['fabric', 'wood'], tactile texture: studded, visual texture: dotted, in bedroom_7." ;
+    :isOnFloorOf :bedroom_7 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:couch_31 rdf:type :Artifact ;
+    :category "couch" ;
+    :description "A couch, made of ['fabric', 'wood'], in living_room_23." ;
+    :isOnFloorOf :living_room_23 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:couch_32 rdf:type :Artifact ;
+    :category "couch" ;
+    :description "A couch, made of ['fabric', 'wood'], tactile texture: studded, visual texture: dotted, in corridor_13." ;
+    :isOnFloorOf :corridor_13 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:potted_plant_33 rdf:type :Artifact ;
+    :category "potted plant" ;
+    :description "A potted plant, made of ['metal', 'foliage'], tactile texture: grooved, visual texture: lined, in corridor_13." ;
+    :isOnFloorOf :corridor_13 ;
+    :affords :Unimanual .
+
+:potted_plant_34 rdf:type :Artifact ;
+    :category "potted plant" ;
+    :description "A potted plant, made of ['ceramic', 'foliage'], tactile texture: frilly, visual texture: blotchy, in dining_room_18." ;
+    :isOnFloorOf :dining_room_18 ;
+    :affords :Unimanual .
+
+:potted_plant_35 rdf:type :Artifact ;
+    :category "potted plant" ;
+    :description "A potted plant, made of ['foliage', None], tactile texture: frilly, visual texture: blotchy, in dining_room_18." ;
+    :isOnFloorOf :dining_room_18 ;
+    :affords :Unimanual .
+
+:potted_plant_36 rdf:type :Artifact ;
+    :category "potted plant" ;
+    :description "A potted plant, made of ['ceramic', 'foliage'], tactile texture: fibrous, in home_office_21." ;
+    :isOnFloorOf :home_office_21 ;
+    :affords :Unimanual .
+
+:potted_plant_37 rdf:type :Artifact ;
+    :category "potted plant" ;
+    :description "A potted plant, made of ['ceramic', 'foliage'], tactile texture: frilly, visual texture: blotchy, in exercise_room_20." ;
+    :isOnFloorOf :exercise_room_20 ;
+    :affords :Unimanual .
+
+:potted_plant_38 rdf:type :Artifact ;
+    :category "potted plant" ;
+    :description "A potted plant, made of [None, None], in exercise_room_20." ;
+    :isOnFloorOf :exercise_room_20 ;
+    :affords :Unimanual .
+
+:potted_plant_39 rdf:type :Artifact ;
+    :category "potted plant" ;
+    :description "A potted plant, made of ['foliage', 'metal'], tactile texture: meshed, visual texture: interlaced, in living_room_23." ;
+    :isOnFloorOf :living_room_23 ;
+    :affords :Unimanual .
+
+:potted_plant_40 rdf:type :Artifact ;
+    :category "potted plant" ;
+    :description "A potted plant, made of ['ceramic', 'foliage'], tactile texture: fibrous, in living_room_24." ;
+    :isOnFloorOf :living_room_24 ;
+    :affords :Unimanual .
+
+:potted_plant_41 rdf:type :Artifact ;
+    :category "potted plant" ;
+    :description "A potted plant, made of ['ceramic', 'foliage'], tactile texture: fibrous, in bathroom_3." ;
+    :isOnFloorOf :bathroom_3 ;
+    :affords :Unimanual .
+
+:potted_plant_42 rdf:type :Artifact ;
+    :category "potted plant" ;
+    :description "A potted plant, made of ['ceramic', 'foliage'], in bedroom_6." ;
+    :isOnFloorOf :bedroom_6 ;
+    :affords :Unimanual .
+
+:potted_plant_43 rdf:type :Artifact ;
+    :category "potted plant" ;
+    :description "A potted plant, made of ['stone', 'foliage'], tactile texture: matted, in staircase_27." ;
+    :isOnFloorOf :staircase_27 ;
+    :affords :Unimanual .
+
+:potted_plant_44 rdf:type :Artifact ;
+    :category "potted plant" ;
+    :description "A potted plant, made of [None, None], in staircase_27." ;
+    :isOnFloorOf :staircase_27 ;
+    :affords :Unimanual .
+
+:potted_plant_45 rdf:type :Artifact ;
+    :category "potted plant" ;
+    :description "A potted plant, made of [None, None], in bathroom_3." ;
+    :isOnFloorOf :bathroom_3 ;
+    :affords :Unimanual .
+
+:potted_plant_46 rdf:type :Artifact ;
+    :category "potted plant" ;
+    :description "A potted plant, made of [None, None], in bathroom_3." ;
+    :isOnFloorOf :bathroom_3 ;
+    :affords :Unimanual .
+
+:bed_47 rdf:type :Artifact ;
+    :category "bed" ;
+    :description "A bed, made of ['fabric', 'wood'], visual texture: paisley, in bedroom_7." ;
+    :isOnFloorOf :bedroom_7 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:bed_48 rdf:type :Artifact ;
+    :category "bed" ;
+    :description "A bed, made of ['fabric', 'wood'], visual texture: paisley, in bedroom_6." ;
+    :isOnFloorOf :bedroom_6 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:dining_table_49 rdf:type :Artifact ;
+    :category "dining table" ;
+    :description "A dining table, made of ['wood', None], in dining_room_19." ;
+    :isOnFloorOf :dining_room_19 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:dining_table_50 rdf:type :Artifact ;
+    :category "dining table" ;
+    :description "A dining table, made of ['wood', None], in dining_room_18." ;
+    :isOnFloorOf :dining_room_18 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:left_hand rdf:type :Hand .
+
+:right_hand rdf:type :Hand .
+
+:robot rdf:type :Robot ;
+    :description "Main service robot in Marstons building." ;
+    :robotIsInSpace :corridor_13 ;
+    :hasHand :left_hand ;
+    :hasHand :right_hand .
+
+:door_1  :doorIsOpen "false"^^xsd:boolean .
+:door_2  :doorIsOpen "true"^^xsd:boolean .
+:door_3  :doorIsOpen "false"^^xsd:boolean .
+:door_4  :doorIsOpen "true"^^xsd:boolean .
+:door_5  :doorIsOpen "false"^^xsd:boolean .
+:door_6  :doorIsOpen "true"^^xsd:boolean .
+:door_7  :doorIsOpen "false"^^xsd:boolean .
+:door_8  :doorIsOpen "false"^^xsd:boolean .
+:door_9  :doorIsOpen "true"^^xsd:boolean .
+:door_10 :doorIsOpen "false"^^xsd:boolean .
+:door_11 :doorIsOpen "false"^^xsd:boolean .
+:door_12 :doorIsOpen "true"^^xsd:boolean .
+:door_13 :doorIsOpen "true"^^xsd:boolean .
+:door_14 :doorIsOpen "true"^^xsd:boolean .
+:door_15 :doorIsOpen "true"^^xsd:boolean .
+:door_16 :doorIsOpen "true"^^xsd:boolean .
+:door_17 :doorIsOpen "false"^^xsd:boolean .
+:door_18 :doorIsOpen "true"^^xsd:boolean .

@@ -1,0 +1,857 @@
+{
+  "env": "Lindenwood",
+  "tasks": [
+    {
+      "id": "S01",
+      "env": "Lindenwood",
+      "size": "small",
+      "instruction": "Could you please switch on the oven in the kitchen? I need to start cooking.",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "oven_1",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            {
+              "subject": "oven_2",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S02",
+      "env": "Lindenwood",
+      "size": "small",
+      "instruction": "Bring one of the books in the living room that is not connected to the lobby to the utility room.",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "book_10",
+              "predicate": "isInSpace",
+              "object": "utility_room_36"
+            },
+            {
+              "subject": "book_11",
+              "predicate": "isInSpace",
+              "object": "utility_room_36"
+            },
+            {
+              "subject": "book_12",
+              "predicate": "isInSpace",
+              "object": "utility_room_36"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S03",
+      "env": "Lindenwood",
+      "size": "small",
+      "instruction": "Can you bring the book in the living room connected to the lobby to the bedroom? There is only one bedroom in this building.",
+      "expected": {
+        "at_end": {
+          "subject": "book_13",
+          "predicate": "isInSpace",
+          "object": "bedroom_7"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S04",
+      "env": "Lindenwood",
+      "size": "small",
+      "instruction": "Move all the potted plants from the kitchen floor to the dining room that is not connected to the lobby. They get more sunlight there.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "potted_plant_39",
+              "predicate": "isInSpace",
+              "object": "dining_room_18"
+            },
+            {
+              "subject": "potted_plant_49",
+              "predicate": "isInSpace",
+              "object": "dining_room_18"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S05",
+      "env": "Lindenwood",
+      "size": "small",
+      "instruction": "Move the vase from the living room to the lobby.",
+      "expected": {
+        "at_end": {
+          "subject": "vase_17",
+          "predicate": "isInSpace",
+          "object": "lobby_32"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S06",
+      "env": "Lindenwood",
+      "size": "small",
+      "instruction": "I'm planning to clean all bathrooms. Open all closed toilets in the bathrooms.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "toilet_18",
+              "predicate": "isOpen",
+              "object": "true"
+            },
+            {
+              "subject": "toilet_19",
+              "predicate": "isOpen",
+              "object": "true"
+            },
+            {
+              "subject": "toilet_20",
+              "predicate": "isOpen",
+              "object": "true"
+            },
+            {
+              "subject": "toilet_21",
+              "predicate": "isOpen",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S07",
+      "env": "Lindenwood",
+      "size": "small",
+      "instruction": "Bring all the books in the living room with the clock to the home office on the same floor. Use only one hand because I'm holding something in your other hand.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "book_10",
+              "predicate": "isInSpace",
+              "object": "home_office_25"
+            },
+            {
+              "subject": "book_11",
+              "predicate": "isInSpace",
+              "object": "home_office_25"
+            },
+            {
+              "subject": "book_12",
+              "predicate": "isInSpace",
+              "object": "home_office_25"
+            }
+          ]
+        },
+        "always": [
+          {
+            "subject": "left_hand",
+            "predicate": "isEmpty",
+            "object": "true"
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S08",
+      "env": "Lindenwood",
+      "size": "small",
+      "instruction": "The dining table in the dining room connected to the lobby needs to be repaired. Move it to the utility room. The table is too wide, so avoid using the door between the kitchen and utility room. Use the corridor route through the openings instead.",
+      "expected": {
+        "at_end": {
+          "subject": "dining_table_57",
+          "predicate": "isInSpace",
+          "object": "utility_room_36"
+        },
+        "always": [
+          {
+            "not": {
+              "and": [
+                {
+                  "subject": "robot",
+                  "predicate": "robotIsInSpace",
+                  "object": "door_9"
+                },
+                {
+                  "subject": "left_hand",
+                  "predicate": "holds",
+                  "object": "dining_table_57"
+                }
+              ]
+            }
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S09",
+      "env": "Lindenwood",
+      "size": "small",
+      "instruction": "There was a small fire in the corridor on Floor B that is connected to the kitchen. The smoke has cleared, but we need to ventilate the area. Open all the doors connected to that corridor. Be careful not to use the staircase connected to that corridor because it is still being inspected for smoke damage.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "door_16",
+              "predicate": "doorIsOpen",
+              "object": "true"
+            },
+            {
+              "subject": "door_17",
+              "predicate": "doorIsOpen",
+              "object": "true"
+            },
+            {
+              "subject": "door_19",
+              "predicate": "doorIsOpen",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [
+          {
+            "not": {
+              "subject": "robot",
+              "predicate": "robotIsInSpace",
+              "object": "stairs_4"
+            }
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S10",
+      "env": "Lindenwood",
+      "size": "small",
+      "instruction": "There was a lot of smoke from cooking. Open both ovens on Floor A to ventilate them. While they're ventilating, move the bowl from the kitchen to the dining room that is not connected to the lobby. After that, close both ovens.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "bowl_16",
+              "predicate": "isInSpace",
+              "object": "dining_room_18"
+            },
+            {
+              "subject": "oven_1",
+              "predicate": "isOpen",
+              "object": "false"
+            },
+            {
+              "subject": "oven_2",
+              "predicate": "isOpen",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "oven_1",
+                "predicate": "isOpen",
+                "object": "true"
+              },
+              {
+                "subject": "oven_2",
+                "predicate": "isOpen",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M01",
+      "env": "Lindenwood",
+      "size": "medium",
+      "instruction": "Could you go to the home office and turn on the computer? I'm about to start working.",
+      "expected": {
+        "at_end": {
+          "subject": "computer_150",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M02",
+      "env": "Lindenwood",
+      "size": "medium",
+      "instruction": "Please take the comb from the drawer in the bathroom connected to the bedroom and bring it to the bedroom. I need to comb my hair before going out.",
+      "expected": {
+        "at_end": {
+          "subject": "comb_18",
+          "predicate": "isInSpace",
+          "object": "bedroom_7"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M03",
+      "env": "Lindenwood",
+      "size": "medium",
+      "instruction": "Please switch on the coffee maker in the kitchen so I can have coffee right away.",
+      "expected": {
+        "at_end": {
+          "subject": "coffee_maker_185",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M04",
+      "env": "Lindenwood",
+      "size": "medium",
+      "instruction": "I left the kitchen refrigerator open. Please go and close it.",
+      "expected": {
+        "at_end": {
+          "subject": "refrigerator_178",
+          "predicate": "isOpen",
+          "object": "false"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M05",
+      "env": "Lindenwood",
+      "size": "medium",
+      "instruction": "I need to touch up the wall painting in the hallway. Bring the paint brush from the storage room to the hallway connected to both living rooms.",
+      "expected": {
+        "at_end": {
+          "subject": "paint_brush_287",
+          "predicate": "isInSpace",
+          "object": "corridor_11"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M06",
+      "env": "Lindenwood",
+      "size": "medium",
+      "instruction": "Move the wall painting from the kitchen on Floor B to the empty room that is connected to both a bathroom and another empty room. Make sure to open all three doors connected to that empty room first before moving the painting inside.",
+      "expected": {
+        "at_end": {
+          "subject": "wall_painting_230",
+          "predicate": "isInSpace",
+          "object": "empty_room_21"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": [
+          {
+            "before": {
+              "and": [
+                {
+                  "subject": "door_10",
+                  "predicate": "doorIsOpen",
+                  "object": "true"
+                },
+                {
+                  "subject": "door_11",
+                  "predicate": "doorIsOpen",
+                  "object": "true"
+                },
+                {
+                  "subject": "door_12",
+                  "predicate": "doorIsOpen",
+                  "object": "true"
+                }
+              ]
+            },
+            "after": {
+              "subject": "wall_painting_230",
+              "predicate": "isInSpace",
+              "object": "empty_room_21"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "M07",
+      "env": "Lindenwood",
+      "size": "medium",
+      "instruction": "I'm craving pancakes! Get eggs and milk from the refrigerator, and flour and sugar from the cupboard next to it, then put them all on the island table in the same kitchen. Make sure to close the refrigerator when you're done.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "egg_188",
+              "predicate": "isOntopOf",
+              "object": "island_table_174"
+            },
+            {
+              "subject": "milk_186",
+              "predicate": "isOntopOf",
+              "object": "island_table_174"
+            },
+            {
+              "subject": "flour_197",
+              "predicate": "isOntopOf",
+              "object": "island_table_174"
+            },
+            {
+              "subject": "sugar_198",
+              "predicate": "isOntopOf",
+              "object": "island_table_174"
+            },
+            {
+              "subject": "refrigerator_178",
+              "predicate": "isOpen",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M08",
+      "env": "Lindenwood",
+      "size": "medium",
+      "instruction": "I have to work all night. Move my notebook and calculator from the home office on Floor A to the desk in the home office on Floor B, and turn on the coffee maker. Use only your left hand.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "notebook_157",
+              "predicate": "isOntopOf",
+              "object": "desk_161"
+            },
+            {
+              "subject": "calculator_160",
+              "predicate": "isOntopOf",
+              "object": "desk_161"
+            },
+            {
+              "subject": "coffee_maker_185",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [
+          {
+            "subject": "right_hand",
+            "predicate": "isEmpty",
+            "object": "true"
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M09",
+      "env": "Lindenwood",
+      "size": "medium",
+      "instruction": "The refrigerator is off and the door is open! The yogurt, cheese, and eggs inside have gone bad. Put them in the sink, then close the fridge door and turn the refrigerator back on. Don't use your right hand.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "yogurt_193",
+              "predicate": "isInsideOf",
+              "object": "sink_177"
+            },
+            {
+              "subject": "cheese_187",
+              "predicate": "isInsideOf",
+              "object": "sink_177"
+            },
+            {
+              "subject": "egg_188",
+              "predicate": "isInsideOf",
+              "object": "sink_177"
+            },
+            {
+              "subject": "refrigerator_178",
+              "predicate": "isOpen",
+              "object": "false"
+            },
+            {
+              "subject": "refrigerator_178",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [
+          {
+            "subject": "right_hand",
+            "predicate": "isEmpty",
+            "object": "true"
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M10",
+      "env": "Lindenwood",
+      "size": "medium",
+      "instruction": "Bring the sponge from the storage cabinet in the utility room to the kitchen sink. Also, the coffee maker has been acting strange lately. Turn it on briefly to check if it's working, then turn it back off.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "sponge_317",
+              "predicate": "isInsideOf",
+              "object": "sink_298"
+            },
+            {
+              "subject": "coffee_maker_185",
+              "predicate": "isSwitchedOn",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [
+          {
+            "subject": "coffee_maker_185",
+            "predicate": "isSwitchedOn",
+            "object": "true"
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L01",
+      "env": "Lindenwood",
+      "size": "large",
+      "instruction": "I'm going to sleep. Could you turn off all the lamps in the bedroom?",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "lamp_93",
+              "predicate": "isSwitchedOn",
+              "object": "false"
+            },
+            {
+              "subject": "lamp_94",
+              "predicate": "isSwitchedOn",
+              "object": "false"
+            },
+            {
+              "subject": "lamp_95",
+              "predicate": "isSwitchedOn",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L02",
+      "env": "Lindenwood",
+      "size": "large",
+      "instruction": "Could you turn on the treadmill in the exercise room? I'm going up to work out soon.",
+      "expected": {
+        "at_end": {
+          "subject": "treadmill_143",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L03",
+      "env": "Lindenwood",
+      "size": "large",
+      "instruction": "Please turn on the TV in the living room.",
+      "expected": {
+        "at_end": {
+          "subject": "tv_1_243",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L04",
+      "env": "Lindenwood",
+      "size": "large",
+      "instruction": "I'm done with my coffee. Please switch off the coffee maker on the kitchen desk.",
+      "expected": {
+        "at_end": {
+          "subject": "coffee_maker_185",
+          "predicate": "isSwitchedOn",
+          "object": "false"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L05",
+      "env": "Lindenwood",
+      "size": "large",
+      "instruction": "Could you turn on the oven in the kitchen? I'm about to start cooking.",
+      "expected": {
+        "at_end": {
+          "subject": "oven_181",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L06",
+      "env": "Lindenwood",
+      "size": "large",
+      "instruction": "I have an important video meeting in the home office on Floor B. Move my notebook and calculator from the home office storage cabinet on Floor A to the desk in the home office on Floor B. Close the storage cabinet after taking the items.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "notebook_157",
+              "predicate": "isOntopOf",
+              "object": "desk_161"
+            },
+            {
+              "subject": "calculator_160",
+              "predicate": "isOntopOf",
+              "object": "desk_161"
+            },
+            {
+              "subject": "storage_cabinet_147",
+              "predicate": "isOpen",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L07",
+      "env": "Lindenwood",
+      "size": "large",
+      "instruction": "I have a big interview tomorrow morning. Take the blue blouse from the wardrobe and put it on the dressing table in the bathroom near the home office on Floor B. Close the wardrobe after taking the clothes.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "blouse_113",
+              "predicate": "isOntopOf",
+              "object": "dressing_table_52"
+            },
+            {
+              "subject": "wardrobe_101",
+              "predicate": "isOpen",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L08",
+      "env": "Lindenwood",
+      "size": "large",
+      "instruction": "I'm doing some woodworking because of the rain. Bring the hammer, screwdriver set, and duct tape from the storage room shelf to the empty room that is only connected to a corridor. There's a leak in the corridor connected to the utility room, so avoid that area, and leave the storage room door open for ventilation.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "hammer_291",
+              "predicate": "isInSpace",
+              "object": "empty_room_22"
+            },
+            {
+              "subject": "screwdriver_set_290",
+              "predicate": "isInSpace",
+              "object": "empty_room_22"
+            },
+            {
+              "subject": "duct_tape_roll_294",
+              "predicate": "isInSpace",
+              "object": "empty_room_22"
+            },
+            {
+              "subject": "door_8",
+              "predicate": "doorIsOpen",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [
+          {
+            "not": {
+              "subject": "robot",
+              "predicate": "robotIsInSpace",
+              "object": "corridor_13"
+            }
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L09",
+      "env": "Lindenwood",
+      "size": "large",
+      "instruction": "Please make me a coffee. Put the latte cup on the coffee maker in the kitchen and turn it on. After brewing, turn off the coffee maker and bring the latte cup to the dining table in the dining room connected to the lobby.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "latte_cup_2_159",
+              "predicate": "isOntopOf",
+              "object": "dining_table_130"
+            },
+            {
+              "subject": "coffee_maker_185",
+              "predicate": "isSwitchedOn",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "latte_cup_2_159",
+                "predicate": "isOntopOf",
+                "object": "coffee_maker_185"
+              },
+              {
+                "subject": "coffee_maker_185",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L10",
+      "env": "Lindenwood",
+      "size": "large",
+      "instruction": "I have a big interview tomorrow. Take the blouse from the wardrobe in the closet and iron it using the iron on the bed. Use the ironing board in the living room. Turn off the iron when you're done and put the blouse on the dressing table in the bathroom near the home office on Floor B. Close the wardrobe after taking the clothes.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "blouse_113",
+              "predicate": "isOntopOf",
+              "object": "dressing_table_52"
+            },
+            {
+              "subject": "iron_1_87",
+              "predicate": "isSwitchedOn",
+              "object": "false"
+            },
+            {
+              "subject": "wardrobe_101",
+              "predicate": "isOpen",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "blouse_113",
+                "predicate": "isOntopOf",
+                "object": "ironing_board_2_282"
+              },
+              {
+                "subject": "iron_1_87",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    }
+  ]
+}

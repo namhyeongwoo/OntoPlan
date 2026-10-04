@@ -1,0 +1,2942 @@
+@prefix : <http://example.org/OntoPlan#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/OntoPlan#> .
+
+<http://example.org/OntoPlan> rdf:type owl:Ontology .
+
+:plant_pot_2 rdf:type :Artifact ;
+    :category "plant_pot" ;
+    :description "A small, light vibrant fabric plant_pot with a matte surface." ;
+    :isOntopOf :toilet_1 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:toilet_1 rdf:type :Artifact ;
+    :category "toilet" ;
+    :description "A beige toilet made of steel, with a smooth finish." ;
+    :isOnFloorOf :bathroom_1 ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "false"^^xsd:boolean .
+
+:wall_painting_3 rdf:type :Artifact ;
+    :category "wall_painting" ;
+    :description "A standard-sized, weighty black plastic wall_painting with a smooth surface." ;
+    :isOnFloorOf :bathroom_1 ;
+    :affords :Bimanual .
+
+:mirror_7 rdf:type :Artifact ;
+    :category "mirror" ;
+    :description "Alex's handheld, light clear glass mirror with a reflective surface." ;
+    :isOnFloorOf :bathroom_2 ;
+    :affords :Unimanual .
+
+:plant_pot_5 rdf:type :Artifact ;
+    :category "plant_pot" ;
+    :description "A colorful plant_pot made of plastic, with a textured finish." ;
+    :isOntopOf :toilet_4 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:sink_6 rdf:type :Artifact ;
+    :category "sink" ;
+    :description "A fixed, heavy dark oak sink with a textured surface." ;
+    :isOnFloorOf :bathroom_2 ;
+    :affords :Containment ;
+    :affords :Support .
+
+:toilet_4 rdf:type :Artifact ;
+    :category "toilet" ;
+    :description "A wooden toilet made of mixed-material, with a textured finish." ;
+    :isOnFloorOf :bathroom_2 ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "false"^^xsd:boolean .
+
+:bathtub_12 rdf:type :Artifact ;
+    :category "bathtub" ;
+    :description "A pink bathtub made of porcelain, with a smooth finish." ;
+    :isOnFloorOf :bathroom_3 ;
+    :affords :Containment ;
+    :affords :Support .
+
+:body_wash_20 rdf:type :Artifact ;
+    :category "body_wash" ;
+    :description "A white body_wash made of glass, with a textured finish." ;
+    :isInsideOf :storage_cabinet_13 ;
+    :affords :Unimanual .
+
+:comb_24 rdf:type :Artifact ;
+    :category "comb" ;
+    :description "Casey's handheld, lightweight clear plastic comb with a textured surface." ;
+    :isInsideOf :storage_cabinet_13 ;
+    :affords :Unimanual .
+
+:mirror_14 rdf:type :Artifact ;
+    :category "mirror" ;
+    :description "Taylor's handheld, lightweight clear glass mirror with a glossy surface." ;
+    :isOnFloorOf :bathroom_3 ;
+    :affords :Unimanual .
+
+:mouthwash_22 rdf:type :Artifact ;
+    :category "mouthwash" ;
+    :description "A beige mouthwash made of glass, with a matte finish." ;
+    :isInsideOf :storage_cabinet_13 ;
+    :affords :Unimanual .
+
+:plant_pot_10 rdf:type :Artifact ;
+    :category "plant_pot" ;
+    :description "A vibrant plant_pot made of fabric, with a smooth finish." ;
+    :isOntopOf :sink_8 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:plant_pot_9 rdf:type :Artifact ;
+    :category "plant_pot" ;
+    :description "A handheld, lightweight vibrant plastic plant_pot with a smooth surface." ;
+    :isOntopOf :sink_8 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:razor_23 rdf:type :Artifact ;
+    :category "razor" ;
+    :description "Taylor's white razor made of rubber, with a matte finish." ;
+    :isInsideOf :storage_cabinet_13 ;
+    :affords :Unimanual .
+
+:shampoo_19 rdf:type :Artifact ;
+    :category "shampoo" ;
+    :description "Jordan's small, lightweight blue plastic shampoo with a textured surface." ;
+    :isInsideOf :storage_cabinet_13 ;
+    :affords :Unimanual .
+
+:sink_8 rdf:type :Artifact ;
+    :category "sink" ;
+    :description "A black sink made of wooden, with a textured finish." ;
+    :isOnFloorOf :bathroom_3 ;
+    :affords :Containment ;
+    :affords :Support .
+
+:soap_18 rdf:type :Artifact ;
+    :category "soap" ;
+    :description "Jordan's small, light pink plastic soap with a textured surface." ;
+    :isInsideOf :storage_cabinet_13 ;
+    :affords :Unimanual .
+
+:storage_cabinet_13 rdf:type :Artifact ;
+    :category "storage_cabinet" ;
+    :description "A large, heavy brown metal storage_cabinet with a finished finish, useful for organizing various items." ;
+    :isOnFloorOf :bathroom_3 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "false"^^xsd:boolean .
+
+:tissue_box_15 rdf:type :Artifact ;
+    :category "tissue_box" ;
+    :description "Casey's handheld, light light blue tissue_box made of paper, designed for storing belongings." ;
+    :isInsideOf :storage_cabinet_13 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:toilet_11 rdf:type :Artifact ;
+    :category "toilet" ;
+    :description "A black toilet made of ceramic, with a textured finish." ;
+    :isOnFloorOf :bathroom_3 ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "false"^^xsd:boolean .
+
+:toothbrush_16 rdf:type :Artifact ;
+    :category "toothbrush" ;
+    :description "Alex's portable, lightweight pink steel toothbrush with a smooth surface." ;
+    :isInsideOf :storage_cabinet_13 ;
+    :affords :Unimanual .
+
+:toothpaste_17 rdf:type :Artifact ;
+    :category "toothpaste" ;
+    :description "Sam's pink toothpaste made of glass, with a smooth finish." ;
+    :isInsideOf :storage_cabinet_13 ;
+    :affords :Unimanual .
+
+:towel_21 rdf:type :Artifact ;
+    :category "towel" ;
+    :description "A portable, lightweight light blue synthetic towel with a soft surface." ;
+    :isInsideOf :storage_cabinet_13 ;
+    :affords :Unimanual .
+
+:body_wash_33 rdf:type :Artifact ;
+    :category "body_wash" ;
+    :description "A white body_wash made of glass, with a smooth finish." ;
+    :isInsideOf :storage_cabinet_27 ;
+    :affords :Unimanual .
+
+:comb_37 rdf:type :Artifact ;
+    :category "comb" ;
+    :description "Taylor's handheld, light clear wooden comb with a textured surface." ;
+    :isInsideOf :storage_cabinet_27 ;
+    :affords :Unimanual .
+
+:mouthwash_35 rdf:type :Artifact ;
+    :category "mouthwash" ;
+    :description "A small, lightweight beige glass mouthwash with a textured surface." ;
+    :isInsideOf :storage_cabinet_27 ;
+    :affords :Unimanual .
+
+:razor_36 rdf:type :Artifact ;
+    :category "razor" ;
+    :description "Sam's white razor made of metal, with a smooth finish." ;
+    :isInsideOf :storage_cabinet_27 ;
+    :affords :Unimanual .
+
+:shampoo_32 rdf:type :Artifact ;
+    :category "shampoo" ;
+    :description "Alex's light blue shampoo made of glass, with a smooth finish." ;
+    :isInsideOf :storage_cabinet_27 ;
+    :affords :Unimanual .
+
+:sink_26 rdf:type :Artifact ;
+    :category "sink" ;
+    :description "A wooden sink made of mixed-material, with a textured finish." ;
+    :isOnFloorOf :bathroom_4 ;
+    :affords :Containment ;
+    :affords :Support .
+
+:soap_31 rdf:type :Artifact ;
+    :category "soap" ;
+    :description "Jordan's light blue soap made of ceramic, with a matte finish." ;
+    :isInsideOf :storage_cabinet_27 ;
+    :affords :Unimanual .
+
+:storage_cabinet_27 rdf:type :Artifact ;
+    :category "storage_cabinet" ;
+    :description "A large, heavy dark storage_cabinet made of porcelain, designed for storing various items." ;
+    :isOnFloorOf :bathroom_4 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "true"^^xsd:boolean .
+
+:tissue_box_28 rdf:type :Artifact ;
+    :category "tissue_box" ;
+    :description "Casey's portable, lightweight light blue tissue_box made of cardboard, designed for storing belongings." ;
+    :isInsideOf :storage_cabinet_27 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:toilet_25 rdf:type :Artifact ;
+    :category "toilet" ;
+    :description "A standard-sized, solid brown oak toilet with a smooth surface." ;
+    :isOnFloorOf :bathroom_4 ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "false"^^xsd:boolean .
+
+:toothbrush_29 rdf:type :Artifact ;
+    :category "toothbrush" ;
+    :description "Jordan's portable, light pink plastic toothbrush with a matte surface." ;
+    :isInsideOf :storage_cabinet_27 ;
+    :affords :Unimanual .
+
+:toothpaste_30 rdf:type :Artifact ;
+    :category "toothpaste" ;
+    :description "Casey's handheld, light white plastic toothpaste with a textured surface." ;
+    :isInsideOf :storage_cabinet_27 ;
+    :affords :Unimanual .
+
+:towel_34 rdf:type :Artifact ;
+    :category "towel" ;
+    :description "A pink towel made of fabric, with a textured finish." ;
+    :isInsideOf :storage_cabinet_27 ;
+    :affords :Unimanual .
+
+:body_wash_49 rdf:type :Artifact ;
+    :category "body_wash" ;
+    :description "A clear body_wash made of glass, with a textured finish." ;
+    :isInsideOf :cupboard_43 ;
+    :affords :Unimanual .
+
+:candle_42 rdf:type :Artifact ;
+    :category "candle" ;
+    :description "A small, lightweight clay-colored mixed-material candle with a matte surface." ;
+    :isOntopOf :toilet_41 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:comb_53 rdf:type :Artifact ;
+    :category "comb" ;
+    :description "Casey's beige comb made of wooden, with a matte finish." ;
+    :isInsideOf :cupboard_43 ;
+    :affords :Unimanual .
+
+:cupboard_43 rdf:type :Artifact ;
+    :category "cupboard" ;
+    :description "A small, lightweight brown cupboard made of steel, designed for storing items." ;
+    :isOnFloorOf :bathroom_5 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:mouthwash_51 rdf:type :Artifact ;
+    :category "mouthwash" ;
+    :description "A beige mouthwash made of glass, with a matte finish." ;
+    :isInsideOf :cupboard_43 ;
+    :affords :Unimanual .
+
+:plant_pot_39 rdf:type :Artifact ;
+    :category "plant_pot" ;
+    :description "A colorful plant_pot made of metal, with a smooth finish." ;
+    :isOntopOf :sink_38 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:razor_52 rdf:type :Artifact ;
+    :category "razor" ;
+    :description "Jordan's light blue razor made of steel, with a matte finish." ;
+    :isInsideOf :cupboard_43 ;
+    :affords :Unimanual .
+
+:shampoo_48 rdf:type :Artifact ;
+    :category "shampoo" ;
+    :description "Taylor's pink shampoo made of glass, with a textured finish." ;
+    :isInsideOf :storage_cabinet_40 ;
+    :affords :Unimanual .
+
+:sink_38 rdf:type :Artifact ;
+    :category "sink" ;
+    :description "A dark sink made of ceramic, with a matte finish." ;
+    :isOnFloorOf :bathroom_5 ;
+    :affords :Containment ;
+    :affords :Support .
+
+:soap_47 rdf:type :Artifact ;
+    :category "soap" ;
+    :description "Sam's beige soap made of plastic, with a smooth finish." ;
+    :isInsideOf :storage_cabinet_40 ;
+    :affords :Unimanual .
+
+:storage_cabinet_40 rdf:type :Artifact ;
+    :category "storage_cabinet" ;
+    :description "A standard-sized, solid black storage_cabinet made of porcelain, designed for storing various items." ;
+    :isOnFloorOf :bathroom_5 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "false"^^xsd:boolean .
+
+:tissue_box_44 rdf:type :Artifact ;
+    :category "tissue_box" ;
+    :description "Sam's handheld, light light blue paper tissue_box with a smooth finish, useful for organizing belongings." ;
+    :isInsideOf :storage_cabinet_40 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:toilet_41 rdf:type :Artifact ;
+    :category "toilet" ;
+    :description "A large, solid wooden mixed-material toilet with a matte surface." ;
+    :isOnFloorOf :bathroom_5 ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "false"^^xsd:boolean .
+
+:toothbrush_45 rdf:type :Artifact ;
+    :category "toothbrush" ;
+    :description "Alex's light blue toothbrush made of metal, with a smooth finish." ;
+    :isInsideOf :storage_cabinet_40 ;
+    :affords :Unimanual .
+
+:toothpaste_46 rdf:type :Artifact ;
+    :category "toothpaste" ;
+    :description "Taylor's blue toothpaste made of ceramic, with a textured finish." ;
+    :isInsideOf :storage_cabinet_40 ;
+    :affords :Unimanual .
+
+:towel_50 rdf:type :Artifact ;
+    :category "towel" ;
+    :description "A white towel made of cotton, with a textured finish." ;
+    :isInsideOf :cupboard_43 ;
+    :affords :Unimanual .
+
+:bed_54 rdf:type :Artifact ;
+    :category "bed" ;
+    :description "A standard-sized, weighty dark mahogany bed with a polished surface." ;
+    :isOnFloorOf :bedroom_6 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:couch_55 rdf:type :Artifact ;
+    :category "couch" ;
+    :description "A full-sized, weighty black wooden couch with a textured surface." ;
+    :isOnFloorOf :bedroom_6 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:cushion_57 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A small, light brown cotton cushion with a textured surface." ;
+    :isOntopOf :couch_55 ;
+    :affords :Unimanual .
+
+:cushion_58 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A beige cushion made of fabric, with a plush finish." ;
+    :isOntopOf :couch_55 ;
+    :affords :Unimanual .
+
+:cushion_63 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A handheld, light black silk cushion with a soft surface." ;
+    :isOntopOf :bed_54 ;
+    :affords :Unimanual .
+
+:cushion_64 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A white cushion made of synthetic, with a soft finish." ;
+    :isOntopOf :bed_54 ;
+    :affords :Unimanual .
+
+:cushion_65 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A gray cushion made of linen, with a smooth finish." ;
+    :isOntopOf :bed_54 ;
+    :affords :Unimanual .
+
+:lamp_61 rdf:type :Artifact ;
+    :category "lamp" ;
+    :description "A handheld, lightweight black metal lamp with a smooth surface." ;
+    :isOntopOf :nightstand_59 ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:lamp_62 rdf:type :Artifact ;
+    :category "lamp" ;
+    :description "A portable, lightweight silver steel lamp with a glossy surface." ;
+    :isOntopOf :nightstand_60 ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:nightstand_59 rdf:type :Artifact ;
+    :category "nightstand" ;
+    :description "A beige nightstand made of oak, with a polished finish." ;
+    :isOnFloorOf :bedroom_6 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:nightstand_60 rdf:type :Artifact ;
+    :category "nightstand" ;
+    :description "A small, lightweight white mahogany nightstand with a finished surface." ;
+    :isOnFloorOf :bedroom_6 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:phone_68 rdf:type :Artifact ;
+    :category "phone" ;
+    :description "Sam's white phone by TechBrand, made of metal with a smooth surface." ;
+    :isOntopOf :nightstand_59 ;
+    :affords :Unimanual .
+
+:pillow_66 rdf:type :Artifact ;
+    :category "pillow" ;
+    :description "A brown pillow made of silk, with a textured finish." ;
+    :isOntopOf :bed_54 ;
+    :affords :Unimanual .
+
+:pillow_67 rdf:type :Artifact ;
+    :category "pillow" ;
+    :description "A white pillow made of linen, with a soft finish." ;
+    :isOntopOf :bed_54 ;
+    :affords :Unimanual .
+
+:tv_56 rdf:type :Artifact ;
+    :category "tv" ;
+    :description "A white tv by HomeFurnishings, made of steel with a glossy surface." ;
+    :isOnFloorOf :bedroom_6 ;
+    :affords :Bimanual ;
+    :affords :Support ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:bed_69 rdf:type :Artifact ;
+    :category "bed" ;
+    :description "A wooden bed made of mixed-material, with a smooth finish." ;
+    :isOnFloorOf :bedroom_7 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:book_79 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Sam's tan book made of paper, with a matte finish." ;
+    :isOntopOf :desk_78 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_80 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Casey's portable, lightweight beige cardboard book with a matte surface." ;
+    :isOntopOf :desk_78 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_81 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Casey's handheld, light tan paper book with a textured surface." ;
+    :isOntopOf :desk_78 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_82 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Casey's brown book made of cardboard, with a smooth finish." ;
+    :isOntopOf :desk_78 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:chair_83 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Sam's blue chair made of metal, with a finished finish." ;
+    :isOnFloorOf :bedroom_7 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:cushion_70 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A portable, lightweight gray synthetic cushion with a textured surface." ;
+    :isOntopOf :bed_69 ;
+    :affords :Unimanual .
+
+:cushion_71 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A small, lightweight white synthetic cushion with a plush surface." ;
+    :isOntopOf :bed_69 ;
+    :affords :Unimanual .
+
+:cushion_72 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A handheld, light gray silk cushion with a soft surface." ;
+    :isOntopOf :bed_69 ;
+    :affords :Unimanual .
+
+:cushion_73 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A beige cushion made of fabric, with a plush finish." ;
+    :isOntopOf :bed_69 ;
+    :affords :Unimanual .
+
+:desk_78 rdf:type :Artifact ;
+    :category "desk" ;
+    :description "A wooden desk made of mixed-material, with a polished finish." ;
+    :isOnFloorOf :bedroom_7 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:doll_74 rdf:type :Artifact ;
+    :category "doll" ;
+    :description "A small, light white metal doll with a textured surface." ;
+    :isOntopOf :bed_69 ;
+    :affords :Unimanual .
+
+:nightstand_76 rdf:type :Artifact ;
+    :category "nightstand" ;
+    :description "A wooden nightstand made of mixed-material, with a varnished finish." ;
+    :isOnFloorOf :bedroom_7 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:pillow_75 rdf:type :Artifact ;
+    :category "pillow" ;
+    :description "A handheld, lightweight gray cotton pillow with a textured surface." ;
+    :isOntopOf :bed_69 ;
+    :affords :Unimanual .
+
+:table_clock_77 rdf:type :Artifact ;
+    :category "table_clock" ;
+    :description "A handheld, lightweight dark steel table_clock with a polished surface." ;
+    :isOntopOf :nightstand_76 ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:trash_bin_84 rdf:type :Artifact ;
+    :category "trash_bin" ;
+    :description "A handheld, lightweight gray metal trash_bin with a matte finish, useful for organizing items." ;
+    :isOnFloorOf :bedroom_7 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:antique_101 rdf:type :Artifact ;
+    :category "antique" ;
+    :description "A small, lightweight clay-colored mixed-material antique with a smooth surface." ;
+    :isOntopOf :bookshelf_93 ;
+    :affords :Unimanual .
+
+:antique_102 rdf:type :Artifact ;
+    :category "antique" ;
+    :description "A handheld, light decorative clay antique with a polished surface." ;
+    :isOntopOf :bookshelf_93 ;
+    :affords :Unimanual .
+
+:antique_103 rdf:type :Artifact ;
+    :category "antique" ;
+    :description "A portable, light clay-colored mixed-material antique with a glazed surface." ;
+    :isOntopOf :bookshelf_93 ;
+    :affords :Unimanual .
+
+:bed_85 rdf:type :Artifact ;
+    :category "bed" ;
+    :description "A standard-sized, heavy white porcelain bed with a finished surface." ;
+    :isOnFloorOf :bedroom_8 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:book_100 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Alex's beige book made of paper, with a textured finish." ;
+    :isInsideOf :bookshelf_93 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_96 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Sam's portable, lightweight tan cardboard book with a textured surface." ;
+    :isInsideOf :bookshelf_93 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_97 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Jordan's small, lightweight tan cardboard book with a smooth surface." ;
+    :isInsideOf :bookshelf_93 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_98 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Taylor's small, lightweight tan cardboard book with a matte surface." ;
+    :isInsideOf :bookshelf_93 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_99 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Jordan's tan book made of paper, with a smooth finish." ;
+    :isInsideOf :bookshelf_93 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:bookshelf_93 rdf:type :Artifact ;
+    :category "bookshelf" ;
+    :description "Taylor's full-sized, weighty wooden bookshelf made of mixed-material, designed for storing items." ;
+    :isOnFloorOf :bedroom_8 ;
+    :affords :Bimanual ;
+    :affords :Containment ;
+    :affords :Support .
+
+:camera_110 rdf:type :Artifact ;
+    :category "camera" ;
+    :description "A handheld, lightweight white fabric camera with a textured finish." ;
+    :isOntopOf :bookshelf_93 ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:cushion_86 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A white cushion made of cotton, with a textured finish." ;
+    :isOntopOf :bed_85 ;
+    :affords :Unimanual .
+
+:cushion_87 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A small, lightweight gray cotton cushion with a plush surface." ;
+    :isOntopOf :bed_85 ;
+    :affords :Unimanual .
+
+:cushion_88 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A small, light beige linen cushion with a textured surface." ;
+    :isOntopOf :bed_85 ;
+    :affords :Unimanual .
+
+:cushion_89 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A handheld, lightweight white wool cushion with a soft surface." ;
+    :isOntopOf :bed_85 ;
+    :affords :Unimanual .
+
+:lamp_104 rdf:type :Artifact ;
+    :category "lamp" ;
+    :description "A small, light gray plastic lamp with a matte surface." ;
+    :isOntopOf :nightstand_94 ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:nightstand_94 rdf:type :Artifact ;
+    :category "nightstand" ;
+    :description "A wooden nightstand made of mixed-material, with a polished finish." ;
+    :isOnFloorOf :bedroom_8 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:nightstand_95 rdf:type :Artifact ;
+    :category "nightstand" ;
+    :description "A small, lightweight dark pine nightstand with a smooth surface." ;
+    :isOnFloorOf :bedroom_8 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:pillow_90 rdf:type :Artifact ;
+    :category "pillow" ;
+    :description "A portable, lightweight black synthetic pillow with a plush surface." ;
+    :isOntopOf :bed_85 ;
+    :affords :Unimanual .
+
+:pillow_91 rdf:type :Artifact ;
+    :category "pillow" ;
+    :description "A gray pillow made of linen, with a soft finish." ;
+    :isOntopOf :bed_85 ;
+    :affords :Unimanual .
+
+:plant_pot_105 rdf:type :Artifact ;
+    :category "plant_pot" ;
+    :description "A colorful plant_pot made of fabric, with a smooth finish." ;
+    :isOntopOf :nightstand_94 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:plant_pot_106 rdf:type :Artifact ;
+    :category "plant_pot" ;
+    :description "A portable, light vibrant fabric plant_pot with a matte surface." ;
+    :isOntopOf :nightstand_95 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:wall_art_107 rdf:type :Artifact ;
+    :category "wall_art" ;
+    :description "A standard-sized, heavy beige metal wall_art with a textured surface." ;
+    :isOnFloorOf :bedroom_8 ;
+    :affords :Bimanual .
+
+:wall_art_108 rdf:type :Artifact ;
+    :category "wall_art" ;
+    :description "A black wall_art made of plastic, with a matte finish." ;
+    :isOnFloorOf :bedroom_8 ;
+    :affords :Bimanual .
+
+:wall_art_109 rdf:type :Artifact ;
+    :category "wall_art" ;
+    :description "A white wall_art made of metal, with a matte finish." ;
+    :isOnFloorOf :bedroom_8 ;
+    :affords :Bimanual .
+
+:whiteboard_92 rdf:type :Artifact ;
+    :category "whiteboard" ;
+    :description "A brown whiteboard made of metal, with a textured finish." ;
+    :isOnFloorOf :bedroom_8 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:bed_111 rdf:type :Artifact ;
+    :category "bed" ;
+    :description "A standard-sized, heavy white metal bed with a polished surface." ;
+    :isOnFloorOf :bedroom_9 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:bookshelf_113 rdf:type :Artifact ;
+    :category "bookshelf" ;
+    :description "Taylor's large, heavy beige metal bookshelf with a varnished finish, useful for organizing items." ;
+    :isOnFloorOf :bedroom_9 ;
+    :affords :Bimanual ;
+    :affords :Containment ;
+    :affords :Support .
+
+:cushion_122 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A small, light beige silk cushion with a soft surface." ;
+    :isOntopOf :bed_111 ;
+    :affords :Unimanual .
+
+:cushion_123 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A small, light black fabric cushion with a textured surface." ;
+    :isOntopOf :bed_111 ;
+    :affords :Unimanual .
+
+:decor_sculpture_114 rdf:type :Artifact ;
+    :category "decor_sculpture" ;
+    :description "A handheld, lightweight white clay decor_sculpture with a smooth surface." ;
+    :isOntopOf :bookshelf_113 ;
+    :affords :Unimanual .
+
+:decor_sculpture_115 rdf:type :Artifact ;
+    :category "decor_sculpture" ;
+    :description "A handheld, light beige porcelain decor_sculpture with a glazed surface." ;
+    :isOntopOf :bookshelf_113 ;
+    :affords :Unimanual .
+
+:dresser_124 rdf:type :Artifact ;
+    :category "dresser" ;
+    :description "Alex's full-sized, weighty black steel dresser with a varnished finish, useful for organizing items." ;
+    :isOnFloorOf :bedroom_9 ;
+    :affords :Bimanual ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "false"^^xsd:boolean .
+
+:picture_frame_125 rdf:type :Artifact ;
+    :category "picture_frame" ;
+    :description "A small, light white metal picture_frame with a smooth surface." ;
+    :isOntopOf :dresser_124 ;
+    :affords :Unimanual .
+
+:pillow_121 rdf:type :Artifact ;
+    :category "pillow" ;
+    :description "A small, lightweight gray linen pillow with a smooth surface." ;
+    :isOntopOf :bed_111 ;
+    :affords :Unimanual .
+
+:storybook_116 rdf:type :Artifact ;
+    :category "storybook" ;
+    :description "Taylor's small, lightweight brown cardboard storybook with a smooth surface." ;
+    :isOntopOf :bookshelf_113 ;
+    :affords :Unimanual .
+
+:storybook_117 rdf:type :Artifact ;
+    :category "storybook" ;
+    :description "Sam's tan storybook made of paper, with a textured finish." ;
+    :isOntopOf :bookshelf_113 ;
+    :affords :Unimanual .
+
+:storybook_118 rdf:type :Artifact ;
+    :category "storybook" ;
+    :description "Taylor's handheld, lightweight tan paper storybook with a matte surface." ;
+    :isOntopOf :bookshelf_113 ;
+    :affords :Unimanual .
+
+:storybook_119 rdf:type :Artifact ;
+    :category "storybook" ;
+    :description "Casey's beige storybook made of cardboard, with a smooth finish." ;
+    :isOntopOf :bookshelf_113 ;
+    :affords :Unimanual .
+
+:storybook_120 rdf:type :Artifact ;
+    :category "storybook" ;
+    :description "Casey's white storybook made of paper, with a smooth finish." ;
+    :isOntopOf :bookshelf_113 ;
+    :affords :Unimanual .
+
+:toy_126 rdf:type :Artifact ;
+    :category "toy" ;
+    :description "A handheld, lightweight black fabric toy with a smooth surface." ;
+    :isOntopOf :dresser_124 ;
+    :affords :Unimanual .
+
+:toy_127 rdf:type :Artifact ;
+    :category "toy" ;
+    :description "A black toy made of plastic, with a matte finish." ;
+    :isOntopOf :dresser_124 ;
+    :affords :Unimanual .
+
+:wall_painting_112 rdf:type :Artifact ;
+    :category "wall_painting" ;
+    :description "A large, weighty black wooden wall_painting with a matte surface." ;
+    :isOnFloorOf :bedroom_9 ;
+    :affords :Bimanual .
+
+:belt_147 rdf:type :Artifact ;
+    :category "belt" ;
+    :description "Casey's gray belt made of fabric, with a textured finish." ;
+    :isInsideOf :dresser_130 ;
+    :affords :Unimanual .
+
+:blazer_139 rdf:type :Artifact ;
+    :category "blazer" ;
+    :description "A portable, lightweight brown wooden blazer with a smooth surface." ;
+    :isOntopOf :clothes_hanger_129 ;
+    :affords :Unimanual .
+
+:cardigan_153 rdf:type :Artifact ;
+    :category "cardigan" ;
+    :description "A gray cardigan made of fabric, with a smooth finish." ;
+    :isInsideOf :storage_cabinet_131 ;
+    :affords :Unimanual .
+
+:clothes_hanger_128 rdf:type :Artifact ;
+    :category "clothes_hanger" ;
+    :description "A beige clothes_hanger made of fabric, with a matte finish." ;
+    :isOnFloorOf :closet_10 ;
+    :affords :Unimanual .
+
+:clothes_hanger_129 rdf:type :Artifact ;
+    :category "clothes_hanger" ;
+    :description "A portable, lightweight beige wooden clothes_hanger with a textured surface." ;
+    :isOnFloorOf :closet_10 ;
+    :affords :Unimanual .
+
+:coat_134 rdf:type :Artifact ;
+    :category "coat" ;
+    :description "Jordan's beige coat made of fabric, with a matte finish." ;
+    :isOntopOf :clothes_hanger_128 ;
+    :affords :Unimanual .
+
+:dress_136 rdf:type :Artifact ;
+    :category "dress" ;
+    :description "Jordan's portable, lightweight black silk dress with a matte surface." ;
+    :isOntopOf :clothes_hanger_128 ;
+    :affords :Unimanual .
+
+:dresser_130 rdf:type :Artifact ;
+    :category "dresser" ;
+    :description "Sam's full-sized, weighty navy dresser made of porcelain, designed for storing items." ;
+    :isOnFloorOf :closet_10 ;
+    :affords :Bimanual ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "false"^^xsd:boolean .
+
+:glove_149 rdf:type :Artifact ;
+    :category "glove" ;
+    :description "A small, lightweight gray fabric glove with a smooth surface." ;
+    :isInsideOf :dresser_130 ;
+    :affords :Unimanual .
+
+:hoodie_138 rdf:type :Artifact ;
+    :category "hoodie" ;
+    :description "A small, light gray fabric hoodie with a textured surface." ;
+    :isOntopOf :clothes_hanger_129 ;
+    :affords :Unimanual .
+
+:jacket_133 rdf:type :Artifact ;
+    :category "jacket" ;
+    :description "Casey's small, light black synthetic jacket with a matte surface." ;
+    :isOntopOf :clothes_hanger_128 ;
+    :affords :Unimanual .
+
+:jeans_154 rdf:type :Artifact ;
+    :category "jeans" ;
+    :description "Alex's black jeans made of fabric, with a textured finish." ;
+    :isInsideOf :storage_cabinet_131 ;
+    :affords :Unimanual .
+
+:laundry_basket_132 rdf:type :Artifact ;
+    :category "laundry_basket" ;
+    :description "A portable, light beige plastic laundry_basket with a textured finish, useful for organizing belongings." ;
+    :isOnFloorOf :closet_10 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:overall_141 rdf:type :Artifact ;
+    :category "overall" ;
+    :description "A handheld, light white plastic overall with a smooth surface." ;
+    :isOntopOf :clothes_hanger_129 ;
+    :affords :Unimanual .
+
+:pajamas_set_157 rdf:type :Artifact ;
+    :category "pajamas_set" ;
+    :description "Taylor's small, light black silk pajamas_set with a textured surface." ;
+    :isInsideOf :laundry_basket_132 ;
+    :affords :Unimanual .
+
+:scarf_150 rdf:type :Artifact ;
+    :category "scarf" ;
+    :description "Alex's navy scarf made of linen, with a plush finish." ;
+    :isInsideOf :dresser_130 ;
+    :affords :Unimanual .
+
+:shirt_135 rdf:type :Artifact ;
+    :category "shirt" ;
+    :description "Sam's small, light blue synthetic shirt with a textured surface." ;
+    :isOntopOf :clothes_hanger_128 ;
+    :affords :Unimanual .
+
+:skirt_140 rdf:type :Artifact ;
+    :category "skirt" ;
+    :description "Jordan's small, light navy wool skirt with a textured surface." ;
+    :isOntopOf :clothes_hanger_129 ;
+    :affords :Unimanual .
+
+:slack_155 rdf:type :Artifact ;
+    :category "slack" ;
+    :description "A black slack made of wooden, with a smooth finish." ;
+    :isInsideOf :storage_cabinet_131 ;
+    :affords :Unimanual .
+
+:socks_143 rdf:type :Artifact ;
+    :category "socks" ;
+    :description "Sam's black socks made of fabric, with a textured finish." ;
+    :isInsideOf :dresser_130 ;
+    :affords :Unimanual .
+
+:socks_144 rdf:type :Artifact ;
+    :category "socks" ;
+    :description "Taylor's navy socks made of wool, with a textured finish." ;
+    :isInsideOf :dresser_130 ;
+    :affords :Unimanual .
+
+:storage_cabinet_131 rdf:type :Artifact ;
+    :category "storage_cabinet" ;
+    :description "A standard-sized, solid beige storage_cabinet made of porcelain, designed for storing various items." ;
+    :isOnFloorOf :closet_10 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "false"^^xsd:boolean .
+
+:suit_137 rdf:type :Artifact ;
+    :category "suit" ;
+    :description "Casey's black suit made of plastic, with a matte finish." ;
+    :isOntopOf :clothes_hanger_128 ;
+    :affords :Unimanual .
+
+:sweater_152 rdf:type :Artifact ;
+    :category "sweater" ;
+    :description "Casey's handheld, light navy wool sweater with a smooth surface." ;
+    :isInsideOf :storage_cabinet_131 ;
+    :affords :Unimanual .
+
+:t_shirt_151 rdf:type :Artifact ;
+    :category "t_shirt" ;
+    :description "Casey's gray t_shirt made of synthetic, with a textured finish." ;
+    :isInsideOf :storage_cabinet_131 ;
+    :affords :Unimanual .
+
+:t_shirt_156 rdf:type :Artifact ;
+    :category "t_shirt" ;
+    :description "Casey's small, lightweight black silk t_shirt with a matte surface." ;
+    :isInsideOf :laundry_basket_132 ;
+    :affords :Unimanual .
+
+:tie_148 rdf:type :Artifact ;
+    :category "tie" ;
+    :description "Casey's black tie made of silk, with a plush finish." ;
+    :isInsideOf :dresser_130 ;
+    :affords :Unimanual .
+
+:underwear_145 rdf:type :Artifact ;
+    :category "underwear" ;
+    :description "Casey's handheld, lightweight navy wool underwear with a plush surface." ;
+    :isInsideOf :dresser_130 ;
+    :affords :Unimanual .
+
+:underwear_146 rdf:type :Artifact ;
+    :category "underwear" ;
+    :description "Jordan's navy underwear made of silk, with a textured finish." ;
+    :isInsideOf :dresser_130 ;
+    :affords :Unimanual .
+
+:uniform_142 rdf:type :Artifact ;
+    :category "uniform" ;
+    :description "A gray uniform made of plastic, with a textured finish." ;
+    :isOntopOf :clothes_hanger_129 ;
+    :affords :Unimanual .
+
+:chair_158 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Alex's white chair made of wood, with a varnished finish." ;
+    :isOnFloorOf :dining_room_13 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:chair_159 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Jordan's white chair made of steel, with a smooth finish." ;
+    :isOnFloorOf :dining_room_13 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:chair_160 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Sam's large, heavy white pine chair with a polished surface." ;
+    :isOnFloorOf :dining_room_13 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:chair_161 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Sam's beige chair made of steel, with a varnished finish." ;
+    :isOnFloorOf :dining_room_13 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:dining_table_162 rdf:type :Artifact ;
+    :category "dining_table" ;
+    :description "A beige dining_table made of oak, with a finished finish." ;
+    :isOnFloorOf :dining_room_13 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:wall_painting_163 rdf:type :Artifact ;
+    :category "wall_painting" ;
+    :description "A gray wall_painting made of steel, with a smooth finish." ;
+    :isOnFloorOf :dining_room_13 ;
+    :affords :Bimanual .
+
+:wall_painting_164 rdf:type :Artifact ;
+    :category "wall_painting" ;
+    :description "A brown wall_painting made of metal, with a textured finish." ;
+    :isOnFloorOf :dining_room_13 ;
+    :affords :Bimanual .
+
+:basket_181 rdf:type :Artifact ;
+    :category "basket" ;
+    :description "A small, lightweight white metal basket with a smooth finish, useful for organizing belongings." ;
+    :isOntopOf :dining_table_173 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:chair_165 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Alex's light blue chair made of metal, with a varnished finish." ;
+    :isOnFloorOf :dining_room_14 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:chair_166 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Casey's white chair made of mahogany, with a finished finish." ;
+    :isOnFloorOf :dining_room_14 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:chair_167 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Sam's full-sized, heavy white oak chair with a polished surface." ;
+    :isOnFloorOf :dining_room_14 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:chair_168 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Sam's beige chair made of wood, with a polished finish." ;
+    :isOnFloorOf :dining_room_14 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:chair_169 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Taylor's beige chair made of pine, with a finished finish." ;
+    :isOnFloorOf :dining_room_14 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:chair_170 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Sam's blue chair made of wood, with a smooth finish." ;
+    :isOnFloorOf :dining_room_14 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:chair_171 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Casey's pink chair made of mahogany, with a polished finish." ;
+    :isOnFloorOf :dining_room_14 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:chair_172 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Jordan's large, heavy beige metal chair with a finished surface." ;
+    :isOnFloorOf :dining_room_14 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:dining_table_173 rdf:type :Artifact ;
+    :category "dining_table" ;
+    :description "A beige dining_table made of ceramic, with a varnished finish." ;
+    :isOnFloorOf :dining_room_14 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:mango_182 rdf:type :Artifact ;
+    :category "mango" ;
+    :description "A black mango made of fabric, with a matte finish." ;
+    :isInsideOf :basket_181 ;
+    :affords :Unimanual .
+
+:mango_183 rdf:type :Artifact ;
+    :category "mango" ;
+    :description "A beige mango made of plastic, with a smooth finish." ;
+    :isInsideOf :basket_181 ;
+    :affords :Unimanual .
+
+:mango_184 rdf:type :Artifact ;
+    :category "mango" ;
+    :description "A small, light brown metal mango with a textured surface." ;
+    :isInsideOf :basket_181 ;
+    :affords :Unimanual .
+
+:mango_185 rdf:type :Artifact ;
+    :category "mango" ;
+    :description "A beige mango made of wooden, with a matte finish." ;
+    :isInsideOf :basket_181 ;
+    :affords :Unimanual .
+
+:tea_cup_178 rdf:type :Artifact ;
+    :category "tea_cup" ;
+    :description "A portable, lightweight white crystal tea_cup with a glazed surface." ;
+    :isInsideOf :wall_cabinet_174 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:tea_cup_179 rdf:type :Artifact ;
+    :category "tea_cup" ;
+    :description "A handheld, lightweight brown porcelain tea_cup with a polished surface." ;
+    :isInsideOf :wall_cabinet_174 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:tea_cup_180 rdf:type :Artifact ;
+    :category "tea_cup" ;
+    :description "A orange tea_cup made of crystal, ideal for serving food or drinks." ;
+    :isInsideOf :wall_cabinet_174 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:wall_cabinet_174 rdf:type :Artifact ;
+    :category "wall_cabinet" ;
+    :description "A large, heavy beige wooden wall_cabinet with a smooth surface." ;
+    :isOnFloorOf :dining_room_14 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "true"^^xsd:boolean .
+
+:wall_painting_186 rdf:type :Artifact ;
+    :category "wall_painting" ;
+    :description "A large, heavy silver steel wall_painting with a textured surface." ;
+    :isOnFloorOf :dining_room_14 ;
+    :affords :Bimanual .
+
+:wall_painting_187 rdf:type :Artifact ;
+    :category "wall_painting" ;
+    :description "A silver wall_painting made of plastic, with a textured finish." ;
+    :isOnFloorOf :dining_room_14 ;
+    :affords :Bimanual .
+
+:wine_glass_175 rdf:type :Artifact ;
+    :category "wine_glass" ;
+    :description "A silver wine_glass made of porcelain, ideal for serving food or drinks." ;
+    :isInsideOf :wall_cabinet_174 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:wine_glass_176 rdf:type :Artifact ;
+    :category "wine_glass" ;
+    :description "A clear wine_glass made of ceramic, ideal for serving food or drinks." ;
+    :isInsideOf :wall_cabinet_174 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:wine_glass_177 rdf:type :Artifact ;
+    :category "wine_glass" ;
+    :description "A clear wine_glass made of porcelain, ideal for serving food or drinks." ;
+    :isInsideOf :wall_cabinet_174 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:book_189 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Alex's tan book made of paper, with a matte finish." ;
+    :isOntopOf :desk_188 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_190 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Sam's white book made of paper, with a smooth finish." ;
+    :isOntopOf :desk_188 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:chair_191 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Alex's standard-sized, weighty light blue metal chair with a varnished surface." ;
+    :isOnFloorOf :home_office_15 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:chair_192 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Alex's large, weighty white oak chair with a varnished surface." ;
+    :isOnFloorOf :home_office_15 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:desk_188 rdf:type :Artifact ;
+    :category "desk" ;
+    :description "A standard-sized, weighty black wood desk with a varnished surface." ;
+    :isOnFloorOf :home_office_15 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:globe_193 rdf:type :Artifact ;
+    :category "globe" ;
+    :description "A portable, lightweight white plastic globe with a matte surface." ;
+    :isOntopOf :desk_188 ;
+    :affords :Unimanual .
+
+:notebook_195 rdf:type :Artifact ;
+    :category "notebook" ;
+    :description "Taylor's handheld, lightweight beige cardboard notebook with a matte surface." ;
+    :isInsideOf :storage_cabinet_194 ;
+    :affords :Unimanual .
+
+:paper_stack_198 rdf:type :Artifact ;
+    :category "paper_stack" ;
+    :description "A handheld, light tan cardboard paper_stack with a textured surface." ;
+    :isInsideOf :storage_cabinet_194 ;
+    :affords :Unimanual .
+
+:pen_holder_196 rdf:type :Artifact ;
+    :category "pen_holder" ;
+    :description "Taylor's handheld, light gray fabric pen_holder with a textured finish, useful for organizing items." ;
+    :isInsideOf :storage_cabinet_194 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:stapler_197 rdf:type :Artifact ;
+    :category "stapler" ;
+    :description "A portable, light beige plastic stapler with a matte surface." ;
+    :isInsideOf :storage_cabinet_194 ;
+    :affords :Unimanual .
+
+:storage_cabinet_194 rdf:type :Artifact ;
+    :category "storage_cabinet" ;
+    :description "A fixed, heavy white storage_cabinet made of porcelain, designed for storing various items." ;
+    :isOnFloorOf :home_office_15 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "false"^^xsd:boolean .
+
+:tape_dispenser_199 rdf:type :Artifact ;
+    :category "tape_dispenser" ;
+    :description "A portable, light gray wooden tape_dispenser with a textured surface." ;
+    :isInsideOf :storage_cabinet_194 ;
+    :affords :Unimanual .
+
+:beef_237 rdf:type :Artifact ;
+    :category "beef" ;
+    :description "A small, light green fabric beef with a smooth surface." ;
+    :isInsideOf :refrigerator_228 ;
+    :affords :Unimanual .
+
+:book_232 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Taylor's brown book made of cardboard, with a matte finish." ;
+    :isOntopOf :desk_230 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:bowl_254 rdf:type :Artifact ;
+    :category "bowl" ;
+    :description "A handheld, light gray porcelain bowl with a polished surface." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:bowl_255 rdf:type :Artifact ;
+    :category "bowl" ;
+    :description "A black bowl made of clay, ideal for serving food or drinks." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:bowl_256 rdf:type :Artifact ;
+    :category "bowl" ;
+    :description "A portable, light gray glass bowl with a smooth surface." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:bowl_257 rdf:type :Artifact ;
+    :category "bowl" ;
+    :description "A white bowl made of ceramic, ideal for serving food or drinks." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:butter_245 rdf:type :Artifact ;
+    :category "butter" ;
+    :description "A white butter made of plastic, with a matte finish." ;
+    :isInsideOf :refrigerator_228 ;
+    :affords :Unimanual .
+
+:canned_bean_252 rdf:type :Artifact ;
+    :category "canned_bean" ;
+    :description "A gray canned_bean made of plastic, with a smooth finish." ;
+    :isInsideOf :storage_cabinet_215 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:carrot_243 rdf:type :Artifact ;
+    :category "carrot" ;
+    :description "A handheld, light white plastic carrot with a matte surface." ;
+    :isInsideOf :refrigerator_228 ;
+    :affords :Unimanual .
+
+:chair_203 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Sam's large, heavy light blue pine chair with a smooth surface." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:chair_204 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Casey's full-sized, heavy white porcelain chair with a finished surface." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:chair_205 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Sam's full-sized, heavy light blue ceramic chair with a finished surface." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:chair_206 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Taylor's large, heavy beige steel chair with a smooth surface." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:cheese_235 rdf:type :Artifact ;
+    :category "cheese" ;
+    :description "A green cheese made of plastic, with a textured finish." ;
+    :isInsideOf :refrigerator_228 ;
+    :affords :Unimanual .
+
+:chicken_238 rdf:type :Artifact ;
+    :category "chicken" ;
+    :description "A handheld, lightweight yellow metal chicken with a matte surface." ;
+    :isInsideOf :refrigerator_228 ;
+    :affords :Unimanual .
+
+:coffee_250 rdf:type :Artifact ;
+    :category "coffee" ;
+    :description "A small, lightweight red crystal coffee with a glazed surface." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Unimanual .
+
+:couch_211 rdf:type :Artifact ;
+    :category "couch" ;
+    :description "A brown couch made of plastic, with a textured finish." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:cup_223 rdf:type :Artifact ;
+    :category "cup" ;
+    :description "A small, light white glass cup with a smooth surface." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Unimanual ;
+    :affords :Support .
+
+:cup_224 rdf:type :Artifact ;
+    :category "cup" ;
+    :description "A black cup made of clay, ideal for serving food or drinks." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Unimanual ;
+    :affords :Support .
+
+:cup_225 rdf:type :Artifact ;
+    :category "cup" ;
+    :description "A portable, light gray ceramic cup with a glazed surface." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Unimanual ;
+    :affords :Support .
+
+:cup_226 rdf:type :Artifact ;
+    :category "cup" ;
+    :description "A handheld, light brown crystal cup with a glazed surface." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Unimanual ;
+    :affords :Support .
+
+:cup_227 rdf:type :Artifact ;
+    :category "cup" ;
+    :description "A small, light black glass cup with a glazed surface." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Unimanual ;
+    :affords :Support .
+
+:cupboard_200 rdf:type :Artifact ;
+    :category "cupboard" ;
+    :description "A small, lightweight brown cupboard made of wooden, designed for storing items." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:cushion_212 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A white cushion made of silk, with a textured finish." ;
+    :isOntopOf :couch_211 ;
+    :affords :Unimanual .
+
+:cushion_213 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A beige cushion made of fabric, with a textured finish." ;
+    :isOntopOf :couch_211 ;
+    :affords :Unimanual .
+
+:cushion_214 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A brown cushion made of wool, with a smooth finish." ;
+    :isOntopOf :couch_211 ;
+    :affords :Unimanual .
+
+:cutting_board_269 rdf:type :Artifact ;
+    :category "cutting_board" ;
+    :description "A handheld, light silver metal cutting_board with a smooth surface." ;
+    :isInsideOf :storage_cabinet_215 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:desk_230 rdf:type :Artifact ;
+    :category "desk" ;
+    :description "A black desk made of pine, with a finished finish." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:egg_236 rdf:type :Artifact ;
+    :category "egg" ;
+    :description "A portable, light gray fabric egg with a smooth surface." ;
+    :isInsideOf :refrigerator_228 ;
+    :affords :Unimanual .
+
+:electric_kettle_217 rdf:type :Artifact ;
+    :category "electric_kettle" ;
+    :description "A small, light gray aluminum electric_kettle with a glossy exterior." ;
+    :isOntopOf :storage_cabinet_215 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:fish_fillet_239 rdf:type :Artifact ;
+    :category "fish_fillet" ;
+    :description "A beige fish_fillet made of plastic, with a matte finish." ;
+    :isInsideOf :refrigerator_228 ;
+    :affords :Unimanual .
+
+:flour_248 rdf:type :Artifact ;
+    :category "flour" ;
+    :description "A orange flour made of plastic, with a smooth finish." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Unimanual .
+
+:gas_stove_233 rdf:type :Artifact ;
+    :category "gas_stove" ;
+    :description "A handheld, light black plastic gas_stove with a glossy exterior." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Support ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:glass_258 rdf:type :Artifact ;
+    :category "glass" ;
+    :description "A clear glass made of porcelain, ideal for serving food or drinks." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:glass_259 rdf:type :Artifact ;
+    :category "glass" ;
+    :description "A clear glass made of crystal, ideal for serving food or drinks." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:glass_260 rdf:type :Artifact ;
+    :category "glass" ;
+    :description "A small, light reflective crystal glass with a smooth surface." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:glass_261 rdf:type :Artifact ;
+    :category "glass" ;
+    :description "A silver glass made of porcelain, ideal for serving food or drinks." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:island_table_207 rdf:type :Artifact ;
+    :category "island_table" ;
+    :description "A handheld, light wooden mixed-material island_table with a finished surface." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:kettle_216 rdf:type :Artifact ;
+    :category "kettle" ;
+    :description "A silver kettle by ClassicWear, built from plastic and finished matte." ;
+    :isOntopOf :storage_cabinet_215 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:knife_270 rdf:type :Artifact ;
+    :category "knife" ;
+    :description "A silver knife made of rubber, with a matte finish." ;
+    :isInsideOf :storage_cabinet_215 ;
+    :affords :Unimanual .
+
+:ladle_272 rdf:type :Artifact ;
+    :category "ladle" ;
+    :description "A silver ladle made of wooden, with a textured finish." ;
+    :isInsideOf :storage_cabinet_215 ;
+    :affords :Unimanual .
+
+:lamp_231 rdf:type :Artifact ;
+    :category "lamp" ;
+    :description "A white lamp made of aluminum, with a glossy finish." ;
+    :isOntopOf :desk_230 ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:lettuce_241 rdf:type :Artifact ;
+    :category "lettuce" ;
+    :description "A beige lettuce made of wooden, with a smooth finish." ;
+    :isInsideOf :refrigerator_228 ;
+    :affords :Unimanual .
+
+:microwave_201 rdf:type :Artifact ;
+    :category "microwave" ;
+    :description "A standard-sized, heavy gray aluminum microwave with a glossy exterior." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Bimanual ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :affords :Switchable ;
+    :isOpen "false"^^xsd:boolean ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:milk_234 rdf:type :Artifact ;
+    :category "milk" ;
+    :description "A handheld, lightweight red fabric milk with a textured surface." ;
+    :isInsideOf :refrigerator_228 ;
+    :affords :Unimanual .
+
+:mug_262 rdf:type :Artifact ;
+    :category "mug" ;
+    :description "A handheld, light gray porcelain mug with a glazed surface." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:mug_263 rdf:type :Artifact ;
+    :category "mug" ;
+    :description "A small, light black clay mug with a polished surface." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:olive_oil_253 rdf:type :Artifact ;
+    :category "olive_oil" ;
+    :description "A gray olive_oil made of plastic, with a smooth finish." ;
+    :isInsideOf :storage_cabinet_215 ;
+    :affords :Unimanual .
+
+:oven_202 rdf:type :Artifact ;
+    :category "oven" ;
+    :description "A black oven by TechBrand, built from steel and finished matte." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:oven_209 rdf:type :Artifact ;
+    :category "oven" ;
+    :description "A silver oven by TechBrand, built from metal and finished matte." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:pan_267 rdf:type :Artifact ;
+    :category "pan" ;
+    :description "A portable, lightweight white fabric pan with a matte surface." ;
+    :isInsideOf :storage_cabinet_215 ;
+    :affords :Unimanual .
+
+:pasta_247 rdf:type :Artifact ;
+    :category "pasta" ;
+    :description "A handheld, lightweight white plastic pasta with a textured surface." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Unimanual .
+
+:plant_pot_208 rdf:type :Artifact ;
+    :category "plant_pot" ;
+    :description "A portable, light colorful metal plant_pot with a smooth surface." ;
+    :isOntopOf :island_table_207 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:plant_pot_210 rdf:type :Artifact ;
+    :category "plant_pot" ;
+    :description "A portable, light vibrant wooden plant_pot with a smooth surface." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:plate_218 rdf:type :Artifact ;
+    :category "plate" ;
+    :description "A handheld, lightweight beige crystal plate with a glazed surface." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:plate_219 rdf:type :Artifact ;
+    :category "plate" ;
+    :description "A handheld, lightweight black glass plate with a glazed surface." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:plate_220 rdf:type :Artifact ;
+    :category "plate" ;
+    :description "A beige plate made of porcelain, ideal for serving food or drinks." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:plate_221 rdf:type :Artifact ;
+    :category "plate" ;
+    :description "A portable, lightweight white crystal plate with a polished surface." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:plate_222 rdf:type :Artifact ;
+    :category "plate" ;
+    :description "A small, lightweight gray crystal plate with a glazed surface." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:pot_266 rdf:type :Artifact ;
+    :category "pot" ;
+    :description "A handheld, lightweight white metal pot with a matte surface." ;
+    :isInsideOf :storage_cabinet_215 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:refrigerator_228 rdf:type :Artifact ;
+    :category "refrigerator" ;
+    :description "A black refrigerator by SmartDevice, built from metal and finished smooth." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Bimanual ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :affords :Switchable ;
+    :isOpen "false"^^xsd:boolean ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:rice_246 rdf:type :Artifact ;
+    :category "rice" ;
+    :description "A white rice made of metal, with a smooth finish." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Unimanual .
+
+:saucepan_268 rdf:type :Artifact ;
+    :category "saucepan" ;
+    :description "A portable, light gray wooden saucepan with a textured surface." ;
+    :isInsideOf :storage_cabinet_215 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:serving_plate_265 rdf:type :Artifact ;
+    :category "serving_plate" ;
+    :description "A portable, light white crystal serving_plate with a smooth surface." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:shrimp_240 rdf:type :Artifact ;
+    :category "shrimp" ;
+    :description "A handheld, light beige wooden shrimp with a matte surface." ;
+    :isInsideOf :refrigerator_228 ;
+    :affords :Unimanual .
+
+:sink_229 rdf:type :Artifact ;
+    :category "sink" ;
+    :description "A large, solid beige wood sink with a smooth surface." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Containment ;
+    :affords :Support .
+
+:spatula_271 rdf:type :Artifact ;
+    :category "spatula" ;
+    :description "A brown spatula made of steel, with a matte finish." ;
+    :isInsideOf :storage_cabinet_215 ;
+    :affords :Unimanual .
+
+:storage_cabinet_215 rdf:type :Artifact ;
+    :category "storage_cabinet" ;
+    :description "A fixed, heavy white ceramic storage_cabinet with a polished finish, useful for organizing various items." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "false"^^xsd:boolean .
+
+:sugar_249 rdf:type :Artifact ;
+    :category "sugar" ;
+    :description "A brown sugar made of crystal, with a smooth finish." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Unimanual .
+
+:tea_251 rdf:type :Artifact ;
+    :category "tea" ;
+    :description "A red tea made of crystal, with a polished finish." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Unimanual .
+
+:teapot_264 rdf:type :Artifact ;
+    :category "teapot" ;
+    :description "A portable, lightweight white clay teapot with a glazed surface." ;
+    :isInsideOf :cupboard_200 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:tomato_242 rdf:type :Artifact ;
+    :category "tomato" ;
+    :description "A red tomato made of cotton, with a plush finish." ;
+    :isInsideOf :refrigerator_228 ;
+    :affords :Unimanual .
+
+:whisk_273 rdf:type :Artifact ;
+    :category "whisk" ;
+    :description "A handheld, light brown metal whisk with a textured surface." ;
+    :isInsideOf :storage_cabinet_215 ;
+    :affords :Unimanual .
+
+:yogurt_244 rdf:type :Artifact ;
+    :category "yogurt" ;
+    :description "A handheld, light brown fabric yogurt with a smooth surface." ;
+    :isInsideOf :refrigerator_228 ;
+    :affords :Unimanual .
+
+:book_297 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Taylor's brown book made of paper, with a smooth finish." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_298 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Jordan's portable, lightweight brown paper book with a smooth surface." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_299 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Casey's small, lightweight tan paper book with a textured surface." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_300 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Casey's handheld, light white cardboard book with a textured surface." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_301 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Taylor's brown book made of cardboard, with a smooth finish." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:cabinet_276 rdf:type :Artifact ;
+    :category "cabinet" ;
+    :description "A fixed, solid white wood cabinet with a varnished finish, useful for organizing various items." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "false"^^xsd:boolean .
+
+:couch_274 rdf:type :Artifact ;
+    :category "couch" ;
+    :description "A brown couch made of fabric, with a smooth finish." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:couch_275 rdf:type :Artifact ;
+    :category "couch" ;
+    :description "A brown couch made of metal, with a matte finish." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:cushion_277 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A small, light gray wool cushion with a plush surface." ;
+    :isOntopOf :couch_274 ;
+    :affords :Unimanual .
+
+:cushion_278 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A portable, lightweight beige linen cushion with a plush surface." ;
+    :isOntopOf :couch_274 ;
+    :affords :Unimanual .
+
+:cushion_279 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A handheld, lightweight white cotton cushion with a smooth surface." ;
+    :isOntopOf :couch_275 ;
+    :affords :Unimanual .
+
+:cushion_280 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A small, lightweight beige cotton cushion with a soft surface." ;
+    :isOntopOf :couch_275 ;
+    :affords :Unimanual .
+
+:fireplace_284 rdf:type :Artifact ;
+    :category "fireplace" ;
+    :description "A white fireplace made of metal, with a varnished finish." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Unimanual .
+
+:lp_vinyl_stack_294 rdf:type :Artifact ;
+    :category "lp_vinyl_stack" ;
+    :description "A small, light white metal lp_vinyl_stack with a matte surface." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Unimanual .
+
+:lp_vinyl_stack_295 rdf:type :Artifact ;
+    :category "lp_vinyl_stack" ;
+    :description "A handheld, lightweight black metal lp_vinyl_stack with a smooth surface." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Unimanual .
+
+:lp_vinyl_stack_296 rdf:type :Artifact ;
+    :category "lp_vinyl_stack" ;
+    :description "A portable, lightweight brown wooden lp_vinyl_stack with a matte surface." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Unimanual .
+
+:picture_frame_288 rdf:type :Artifact ;
+    :category "picture_frame" ;
+    :description "A small, light decorative metal picture_frame with a textured surface." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Unimanual .
+
+:picture_frame_289 rdf:type :Artifact ;
+    :category "picture_frame" ;
+    :description "A clay-colored picture_frame made of mixed-material, with a matte finish." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Unimanual .
+
+:picture_frame_290 rdf:type :Artifact ;
+    :category "picture_frame" ;
+    :description "A white picture_frame made of fabric, with a textured finish." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Unimanual .
+
+:plate_282 rdf:type :Artifact ;
+    :category "plate" ;
+    :description "A black plate made of porcelain, ideal for serving food or drinks." ;
+    :isOntopOf :side_table_281 ;
+    :affords :Containment ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:pottery_292 rdf:type :Artifact ;
+    :category "pottery" ;
+    :description "A small, light beige ceramic pottery with a smooth surface." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Unimanual .
+
+:pottery_293 rdf:type :Artifact ;
+    :category "pottery" ;
+    :description "A portable, lightweight white glass pottery with a polished surface." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Unimanual .
+
+:sculpture_285 rdf:type :Artifact ;
+    :category "sculpture" ;
+    :description "A handheld, light clay-colored mixed-material sculpture with a polished surface." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Unimanual .
+
+:sculpture_286 rdf:type :Artifact ;
+    :category "sculpture" ;
+    :description "A small, light white ceramic sculpture with a glazed surface." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Unimanual .
+
+:sculpture_287 rdf:type :Artifact ;
+    :category "sculpture" ;
+    :description "A clay-colored sculpture made of mixed-material, with a smooth finish." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Unimanual .
+
+:side_table_281 rdf:type :Artifact ;
+    :category "side_table" ;
+    :description "A standard-sized, heavy black wooden side_table with a polished surface." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:turntable_291 rdf:type :Artifact ;
+    :category "turntable" ;
+    :description "A small, lightweight beige mahogany turntable with a finished surface." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Support ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:tv_283 rdf:type :Artifact ;
+    :category "tv" ;
+    :description "A black tv by TechBrand, made of aluminum with a matte surface." ;
+    :isOntopOf :cabinet_276 ;
+    :affords :Bimanual ;
+    :affords :Support ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:book_328 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Sam's white book made of cardboard, with a textured finish." ;
+    :isOntopOf :side_table_323 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_329 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Taylor's handheld, light beige paper book with a smooth surface." ;
+    :isOntopOf :side_table_324 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_330 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Sam's portable, light tan cardboard book with a matte surface." ;
+    :isOntopOf :side_table_325 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:cushion_315 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A handheld, lightweight gray wool cushion with a textured surface." ;
+    :isOntopOf :sofa_302 ;
+    :affords :Unimanual .
+
+:cushion_316 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A black cushion made of cotton, with a soft finish." ;
+    :isOntopOf :sofa_302 ;
+    :affords :Unimanual .
+
+:cushion_317 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A small, lightweight beige fabric cushion with a soft surface." ;
+    :isOntopOf :sofa_302 ;
+    :affords :Unimanual .
+
+:cushion_318 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A portable, lightweight black silk cushion with a smooth surface." ;
+    :isOntopOf :sofa_302 ;
+    :affords :Unimanual .
+
+:cushion_319 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A beige cushion made of fabric, with a smooth finish." ;
+    :isOntopOf :sofa_303 ;
+    :affords :Unimanual .
+
+:cushion_320 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A beige cushion made of silk, with a smooth finish." ;
+    :isOntopOf :sofa_303 ;
+    :affords :Unimanual .
+
+:cushion_321 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A brown cushion made of linen, with a textured finish." ;
+    :isOntopOf :sofa_304 ;
+    :affords :Unimanual .
+
+:cushion_322 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A portable, lightweight beige cotton cushion with a plush surface." ;
+    :isOntopOf :sofa_304 ;
+    :affords :Unimanual .
+
+:desk_326 rdf:type :Artifact ;
+    :category "desk" ;
+    :description "A standard-sized, heavy beige oak desk with a varnished surface." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:fireplace_305 rdf:type :Artifact ;
+    :category "fireplace" ;
+    :description "A brown fireplace made of pine, with a smooth finish." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Unimanual .
+
+:floor_lamp_309 rdf:type :Artifact ;
+    :category "floor_lamp" ;
+    :description "A handheld, lightweight silver aluminum floor_lamp with a smooth surface." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:floor_lamp_310 rdf:type :Artifact ;
+    :category "floor_lamp" ;
+    :description "A small, light gray aluminum floor_lamp with a glossy surface." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:glass_jar_307 rdf:type :Artifact ;
+    :category "glass_jar" ;
+    :description "A reflective glass_jar made of clay, with a glazed finish." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:glass_jar_308 rdf:type :Artifact ;
+    :category "glass_jar" ;
+    :description "A small, light clear porcelain glass_jar with a polished surface." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:plant_pot_306 rdf:type :Artifact ;
+    :category "plant_pot" ;
+    :description "A green plant_pot made of wooden, with a matte finish." ;
+    :isOntopOf :fireplace_305 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:plate_327 rdf:type :Artifact ;
+    :category "plate" ;
+    :description "A gray plate made of clay, ideal for serving food or drinks." ;
+    :isOntopOf :desk_326 ;
+    :affords :Containment ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:side_table_323 rdf:type :Artifact ;
+    :category "side_table" ;
+    :description "A brown side_table made of steel, with a finished finish." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:side_table_324 rdf:type :Artifact ;
+    :category "side_table" ;
+    :description "A standard-sized, heavy white porcelain side_table with a smooth surface." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:side_table_325 rdf:type :Artifact ;
+    :category "side_table" ;
+    :description "A standard-sized, heavy beige wooden side_table with a polished surface." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:sofa_302 rdf:type :Artifact ;
+    :category "sofa" ;
+    :description "A standard-sized, heavy dark pine sofa with a smooth surface." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:sofa_303 rdf:type :Artifact ;
+    :category "sofa" ;
+    :description "A brown sofa made of pine, with a polished finish." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:sofa_304 rdf:type :Artifact ;
+    :category "sofa" ;
+    :description "A standard-sized, weighty brown steel sofa with a polished surface." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:wall_painting_311 rdf:type :Artifact ;
+    :category "wall_painting" ;
+    :description "A standard-sized, weighty wooden mixed-material wall_painting with a textured surface." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Bimanual .
+
+:wall_painting_312 rdf:type :Artifact ;
+    :category "wall_painting" ;
+    :description "A gray wall_painting made of steel, with a textured finish." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Bimanual .
+
+:wall_painting_313 rdf:type :Artifact ;
+    :category "wall_painting" ;
+    :description "A wooden wall_painting made of mixed-material, with a textured finish." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Bimanual .
+
+:wall_painting_314 rdf:type :Artifact ;
+    :category "wall_painting" ;
+    :description "A silver wall_painting made of rubber, with a matte finish." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Bimanual .
+
+:coffee_table_331 rdf:type :Artifact ;
+    :category "coffee_table" ;
+    :description "A standard-sized, weighty white steel coffee_table with a finished surface." ;
+    :isOnFloorOf :lobby_19 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:plant_pot_332 rdf:type :Artifact ;
+    :category "plant_pot" ;
+    :description "A vibrant plant_pot made of metal, with a smooth finish." ;
+    :isOntopOf :coffee_table_331 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:armchair_338 rdf:type :Artifact ;
+    :category "armchair" ;
+    :description "Taylor's full-sized, heavy beige pine armchair with a smooth surface." ;
+    :isOnFloorOf :playroom_20 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:armchair_339 rdf:type :Artifact ;
+    :category "armchair" ;
+    :description "Sam's clear armchair made of wooden, with a polished finish." ;
+    :isOnFloorOf :playroom_20 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:bench_333 rdf:type :Artifact ;
+    :category "bench" ;
+    :description "A standard-sized, weighty dark oak bench with a smooth surface." ;
+    :isOnFloorOf :playroom_20 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:book_345 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Taylor's tan book made of paper, with a smooth finish." ;
+    :isInsideOf :cabinet_341 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_346 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Sam's handheld, light brown paper book with a smooth surface." ;
+    :isInsideOf :cabinet_341 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_347 rdf:type :Artifact ;
+    :category "book" ;
+    :description "Sam's small, light tan paper book with a textured surface." ;
+    :isInsideOf :cabinet_341 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :isOpen "false"^^xsd:boolean .
+
+:cabinet_341 rdf:type :Artifact ;
+    :category "cabinet" ;
+    :description "A standard-sized, heavy white cabinet made of wood, designed for storing various items." ;
+    :isOnFloorOf :playroom_20 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "false"^^xsd:boolean .
+
+:chair_334 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "Casey's clear chair made of mahogany, with a varnished finish." ;
+    :isOnFloorOf :playroom_20 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:lamp_337 rdf:type :Artifact ;
+    :category "lamp" ;
+    :description "A handheld, lightweight black plastic lamp with a smooth surface." ;
+    :isOntopOf :toy_piano_335 ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:magazine_342 rdf:type :Artifact ;
+    :category "magazine" ;
+    :description "A tan magazine made of cardboard, with a smooth finish." ;
+    :isInsideOf :cabinet_341 ;
+    :affords :Unimanual .
+
+:magazine_343 rdf:type :Artifact ;
+    :category "magazine" ;
+    :description "A beige magazine made of cardboard, with a matte finish." ;
+    :isInsideOf :cabinet_341 ;
+    :affords :Unimanual .
+
+:magazine_344 rdf:type :Artifact ;
+    :category "magazine" ;
+    :description "A small, light white paper magazine with a smooth surface." ;
+    :isInsideOf :cabinet_341 ;
+    :affords :Unimanual .
+
+:music_sheet_348 rdf:type :Artifact ;
+    :category "music_sheet" ;
+    :description "A brown music_sheet made of metal, with a textured finish." ;
+    :isInsideOf :cabinet_341 ;
+    :affords :Unimanual .
+
+:music_sheet_349 rdf:type :Artifact ;
+    :category "music_sheet" ;
+    :description "A black music_sheet made of wooden, with a matte finish." ;
+    :isInsideOf :cabinet_341 ;
+    :affords :Unimanual .
+
+:music_sheet_350 rdf:type :Artifact ;
+    :category "music_sheet" ;
+    :description "A gray music_sheet made of metal, with a smooth finish." ;
+    :isInsideOf :cabinet_341 ;
+    :affords :Unimanual .
+
+:ottoman_340 rdf:type :Artifact ;
+    :category "ottoman" ;
+    :description "A beige ottoman made of plastic, with a matte finish." ;
+    :isOnFloorOf :playroom_20 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:plant_pot_336 rdf:type :Artifact ;
+    :category "plant_pot" ;
+    :description "A green plant_pot made of wooden, with a matte finish." ;
+    :isOntopOf :toy_piano_335 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:toy_piano_335 rdf:type :Artifact ;
+    :category "toy_piano" ;
+    :description "A white toy_piano made of plastic, with a textured finish." ;
+    :isOnFloorOf :playroom_20 ;
+    :affords :Unimanual .
+
+:plant_pot_351 rdf:type :Artifact ;
+    :category "plant_pot" ;
+    :description "A vibrant plant_pot made of metal, with a matte finish." ;
+    :isOnFloorOf :staircase_22 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:vase_352 rdf:type :Artifact ;
+    :category "vase" ;
+    :description "A handheld, lightweight decorative ceramic vase with a smooth surface." ;
+    :isOnFloorOf :staircase_22 ;
+    :affords :Unimanual ;
+    :affords :Containment .
+
+:vase_353 rdf:type :Artifact ;
+    :category "vase" ;
+    :description "A small, light decorative clay vase with a glazed surface." ;
+    :isOnFloorOf :staircase_22 ;
+    :affords :Unimanual ;
+    :affords :Containment .
+
+:wall_painting_354 rdf:type :Artifact ;
+    :category "wall_painting" ;
+    :description "A silver wall_painting made of metal, with a smooth finish." ;
+    :isOnFloorOf :staircase_22 ;
+    :affords :Bimanual .
+
+:antique_359 rdf:type :Artifact ;
+    :category "antique" ;
+    :description "A clay-colored antique made of mixed-material, with a polished finish." ;
+    :isOntopOf :cabinet_355 ;
+    :affords :Unimanual .
+
+:antique_360 rdf:type :Artifact ;
+    :category "antique" ;
+    :description "A ceramic antique made of mixed-material, with a polished finish." ;
+    :isOntopOf :cabinet_355 ;
+    :affords :Unimanual .
+
+:antique_361 rdf:type :Artifact ;
+    :category "antique" ;
+    :description "A beige antique made of crystal, with a glazed finish." ;
+    :isOntopOf :cabinet_355 ;
+    :affords :Unimanual .
+
+:board_game_362 rdf:type :Artifact ;
+    :category "board_game" ;
+    :description "A brown board_game made of steel, with a textured finish." ;
+    :isOntopOf :cabinet_355 ;
+    :affords :Bimanual ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:board_game_363 rdf:type :Artifact ;
+    :category "board_game" ;
+    :description "A brown board_game made of plastic, with a matte finish." ;
+    :isOntopOf :cabinet_355 ;
+    :affords :Bimanual ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:board_game_364 rdf:type :Artifact ;
+    :category "board_game" ;
+    :description "A regular, moderate-weight brown steel board_game with a smooth surface." ;
+    :isOntopOf :cabinet_355 ;
+    :affords :Bimanual ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:cabinet_355 rdf:type :Artifact ;
+    :category "cabinet" ;
+    :description "A standard-sized, solid wooden mixed-material cabinet with a polished finish, useful for organizing various items." ;
+    :isOnFloorOf :television_room_23 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "false"^^xsd:boolean .
+
+:chess_378 rdf:type :Artifact ;
+    :category "chess" ;
+    :description "A portable, light black plastic chess with a textured surface." ;
+    :isOntopOf :desk_377 ;
+    :affords :Unimanual .
+
+:cushion_384 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A beige cushion made of cotton, with a plush finish." ;
+    :isOntopOf :sofa_380 ;
+    :affords :Unimanual .
+
+:cushion_385 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A portable, light brown synthetic cushion with a smooth surface." ;
+    :isOntopOf :sofa_380 ;
+    :affords :Unimanual .
+
+:cushion_386 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A beige cushion made of silk, with a plush finish." ;
+    :isOntopOf :sofa_380 ;
+    :affords :Unimanual .
+
+:cushion_387 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A small, lightweight black cotton cushion with a textured surface." ;
+    :isOntopOf :sofa_380 ;
+    :affords :Unimanual .
+
+:cushion_388 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A small, light white silk cushion with a textured surface." ;
+    :isOntopOf :sofa_381 ;
+    :affords :Unimanual .
+
+:cushion_389 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A brown cushion made of wool, with a smooth finish." ;
+    :isOntopOf :sofa_381 ;
+    :affords :Unimanual .
+
+:cushion_390 rdf:type :Artifact ;
+    :category "cushion" ;
+    :description "A black cushion made of synthetic, with a smooth finish." ;
+    :isOntopOf :sofa_382 ;
+    :affords :Unimanual .
+
+:desk_377 rdf:type :Artifact ;
+    :category "desk" ;
+    :description "A standard-sized, weighty black wood desk with a finished surface." ;
+    :isOnFloorOf :television_room_23 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:floor_lamp_379 rdf:type :Artifact ;
+    :category "floor_lamp" ;
+    :description "A handheld, light white steel floor_lamp with a matte surface." ;
+    :isOnFloorOf :television_room_23 ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:ottoman_383 rdf:type :Artifact ;
+    :category "ottoman" ;
+    :description "A brown ottoman made of wooden, with a matte finish." ;
+    :isOnFloorOf :television_room_23 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:picture_frame_366 rdf:type :Artifact ;
+    :category "picture_frame" ;
+    :description "A white picture_frame made of wooden, with a matte finish." ;
+    :isOntopOf :cabinet_355 ;
+    :affords :Unimanual .
+
+:picture_frame_367 rdf:type :Artifact ;
+    :category "picture_frame" ;
+    :description "A small, lightweight brown fabric picture_frame with a textured surface." ;
+    :isOntopOf :cabinet_355 ;
+    :affords :Unimanual .
+
+:picture_frame_368 rdf:type :Artifact ;
+    :category "picture_frame" ;
+    :description "A white picture_frame made of metal, with a matte finish." ;
+    :isOntopOf :cabinet_355 ;
+    :affords :Unimanual .
+
+:playstation_365 rdf:type :Artifact ;
+    :category "playstation" ;
+    :description "A white playstation by SmartDevice, made of fabric with a textured surface." ;
+    :isOntopOf :cabinet_355 ;
+    :affords :Bimanual ;
+    :affords :Support ;
+    :affords :Switchable ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:sofa_380 rdf:type :Artifact ;
+    :category "sofa" ;
+    :description "A white sofa made of metal, with a finished finish." ;
+    :isOnFloorOf :television_room_23 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:sofa_381 rdf:type :Artifact ;
+    :category "sofa" ;
+    :description "A full-sized, heavy brown oak sofa with a finished surface." ;
+    :isOnFloorOf :television_room_23 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:sofa_382 rdf:type :Artifact ;
+    :category "sofa" ;
+    :description "A brown sofa made of wood, with a finished finish." ;
+    :isOnFloorOf :television_room_23 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:speaker_small_374 rdf:type :Artifact ;
+    :category "speaker_small" ;
+    :description "A mini, lightweight white plastic speaker_small with a smooth finish." ;
+    :isOnFloorOf :television_room_23 ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:speaker_small_375 rdf:type :Artifact ;
+    :category "speaker_small" ;
+    :description "A small, lightweight black fabric speaker_small with a textured finish." ;
+    :isOnFloorOf :television_room_23 ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:speaker_small_376 rdf:type :Artifact ;
+    :category "speaker_small" ;
+    :description "A beige speaker_small by ElectroCorp, made of metal with a matte surface." ;
+    :isOnFloorOf :television_room_23 ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:speaker_system_357 rdf:type :Artifact ;
+    :category "speaker_system" ;
+    :description "A white speaker_system by HomeFurnishings, made of metal with a textured surface." ;
+    :isOnFloorOf :television_room_23 ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:speaker_system_358 rdf:type :Artifact ;
+    :category "speaker_system" ;
+    :description "A handheld, light beige wooden speaker_system with a textured finish." ;
+    :isOnFloorOf :television_room_23 ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:tv_356 rdf:type :Artifact ;
+    :category "tv" ;
+    :description "A full-sized, heavy black metal tv with a matte finish." ;
+    :isOntopOf :cabinet_355 ;
+    :affords :Bimanual ;
+    :affords :Support ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:video_391 rdf:type :Artifact ;
+    :category "video" ;
+    :description "A small, light black metal video with a textured surface." ;
+    :isOntopOf :cabinet_355 ;
+    :affords :Unimanual .
+
+:video_392 rdf:type :Artifact ;
+    :category "video" ;
+    :description "A black video made of wooden, with a smooth finish." ;
+    :isOntopOf :cabinet_355 ;
+    :affords :Unimanual .
+
+:video_393 rdf:type :Artifact ;
+    :category "video" ;
+    :description "A small, light gray wooden video with a matte surface." ;
+    :isOntopOf :cabinet_355 ;
+    :affords :Unimanual .
+
+:wall_painting_369 rdf:type :Artifact ;
+    :category "wall_painting" ;
+    :description "A large, weighty wooden mixed-material wall_painting with a smooth surface." ;
+    :isOnFloorOf :television_room_23 ;
+    :affords :Bimanual .
+
+:wall_painting_370 rdf:type :Artifact ;
+    :category "wall_painting" ;
+    :description "A standard-sized, heavy black wooden wall_painting with a textured surface." ;
+    :isOnFloorOf :television_room_23 ;
+    :affords :Bimanual .
+
+:wall_painting_371 rdf:type :Artifact ;
+    :category "wall_painting" ;
+    :description "A silver wall_painting made of metal, with a textured finish." ;
+    :isOnFloorOf :television_room_23 ;
+    :affords :Bimanual .
+
+:wall_painting_372 rdf:type :Artifact ;
+    :category "wall_painting" ;
+    :description "A brown wall_painting made of wooden, with a textured finish." ;
+    :isOnFloorOf :television_room_23 ;
+    :affords :Bimanual .
+
+:wall_painting_373 rdf:type :Artifact ;
+    :category "wall_painting" ;
+    :description "A silver wall_painting made of wooden, with a textured finish." ;
+    :isOnFloorOf :television_room_23 ;
+    :affords :Bimanual .
+
+:bleach_406 rdf:type :Artifact ;
+    :category "bleach" ;
+    :description "A small, light white wooden bleach with a smooth surface." ;
+    :isInsideOf :cupboard_396 ;
+    :affords :Unimanual .
+
+:broom_416 rdf:type :Artifact ;
+    :category "broom" ;
+    :description "A standard-sized, weighty brown metal broom with a matte surface." ;
+    :isInsideOf :storage_cabinet_397 ;
+    :affords :Bimanual .
+
+:bucket_418 rdf:type :Artifact ;
+    :category "bucket" ;
+    :description "A small, light white fabric bucket with a smooth finish, useful for organizing items." ;
+    :isInsideOf :storage_cabinet_397 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:cleaning_wipe_411 rdf:type :Artifact ;
+    :category "cleaning_wipe" ;
+    :description "A handheld, lightweight brown fabric cleaning_wipe with a smooth surface." ;
+    :isInsideOf :cupboard_396 ;
+    :affords :Unimanual .
+
+:cupboard_396 rdf:type :Artifact ;
+    :category "cupboard" ;
+    :description "A handheld, lightweight silver cupboard made of wooden, designed for storing items." ;
+    :isOnFloorOf :utility_room_24 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:dryer_403 rdf:type :Artifact ;
+    :category "dryer" ;
+    :description "A handheld, light beige aluminum dryer with a matte exterior." ;
+    :isOnFloorOf :utility_room_24 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean ;
+    :isSwitchedOn "true"^^xsd:boolean .
+
+:dryer_sheet_408 rdf:type :Artifact ;
+    :category "dryer_sheet" ;
+    :description "A gray dryer_sheet made of metal, with a glossy finish." ;
+    :isInsideOf :cupboard_396 ;
+    :affords :Unimanual .
+
+:dustpan_417 rdf:type :Artifact ;
+    :category "dustpan" ;
+    :description "A small, lightweight white fabric dustpan with a smooth surface." ;
+    :isInsideOf :storage_cabinet_397 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:fabric_softener_405 rdf:type :Artifact ;
+    :category "fabric_softener" ;
+    :description "A beige fabric_softener made of cotton, with a plush finish." ;
+    :isInsideOf :cupboard_396 ;
+    :affords :Unimanual .
+
+:garbage_bags_box_413 rdf:type :Artifact ;
+    :category "garbage_bags_box" ;
+    :description "Taylor's handheld, light white garbage_bags_box made of wooden, designed for storing belongings." ;
+    :isInsideOf :cupboard_396 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:glove_423 rdf:type :Artifact ;
+    :category "glove" ;
+    :description "A gray glove made of wooden, with a smooth finish." ;
+    :isInsideOf :storage_cabinet_397 ;
+    :affords :Unimanual .
+
+:ironing_spray_410 rdf:type :Artifact ;
+    :category "ironing_spray" ;
+    :description "A black ironing_spray by DesignWorks, built from fabric and finished smooth." ;
+    :isInsideOf :cupboard_396 ;
+    :affords :Unimanual .
+
+:laundry_detergent_404 rdf:type :Artifact ;
+    :category "laundry_detergent" ;
+    :description "A brown laundry_detergent made of wooden, with a matte finish." ;
+    :isInsideOf :cupboard_396 ;
+    :affords :Unimanual .
+
+:laundry_detergent_pod_409 rdf:type :Artifact ;
+    :category "laundry_detergent_pod" ;
+    :description "A small, light beige wooden laundry_detergent_pod with a textured surface." ;
+    :isInsideOf :cupboard_396 ;
+    :affords :Unimanual .
+
+:microfiber_cloth_422 rdf:type :Artifact ;
+    :category "microfiber_cloth" ;
+    :description "A white microfiber_cloth made of wooden, with a matte finish." ;
+    :isInsideOf :storage_cabinet_397 ;
+    :affords :Unimanual .
+
+:mop_415 rdf:type :Artifact ;
+    :category "mop" ;
+    :description "A white mop made of wooden, with a textured finish." ;
+    :isInsideOf :storage_cabinet_397 ;
+    :affords :Bimanual .
+
+:paper_towel_roll_412 rdf:type :Artifact ;
+    :category "paper_towel_roll" ;
+    :description "A light blue paper_towel_roll made of silk, with a plush finish." ;
+    :isInsideOf :cupboard_396 ;
+    :affords :Unimanual .
+
+:picture_frame_398 rdf:type :Artifact ;
+    :category "picture_frame" ;
+    :description "A brown picture_frame made of fabric, with a matte finish." ;
+    :isOntopOf :storage_cabinet_397 ;
+    :affords :Unimanual .
+
+:picture_frame_399 rdf:type :Artifact ;
+    :category "picture_frame" ;
+    :description "A brown picture_frame made of wooden, with a matte finish." ;
+    :isOntopOf :storage_cabinet_397 ;
+    :affords :Unimanual .
+
+:picture_frame_400 rdf:type :Artifact ;
+    :category "picture_frame" ;
+    :description "A handheld, light ceramic mixed-material picture_frame with a textured surface." ;
+    :isOntopOf :storage_cabinet_397 ;
+    :affords :Unimanual .
+
+:scrub_brush_420 rdf:type :Artifact ;
+    :category "scrub_brush" ;
+    :description "Casey's portable, light blue rubber scrub_brush with a textured surface." ;
+    :isInsideOf :storage_cabinet_397 ;
+    :affords :Unimanual .
+
+:sink_394 rdf:type :Artifact ;
+    :category "sink" ;
+    :description "A large, solid beige mahogany sink with a matte surface." ;
+    :isOnFloorOf :utility_room_24 ;
+    :affords :Containment ;
+    :affords :Support .
+
+:sponge_419 rdf:type :Artifact ;
+    :category "sponge" ;
+    :description "A beige sponge made of fabric, with a textured finish." ;
+    :isInsideOf :storage_cabinet_397 ;
+    :affords :Unimanual .
+
+:stain_remover_407 rdf:type :Artifact ;
+    :category "stain_remover" ;
+    :description "A small, light brown metal stain_remover with a smooth surface." ;
+    :isInsideOf :cupboard_396 ;
+    :affords :Unimanual .
+
+:storage_cabinet_397 rdf:type :Artifact ;
+    :category "storage_cabinet" ;
+    :description "A fixed, heavy wooden storage_cabinet made of mixed-material, designed for storing various items." ;
+    :isOnFloorOf :utility_room_24 ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "true"^^xsd:boolean .
+
+:towel_401 rdf:type :Artifact ;
+    :category "towel" ;
+    :description "A handheld, lightweight beige fabric towel with a soft surface." ;
+    :isOntopOf :sink_394 ;
+    :affords :Unimanual .
+
+:towel_421 rdf:type :Artifact ;
+    :category "towel" ;
+    :description "A portable, light clear synthetic towel with a soft surface." ;
+    :isInsideOf :storage_cabinet_397 ;
+    :affords :Unimanual .
+
+:vacuum_filter_414 rdf:type :Artifact ;
+    :category "vacuum_filter" ;
+    :description "A small, lightweight black wooden vacuum_filter with a smooth exterior." ;
+    :isInsideOf :storage_cabinet_397 ;
+    :affords :Unimanual .
+
+:wall_painting_395 rdf:type :Artifact ;
+    :category "wall_painting" ;
+    :description "A brown wall_painting made of wooden, with a textured finish." ;
+    :isOnFloorOf :utility_room_24 ;
+    :affords :Bimanual .
+
+:washing_machine_402 rdf:type :Artifact ;
+    :category "washing_machine" ;
+    :description "A portable, lightweight beige ceramic washing_machine with a matte surface." ;
+    :isOnFloorOf :utility_room_24 ;
+    :affords :Unimanual ;
+    :affords :Openable ;
+    :affords :Support ;
+    :affords :Containment ;
+    :affords :Switchable ;
+    :isOpen "false"^^xsd:boolean .
+
+:left_hand rdf:type :Hand .
+
+:right_hand rdf:type :Hand .
+
+:robot rdf:type :Robot ;
+    :description "Main service robot in Muleshoe building." ;
+    :robotIsInSpace :corridor_11 ;
+    :hasHand :left_hand ;
+    :hasHand :right_hand .
+
+
+:door_1  :doorIsOpen "true"^^xsd:boolean .
+:door_2  :doorIsOpen "true"^^xsd:boolean .
+:door_3  :doorIsOpen "true"^^xsd:boolean .
+:door_4  :doorIsOpen "true"^^xsd:boolean .
+:door_5  :doorIsOpen "false"^^xsd:boolean .
+:door_6  :doorIsOpen "false"^^xsd:boolean .
+:door_7  :doorIsOpen "true"^^xsd:boolean .
+:door_8  :doorIsOpen "false"^^xsd:boolean .
+:door_9  :doorIsOpen "false"^^xsd:boolean .
+:door_10 :doorIsOpen "true"^^xsd:boolean .
+:door_11 :doorIsOpen "false"^^xsd:boolean .
+:door_12 :doorIsOpen "true"^^xsd:boolean .

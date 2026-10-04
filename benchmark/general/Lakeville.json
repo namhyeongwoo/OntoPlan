@@ -1,0 +1,882 @@
+{
+  "env": "Lakeville",
+  "tasks": [
+    {
+      "id": "S01",
+      "env": "Lakeville",
+      "size": "small",
+      "instruction": "Could you please turn on the toaster in the kitchen?",
+      "expected": {
+        "at_end": {
+          "subject": "toaster_2",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S02",
+      "env": "Lakeville",
+      "size": "small",
+      "instruction": "Turn on the TV in the living room so I can watch the news.",
+      "expected": {
+        "at_end": {
+          "subject": "tv_83",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S03",
+      "env": "Lakeville",
+      "size": "small",
+      "instruction": "Please bring the cup from the work room to the dining table.",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "cup_40",
+              "predicate": "isOntopOf",
+              "object": "dining_table_79"
+            },
+            {
+              "subject": "cup_40",
+              "predicate": "isOntopOf",
+              "object": "dining_table_80"
+            },
+            {
+              "subject": "cup_40",
+              "predicate": "isOntopOf",
+              "object": "dining_table_81"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S04",
+      "env": "Lakeville",
+      "size": "small",
+      "instruction": "A guest is coming to a bedroom on floor A without a bathroom, so could you open the door in advance?",
+      "expected": {
+        "at_end": {
+          "subject": "door_4",
+          "predicate": "doorIsOpen",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S05",
+      "env": "Lakeville",
+      "size": "small",
+      "instruction": "Turn off the oven and close it.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "oven_1",
+              "predicate": "isSwitchedOn",
+              "object": "false"
+            },
+            {
+              "subject": "oven_1",
+              "predicate": "isOpen",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S06",
+      "env": "Lakeville",
+      "size": "small",
+      "instruction": "Move all the books in the home office to the work room.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "book_5",
+              "predicate": "isInSpace",
+              "object": "work_room_14"
+            },
+            {
+              "subject": "book_6",
+              "predicate": "isInSpace",
+              "object": "work_room_14"
+            },
+            {
+              "subject": "book_7",
+              "predicate": "isInSpace",
+              "object": "work_room_14"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S07",
+      "env": "Lakeville",
+      "size": "small",
+      "instruction": "Can you turn on the tv? And please close all the dining room doors.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "tv_83",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            {
+              "subject": "door_2",
+              "predicate": "doorIsOpen",
+              "object": "false"
+            },
+            {
+              "subject": "door_1",
+              "predicate": "doorIsOpen",
+              "object": "false"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S08",
+      "env": "Lakeville",
+      "size": "small",
+      "instruction": "Turn on the TV first, then bring all vases from floor B to the living room with the TV. Use only your right hand - my left arm brace is charging on the left hand dock.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "tv_83",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            {
+              "subject": "vase_42",
+              "predicate": "isInSpace",
+              "object": "living_room_17"
+            },
+            {
+              "subject": "vase_43",
+              "predicate": "isInSpace",
+              "object": "living_room_17"
+            },
+            {
+              "subject": "vase_45",
+              "predicate": "isInSpace",
+              "object": "living_room_17"
+            },
+            {
+              "subject": "vase_47",
+              "predicate": "isInSpace",
+              "object": "living_room_17"
+            }
+          ]
+        },
+        "always": [
+          {
+            "subject": "left_hand",
+            "predicate": "isEmpty",
+            "object": "true"
+          }
+        ],
+        "sometime": [],
+        "ordering": [
+          {
+            "before": {
+              "subject": "tv_83",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            "after": {
+              "subject": "vase_42",
+              "predicate": "isInSpace",
+              "object": "living_room_17"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "S09",
+      "env": "Lakeville",
+      "size": "small",
+      "instruction": "I'm having a meeting in the floor B office and we need more chairs. Could you bring all the chairs from the bedroom connected to the bathroom on floor A up to the home office?",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "chair_65",
+              "predicate": "isInSpace",
+              "object": "home_office_15"
+            },
+            {
+              "subject": "chair_66",
+              "predicate": "isInSpace",
+              "object": "home_office_15"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "S10",
+      "env": "Lakeville",
+      "size": "small",
+      "instruction": "Bring all the bowls to the home office. Use only your right hand.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "bowl_51",
+              "predicate": "isInSpace",
+              "object": "home_office_15"
+            },
+            {
+              "subject": "bowl_52",
+              "predicate": "isInSpace",
+              "object": "home_office_15"
+            }
+          ]
+        },
+        "always": [
+          {
+            "subject": "left_hand",
+            "predicate": "isEmpty",
+            "object": "true"
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M01",
+      "env": "Lakeville",
+      "size": "medium",
+      "instruction": "Could you please turn on the computer in the bedroom next to the hallway? I need to start working.",
+      "expected": {
+        "at_end": {
+          "subject": "computer_77",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M02",
+      "env": "Lakeville",
+      "size": "medium",
+      "instruction": "Please bring all the combs in this building to the work room.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "comb_7",
+              "predicate": "isInSpace",
+              "object": "work_room_14"
+            },
+            {
+              "subject": "comb_27",
+              "predicate": "isInSpace",
+              "object": "work_room_14"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M03",
+      "env": "Lakeville",
+      "size": "medium",
+      "instruction": "Turn on the coffee maker in the kitchen in advance.",
+      "expected": {
+        "at_end": {
+          "subject": "coffee_maker_255",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M04",
+      "env": "Lakeville",
+      "size": "medium",
+      "instruction": "Open all the dressers in the work room to air them out. Use only your right hand - your left gripper is dusty from the last cleaning job.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "dresser_171",
+              "predicate": "isOpen",
+              "object": "true"
+            },
+            {
+              "subject": "dresser_172",
+              "predicate": "isOpen",
+              "object": "true"
+            },
+            {
+              "subject": "dresser_173",
+              "predicate": "isOpen",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [
+          {
+            "subject": "left_hand",
+            "predicate": "isEmpty",
+            "object": "true"
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M05",
+      "env": "Lakeville",
+      "size": "medium",
+      "instruction": "There are some books on a dining table. Please pick up one of them and bring it to the home office upstairs. Use only your left hand - the right gripper needs calibration.",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "book_135",
+              "predicate": "isInSpace",
+              "object": "home_office_15"
+            },
+            {
+              "subject": "book_136",
+              "predicate": "isInSpace",
+              "object": "home_office_15"
+            },
+            {
+              "subject": "book_137",
+              "predicate": "isInSpace",
+              "object": "home_office_15"
+            }
+          ]
+        },
+        "always": [
+          {
+            "subject": "right_hand",
+            "predicate": "isEmpty",
+            "object": "true"
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M06",
+      "env": "Lakeville",
+      "size": "medium",
+      "instruction": "Go up to the home office and turn on the computer. After that, bring the notebook from the home office down to the work room on Floor A.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "computer_227",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            {
+              "subject": "notebook_224",
+              "predicate": "isInSpace",
+              "object": "work_room_14"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": [
+          {
+            "before": {
+              "subject": "computer_227",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            "after": {
+              "subject": "notebook_224",
+              "predicate": "isInSpace",
+              "object": "work_room_14"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "M07",
+      "env": "Lakeville",
+      "size": "medium",
+      "instruction": "I want to ventilate the house. Open all the closed doors, but don't open the home office door - someone is in a meeting there.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "door_4",
+              "predicate": "doorIsOpen",
+              "object": "true"
+            },
+            {
+              "subject": "door_5",
+              "predicate": "doorIsOpen",
+              "object": "true"
+            },
+            {
+              "subject": "door_8",
+              "predicate": "doorIsOpen",
+              "object": "true"
+            },
+            {
+              "subject": "door_10",
+              "predicate": "doorIsOpen",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [
+          {
+            "subject": "door_11",
+            "predicate": "doorIsOpen",
+            "object": "false"
+          }
+        ],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M08",
+      "env": "Lakeville",
+      "size": "medium",
+      "instruction": "Cook the pork from the kitchen refrigerator in the oven. Put it in, close the door and turn on the oven. After cooking, serve it on the kitchen island table.",
+      "expected": {
+        "at_end": {
+          "subject": "pork_302",
+          "predicate": "isOntopOf",
+          "object": "island_table_244"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "pork_302",
+                "predicate": "isInsideOf",
+                "object": "oven_245"
+              },
+              {
+                "subject": "oven_245",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "oven_245",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M09",
+      "env": "Lakeville",
+      "size": "medium",
+      "instruction": "Wash the bowl from the kitchen island table in the dishwasher. Put the bowl inside, close the dishwasher, and run it with the bowl inside while closed. After washing, return the bowl to the island table.",
+      "expected": {
+        "at_end": {
+          "subject": "bowl_254",
+          "predicate": "isOntopOf",
+          "object": "island_table_244"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "bowl_254",
+                "predicate": "isInsideOf",
+                "object": "dishwasher_251"
+              },
+              {
+                "subject": "dishwasher_251",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "dishwasher_251",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "M10",
+      "env": "Lakeville",
+      "size": "medium",
+      "instruction": "The fork in the kitchen cutlery drawer organizer got too hot from cooking. Cool it down by putting it in the refrigerator. Put the fork inside, close the refrigerator, and turn it on to cool the fork inside while the refrigerator is closed. After cooling, take the fork out and put it back in the cutlery drawer organizer.",
+      "expected": {
+        "at_end": {
+          "subject": "fork_261",
+          "predicate": "isInsideOf",
+          "object": "cutlery_drawer_organizer_256"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "fork_261",
+                "predicate": "isInsideOf",
+                "object": "refrigerator_246"
+              },
+              {
+                "subject": "refrigerator_246",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "refrigerator_246",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L01",
+      "env": "Lakeville",
+      "size": "large",
+      "instruction": "Could you please turn on the coffee maker in the kitchen? I'm going to have some coffee soon.",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "coffee_maker_255",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            {
+              "subject": "coffee_maker_2_158",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L02",
+      "env": "Lakeville",
+      "size": "large",
+      "instruction": "I need to air out the large dresser in the hallway, so please leave the dresser open.",
+      "expected": {
+        "at_end": {
+          "subject": "dresser_124",
+          "predicate": "isOpen",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L03",
+      "env": "Lakeville",
+      "size": "large",
+      "instruction": "Can you turn on the computer on the desk in the bedroom next door? I need to start working right away.",
+      "expected": {
+        "at_end": {
+          "subject": "computer_77",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L04",
+      "env": "Lakeville",
+      "size": "large",
+      "instruction": "Turn on the TV in the living room.",
+      "expected": {
+        "at_end": {
+          "subject": "tv_321",
+          "predicate": "isSwitchedOn",
+          "object": "true"
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L05",
+      "env": "Lakeville",
+      "size": "large",
+      "instruction": "Take some blueberries and yogurt from the kitchen fridge and put them in the brown backpack. Close the fridge door after taking the items.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "blueberry_295",
+              "predicate": "isInsideOf",
+              "object": "backpack_1_116"
+            },
+            {
+              "subject": "yogurt_308",
+              "predicate": "isInsideOf",
+              "object": "backpack_1_116"
+            },
+            {
+              "subject": "refrigerator_246",
+              "predicate": "isOpen",
+              "object": "false"
+            }
+          ]
+        },
+        "sometime": [],
+        "always": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L06",
+      "env": "Lakeville",
+      "size": "large",
+      "instruction": "The upstairs hallway is too dark. Go up and turn on both wall lights. And pick up one of my keys from the staircase and place it on the corner desk in the work room.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "wall_light_130",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            {
+              "subject": "wall_light_131",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            {
+              "or": [
+                {
+                  "subject": "key_382",
+                  "predicate": "isOntopOf",
+                  "object": "corner_desk_2_132"
+                },
+                {
+                  "subject": "key_383",
+                  "predicate": "isOntopOf",
+                  "object": "corner_desk_2_132"
+                },
+                {
+                  "subject": "key_384",
+                  "predicate": "isOntopOf",
+                  "object": "corner_desk_2_132"
+                },
+                {
+                  "subject": "key_385",
+                  "predicate": "isOntopOf",
+                  "object": "corner_desk_2_132"
+                },
+                {
+                  "subject": "key_386",
+                  "predicate": "isOntopOf",
+                  "object": "corner_desk_2_132"
+                },
+                {
+                  "subject": "key_387",
+                  "predicate": "isOntopOf",
+                  "object": "corner_desk_2_132"
+                }
+              ]
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L07",
+      "env": "Lakeville",
+      "size": "large",
+      "instruction": "Take the nails box from the hallway on floor B and place it on a bookshelf in the work room.",
+      "expected": {
+        "at_end": {
+          "or": [
+            {
+              "subject": "nails_box_2_143",
+              "predicate": "isOntopOf",
+              "object": "bookshelf_169"
+            },
+            {
+              "subject": "nails_box_2_143",
+              "predicate": "isOntopOf",
+              "object": "bookshelf_1_169"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L08",
+      "env": "Lakeville",
+      "size": "large",
+      "instruction": "Bring the laptop from the home office to the work room, open it and turn it on.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "laptop_1_215",
+              "predicate": "isInSpace",
+              "object": "work_room_14"
+            },
+            {
+              "subject": "laptop_1_215",
+              "predicate": "isOpen",
+              "object": "true"
+            },
+            {
+              "subject": "laptop_1_215",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L09",
+      "env": "Lakeville",
+      "size": "large",
+      "instruction": "I'm going to study in the home office upstairs. Turn on the air purifier, move the history book to the desk, and switch on the computer in the home office.",
+      "expected": {
+        "at_end": {
+          "and": [
+            {
+              "subject": "air_purifier_1_238",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            },
+            {
+              "subject": "history_book_1_214",
+              "predicate": "isOntopOf",
+              "object": "desk_215"
+            },
+            {
+              "subject": "computer_227",
+              "predicate": "isSwitchedOn",
+              "object": "true"
+            }
+          ]
+        },
+        "always": [],
+        "sometime": [],
+        "ordering": []
+      }
+    },
+    {
+      "id": "L10",
+      "env": "Lakeville",
+      "size": "large",
+      "instruction": "Wash Sam's t-shirt from the bed on Floor A in the washer, then put it back on the bed after washing.",
+      "expected": {
+        "at_end": {
+          "subject": "t_shirt_1_74",
+          "predicate": "isOntopOf",
+          "object": "bed_67"
+        },
+        "always": [],
+        "sometime": [
+          {
+            "and": [
+              {
+                "subject": "t_shirt_1_74",
+                "predicate": "isInsideOf",
+                "object": "washer_2_133"
+              },
+              {
+                "subject": "washer_2_133",
+                "predicate": "isOpen",
+                "object": "false"
+              },
+              {
+                "subject": "washer_2_133",
+                "predicate": "isSwitchedOn",
+                "object": "true"
+              }
+            ]
+          }
+        ],
+        "ordering": []
+      }
+    }
+  ]
+}

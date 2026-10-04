@@ -1,0 +1,664 @@
+@prefix : <http://example.org/OntoPlan#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/OntoPlan#> .
+
+<http://example.org/OntoPlan> rdf:type owl:Ontology .
+
+:oven_1 rdf:type :Artifact ;
+    :category "oven" ;
+    :description "A oven, made of ['metal', 'glass'], in kitchen_16." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Openable ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :affords :Support ;
+    :affords :Containment ;
+    :isOpen "true"^^xsd:boolean ;
+    :isSwitchedOn "true"^^xsd:boolean .
+
+:toaster_2 rdf:type :Artifact ;
+    :category "toaster" ;
+    :description "A toaster, made of ['metal', None], in kitchen_16." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:sink_3 rdf:type :Artifact ;
+    :category "sink" ;
+    :description "A sink, made of ['ceramic', None], in kitchen_16." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Containment ;
+    :affords :Support .
+
+:refrigerator_4 rdf:type :Artifact ;
+    :category "refrigerator" ;
+    :description "A refrigerator, made of ['metal', None], in kitchen_16." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Bimanual ;
+    :affords :Containment ;
+    :affords :Openable ;
+    :affords :Support ;
+    :affords :Switchable ;
+    :isOpen "false"^^xsd:boolean ;
+    :isSwitchedOn "true"^^xsd:boolean .
+
+:book_5 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in home_office_15." ;
+    :isOnFloorOf :home_office_15 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_6 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], visual texture: stained, in home_office_15." ;
+    :isOnFloorOf :home_office_15 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_7 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], visual texture: stained, in home_office_15." ;
+    :isOnFloorOf :home_office_15 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_8 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_9 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_10 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_11 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_12 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_13 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_14 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_15 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_16 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_17 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_18 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_19 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_20 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], visual texture: stained, in work_room_14." ;
+    :isOnFloorOf :work_room_14 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_21 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], visual texture: stained, in work_room_14." ;
+    :isOnFloorOf :work_room_14 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_22 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, in work_room_14." ;
+    :isOnFloorOf :work_room_14 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_23 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in work_room_14." ;
+    :isOnFloorOf :work_room_14 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_24 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], visual texture: stained, in work_room_14." ;
+    :isOnFloorOf :work_room_14 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_25 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in work_room_14." ;
+    :isOnFloorOf :work_room_14 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_26 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in bedroom_6." ;
+    :isOnFloorOf :bedroom_6 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_27 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in dining_room_12." ;
+    :isOnFloorOf :dining_room_12 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_28 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in dining_room_12." ;
+    :isOnFloorOf :dining_room_12 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_29 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], visual texture: stained, in work_room_14." ;
+    :isOnFloorOf :work_room_14 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_30 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in work_room_14." ;
+    :isOnFloorOf :work_room_14 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_31 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in work_room_14." ;
+    :isOnFloorOf :work_room_14 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_32 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in work_room_14." ;
+    :isOnFloorOf :work_room_14 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_33 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_34 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_35 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_36 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_37 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_38 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], tactile texture: veined, visual texture: striped, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:book_39 rdf:type :Artifact ;
+    :category "book" ;
+    :description "A book, made of ['paper', None], visual texture: stained, in dining_room_12." ;
+    :isOnFloorOf :dining_room_12 ;
+    :affords :Openable ;
+    :affords :Unimanual ;
+    :isOpen "false"^^xsd:boolean .
+
+:cup_40 rdf:type :Artifact ;
+    :category "cup" ;
+    :description "A cup, made of ['ceramic', None], in work_room_14." ;
+    :isOnFloorOf :work_room_14 ;
+    :affords :Containment ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:vase_41 rdf:type :Artifact ;
+    :category "vase" ;
+    :description "A vase, made of ['ceramic', None], tactile texture: grooved, visual texture: lined, in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:vase_42 rdf:type :Artifact ;
+    :category "vase" ;
+    :description "A vase, made of ['metal', None], in bathroom_3." ;
+    :isOnFloorOf :bathroom_3 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:vase_43 rdf:type :Artifact ;
+    :category "vase" ;
+    :description "A vase, made of ['ceramic', None], tactile texture: veined, in bathroom_3." ;
+    :isOnFloorOf :bathroom_3 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:vase_44 rdf:type :Artifact ;
+    :category "vase" ;
+    :description "A vase, made of ['ceramic', None], tactile texture: veined, in living_room_18." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:vase_45 rdf:type :Artifact ;
+    :category "vase" ;
+    :description "A vase, made of ['metal', None], tactile texture: grooved, visual texture: dotted, in bedroom_8." ;
+    :isOnFloorOf :bedroom_8 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:vase_46 rdf:type :Artifact ;
+    :category "vase" ;
+    :description "A vase, made of ['ceramic', None], tactile texture: bumpy, visual texture: grid, in dining_room_13." ;
+    :isOnFloorOf :dining_room_13 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:vase_47 rdf:type :Artifact ;
+    :category "vase" ;
+    :description "A vase, made of ['ceramic', None], visual texture: stained, in bedroom_7." ;
+    :isOnFloorOf :bedroom_7 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:vase_48 rdf:type :Artifact ;
+    :category "vase" ;
+    :description "A vase, made of ['glass', None], in bedroom_6." ;
+    :isOnFloorOf :bedroom_6 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:vase_49 rdf:type :Artifact ;
+    :category "vase" ;
+    :description "A vase, made of ['ceramic', None], tactile texture: woven, visual texture: interlaced, in dining_room_12." ;
+    :isOnFloorOf :dining_room_12 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:vase_50 rdf:type :Artifact ;
+    :category "vase" ;
+    :description "A vase, made of ['glass', None], visual texture: grid, in bathroom_2." ;
+    :isOnFloorOf :bathroom_2 ;
+    :affords :Containment ;
+    :affords :Unimanual .
+
+:bowl_51 rdf:type :Artifact ;
+    :category "bowl" ;
+    :description "A bowl, made of ['wood', None], visual texture: lined, in kitchen_16." ;
+    :isOnFloorOf :kitchen_16 ;
+    :affords :Containment ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:bowl_52 rdf:type :Artifact ;
+    :category "bowl" ;
+    :description "A bowl, made of ['ceramic', None], in dining_room_12." ;
+    :isOnFloorOf :dining_room_12 ;
+    :affords :Containment ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_53 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['wood', None], in dining_room_13." ;
+    :isOnFloorOf :dining_room_13 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_54 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['wood', None], in dining_room_13." ;
+    :isOnFloorOf :dining_room_13 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_55 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['wood', None], in dining_room_13." ;
+    :isOnFloorOf :dining_room_13 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_56 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['wood', None], in dining_room_13." ;
+    :isOnFloorOf :dining_room_13 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_57 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['wood', None], in bathroom_2." ;
+    :isOnFloorOf :bathroom_2 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_58 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['wood', None], in dining_room_13." ;
+    :isOnFloorOf :dining_room_13 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_59 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['wood', None], in bathroom_2." ;
+    :isOnFloorOf :bathroom_2 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_60 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['wood', None], in bathroom_2." ;
+    :isOnFloorOf :bathroom_2 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_61 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['leather', None], in living_room_18." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_62 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['fabric', 'wood'], visual texture: paisley, in living_room_18." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_63 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['wood', None], in dining_room_13." ;
+    :isOnFloorOf :dining_room_13 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_64 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['wood', None], in dining_room_13." ;
+    :isOnFloorOf :dining_room_13 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_65 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['plastic', 'fabric'], tactile texture: woven, visual texture: interlaced, in bedroom_6." ;
+    :isOnFloorOf :bedroom_6 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_66 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['plastic', 'fabric'], tactile texture: woven, visual texture: interlaced, in bedroom_6." ;
+    :isOnFloorOf :bedroom_6 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_67 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['leather', None], in bedroom_7." ;
+    :isOnFloorOf :bedroom_7 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_68 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['fabric', 'wood'], visual texture: grid, in dining_room_12." ;
+    :isOnFloorOf :dining_room_12 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_69 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['fabric', 'wood'], visual texture: grid, in dining_room_12." ;
+    :isOnFloorOf :dining_room_12 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:chair_70 rdf:type :Artifact ;
+    :category "chair" ;
+    :description "A chair, made of ['wood', None], in bathroom_2." ;
+    :isOnFloorOf :bathroom_2 ;
+    :affords :Support ;
+    :affords :Unimanual .
+
+:couch_71 rdf:type :Artifact ;
+    :category "couch" ;
+    :description "A couch, made of ['leather', None], tactile texture: studded, in bedroom_8." ;
+    :isOnFloorOf :bedroom_8 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:couch_72 rdf:type :Artifact ;
+    :category "couch" ;
+    :description "A couch, made of ['leather', 'metal'], in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:couch_73 rdf:type :Artifact ;
+    :category "couch" ;
+    :description "A couch, made of ['fabric', None], in living_room_18." ;
+    :isOnFloorOf :living_room_18 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:potted_plant_74 rdf:type :Artifact ;
+    :category "potted plant" ;
+    :description "A potted plant, made of ['foliage', None], tactile texture: frilly, visual texture: blotchy, in bathroom_3." ;
+    :isOnFloorOf :bathroom_3 ;
+    :affords :Unimanual .
+
+:bed_75 rdf:type :Artifact ;
+    :category "bed" ;
+    :description "A bed, made of ['fabric', None], tactile texture: waffled, in bedroom_6." ;
+    :isOnFloorOf :bedroom_6 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:bed_76 rdf:type :Artifact ;
+    :category "bed" ;
+    :description "A bed, made of ['fabric', 'wood'], visual texture: paisley, in bedroom_8." ;
+    :isOnFloorOf :bedroom_8 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:bed_77 rdf:type :Artifact ;
+    :category "bed" ;
+    :description "A bed, made of ['fabric', None], tactile texture: wrinkled, visual texture: paisley, in bedroom_7." ;
+    :isOnFloorOf :bedroom_7 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:bed_78 rdf:type :Artifact ;
+    :category "bed" ;
+    :description "A bed, made of ['fabric', None], visual texture: paisley, in bedroom_5." ;
+    :isOnFloorOf :bedroom_5 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:dining_table_79 rdf:type :Artifact ;
+    :category "dining table" ;
+    :description "A dining table, made of ['wood', None], visual texture: stained, in dining_room_13." ;
+    :isOnFloorOf :dining_room_13 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:dining_table_80 rdf:type :Artifact ;
+    :category "dining table" ;
+    :description "A dining table, made of ['wood', None], in bathroom_2." ;
+    :isOnFloorOf :bathroom_2 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:dining_table_81 rdf:type :Artifact ;
+    :category "dining table" ;
+    :description "A dining table, made of ['wood', 'stone'], visual texture: marbled, in dining_room_12." ;
+    :isOnFloorOf :dining_room_12 ;
+    :affords :Bimanual ;
+    :affords :Support .
+
+:toilet_82 rdf:type :Artifact ;
+    :category "toilet" ;
+    :description "A toilet, made of ['ceramic', None], in bathroom_1." ;
+    :isOnFloorOf :bathroom_1 ;
+    :affords :Openable ;
+    :affords :Support ;
+    :isOpen "false"^^xsd:boolean .
+
+:tv_83 rdf:type :Artifact ;
+    :category "tv" ;
+    :description "A tv, made of ['plastic', 'glass'], in living_room_17." ;
+    :isOnFloorOf :living_room_17 ;
+    :affords :Switchable ;
+    :affords :Unimanual ;
+    :affords :Support ;
+    :isSwitchedOn "false"^^xsd:boolean .
+
+:left_hand rdf:type :Hand .
+
+:right_hand rdf:type :Hand .
+
+:robot rdf:type :Robot ;
+    :description "Main service robot in Lakeville building." ;
+    :robotIsInSpace :corridor_9 ;
+    :hasHand :left_hand ;
+    :hasHand :right_hand .
+
+:door_1  :doorIsOpen "true"^^xsd:boolean .
+:door_2  :doorIsOpen "true"^^xsd:boolean .
+:door_3  :doorIsOpen "true"^^xsd:boolean .
+:door_4  :doorIsOpen "false"^^xsd:boolean .
+:door_5  :doorIsOpen "false"^^xsd:boolean .
+:door_6  :doorIsOpen "true"^^xsd:boolean .
+:door_7  :doorIsOpen "true"^^xsd:boolean .
+:door_8  :doorIsOpen "false"^^xsd:boolean .
+:door_9  :doorIsOpen "true"^^xsd:boolean .
+:door_10 :doorIsOpen "false"^^xsd:boolean .
+:door_11 :doorIsOpen "false"^^xsd:boolean .
+:door_12 :doorIsOpen "true"^^xsd:boolean .
